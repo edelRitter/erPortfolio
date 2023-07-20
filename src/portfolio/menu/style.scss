@@ -19,6 +19,7 @@
     outline: none;
     cursor: pointer;
     transition: all .5s ease-in-out;
+    z-index: 3;
 
     &-input {
       display: none;
@@ -51,6 +52,56 @@
       &::after{
         transform: translateY(6px);
       }
+    }
+  }
+
+  &__sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 75%;
+    max-width: 400px;
+    top: 0;
+    right: -100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .6s ease;
+    background-color: colors.$portfolio_White;
+    z-index: 2;
+
+    &.is-active {
+      right: 0;
+    }
+
+    &-title {
+      padding: 6px 0 6px 24px;
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: -0.05em;
+      font-family: "Playfair", serif;
+      color: colors.$portfolio_Black;
+    }
+  }
+
+  &__background {
+    position: fixed;
+    display: block;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .6s ease;
+    cursor: pointer;
+    z-index: 1;
+
+    &.is-active {
+      opacity: 1;
     }
   }
 }
