@@ -1,0 +1,70 @@
+@use '@/assets/scss/_colors.scss' as colors;
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  &__button {
+    appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+
+    &-input {
+      display: none;
+    }
+
+    &-hamburger {
+      display: flex;
+      width: 20px;
+      height: 2px;
+      background-color: colors.$portfolio_Black;
+      border-radius: 5px;
+      z-index: 10;
+      transition: all .5s ease;
+  
+      &::before, 
+      &::after{
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: colors.$portfolio_Black;
+        border-radius: 5px;
+        transition: all .5s ease;
+      }
+  
+      &::before {
+        transform: translateY(-6px);
+      }
+      
+      &::after{
+        transform: translateY(6px);
+      }
+    }
+  }
+}
+
+/** checked state */
+.menu__button-input:checked ~.menu__button-hamburger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.menu__button-input:checked ~.menu__button-hamburger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu__button-input:checked ~.menu__button-hamburger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}

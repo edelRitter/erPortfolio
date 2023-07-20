@@ -1,30 +1,22 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <Menu />
+    <Header />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<script setup>
+import Menu from './portfolio/menu/index.vue'
+import Header from './portfolio/header/index.vue'
+</script>
+
+<style>
+@import '@/assets/vendors/reset.css';
+@import '@/assets/vendors/default.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/** modules */ 
+@import '@/assets/scss/_colors.scss';
+@import '@/assets/scss/_textsize.scss';
+@import '@/assets/scss/_media-queries.scss';
 </style>

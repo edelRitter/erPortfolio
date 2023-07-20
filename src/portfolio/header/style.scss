@@ -1,0 +1,17 @@
+@use '@/assets/scss/_colors.scss' as colors;
+
+.portfolio {
+  &__header {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+
+    &-hero {
+      position: relative;
+      width: 50%;
+      height: 50%;
+    }
+  }
+}
