@@ -1,9 +1,12 @@
 @use '@/assets/scss/_colors.scss' as colors;
 
 .menu {
-  position: fixed;
-  top: 0;
-  right: 0;
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+  }
 
   &__button {
     appearance: none;
@@ -12,17 +15,19 @@
     align-items: center;
     width: 50px;
     height: 50px;
-    padding: 0;
     margin: 0;
     background-color: transparent;
     border: none;
     outline: none;
-    cursor: pointer;
     transition: all .5s ease-in-out;
-    z-index: 3;
+    z-index: 1;
 
     &-input {
-      display: none;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+      z-index: 2;
     }
 
     &-hamburger {
@@ -31,8 +36,8 @@
       height: 2px;
       background-color: colors.$portfolio_Black;
       border-radius: 5px;
-      z-index: 10;
       transition: all .5s ease;
+      z-index: 3;
   
       &::before, 
       &::after{
@@ -97,7 +102,6 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     transition: all .6s ease;
-    cursor: pointer;
     z-index: 1;
 
     &.is-active {

@@ -1,11 +1,8 @@
 <template>
   <div class="menu">
-    <label for="menu" class="menu__button">
-      <input type="checkbox"
-        id="menu"
-        class="menu__button-input"
-        v-on:click="toggleMenu"
-        />
+    <div class="menu__wrapper">
+    <label for="navigation" class="menu__button">
+      <input type="checkbox" id="navigation" class="menu__button-input" v-on:click="toggleMenu"/>
       <span class="menu__button-hamburger"></span>
     </label>
     <menu class="menu__sidebar" :class="{'is-active': isActive}">
@@ -19,6 +16,7 @@
         <li><a href="#">menu4</a></li>
       </ul>
     </menu>
+    </div>
     <div class="menu__background" :class="{'is-active': isActive}"></div>
   </div>
 </template>

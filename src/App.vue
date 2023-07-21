@@ -1,13 +1,13 @@
 <template>
   <div>
     <Menu />
-    <Header />
+    <Top />
   </div>
 </template>
 
 <script setup>
 import Menu from './portfolio/menu/index.vue'
-import Header from './portfolio/header/index.vue'
+import Top from './portfolio/top/index.vue'
 </script>
 
 <style>
