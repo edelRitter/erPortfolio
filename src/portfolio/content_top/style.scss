@@ -6,6 +6,11 @@
     width: 100%;
     min-height: 100vh;
 
+    &-wrapper {
+      width: 100%;
+      padding: 12px;
+    }
+
     &-video {
       position: absolute;
       right: 0;
@@ -25,20 +30,27 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: colors.$portfolio_White;
-      background-color: colors.$portfolio_Black;
+      color: colors.$portfolio_Black;
+      background-color: colors.$portfolio_White;
       z-index: 1;
     }
 
     &-title {
-      font-size: 64px;
+      font-size: 40px;
       letter-spacing: -0.05em;
       font-family: 'Playfair', 'Roboto', 'Manrope',sans-serif;
     }
 
     &-subtitle {
+      font-size: 8vw;
+      line-height: 0.8em;
+      letter-spacing: -0.04em;
+      font-family: "Roboto", "Manrope", sans-serif;
+    }
+
+    &-text {
       font-size: 12px;
-      font-family: 'Roboto', 'Manrope',sans-serif;
+      text-indent: 0.7%;
     }
   }
 }

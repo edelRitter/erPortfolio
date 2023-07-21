@@ -1,0 +1,15 @@
+@use '@/assets/scss/_colors.scss' as colors;
+
+.portfolio {
+  &__about {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    &-wrapper {
+      width: 100%;
+      padding: 12px;
+    }
+
+  }
+}

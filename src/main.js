@@ -1,4 +1,14 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+/** plugin AOS */
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+/** plugin Masonry */
+import MasonryWall from '@yeger/vue-masonry-wall'
+
+createApp(App)
+ .use(AOS.init())
+ .use(MasonryWall)
+ .mount("#app");

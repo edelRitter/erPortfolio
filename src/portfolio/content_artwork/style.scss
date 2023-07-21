@@ -1,0 +1,10 @@
+@use '@/assets/scss/_colors.scss' as colors;
+
+.portfolio {
+  &__artwork {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    
+  }
+}

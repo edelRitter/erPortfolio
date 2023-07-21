@@ -1,0 +1,12 @@
+@use '@/assets/scss/_colors.scss' as colors;
+
+.ui-catalog {
+  &__sns {
+    display: flex;
+    margin: 8px 0;
+    margin-left: auto;
+    max-width: 120px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
