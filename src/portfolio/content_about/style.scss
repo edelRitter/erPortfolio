@@ -1,4 +1,5 @@
 @use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
 
 .portfolio {
   &__about {
@@ -6,10 +7,24 @@
     width: 100%;
     min-height: 100vh;
 
-    &-wrapper {
+    &-profile {
       width: 100%;
       padding: 12px;
-    }
 
+      &-wrap {
+        padding: 12px;
+        border: 2px solid colors.$portfolio_Black;
+      }
+
+      &-name {
+        font-size: 2vw;
+        line-height: 0.8em;
+        font-family: "Playfair", "Manrope", sans-serif;
+
+        @media  #{media.$xsmall-and-down} {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio__top">
+  <section class="portfolio__top" :bg="dark">
     <div class="portfolio__top-hero m-0">
       <div class="portfolio__top-wrapper">
         <span
@@ -51,6 +51,11 @@ export default {
   name: 'Top',
   components: {
     socialNetworking
+  },
+  data() {
+    return {
+      bg: 'dark',
+    }
   },
 }
 </script>

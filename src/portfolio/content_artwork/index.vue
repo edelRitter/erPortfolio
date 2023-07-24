@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio__artwork">
+  <section class="portfolio__artwork" :bg="dark">
     <div class="row no-gutters">
       <div class="col-12">
         <div class="portfolio__artwork-icon">
@@ -7,7 +7,14 @@
           <p class="portfolio__artwork-icon-img text-center m-0"><img src="@/assets/img/icons/arrow_icon.svg"></p>
         </div>
       </div>
-      <div class="portfolio__artwork-title">
+      <div
+        class="portfolio__artwork-title"
+        data-aos="fade-right"
+        data-aos-duration="1200"
+        data-aos-delay="800"
+        data-aos-easing="ease-in-out"
+        data-aos-once="true"
+        >
         <div class="portfolio__artwork-title-border">
           <h2 class="portfolio__artwork-title-text">SELECTED WORKS /</h2>
           <p class="portfolio__artwork-title-sub">arknights</p>
@@ -22,16 +29,18 @@
           <p class="portfolio__artwork-description-text m-0">photoshop / illustrator / iphone 12 for photography</p>
         </div>
       </div>
-      <div class="portfolio__artwork-title-end portfolio__artwork-content col-12 col-md-8">
-        <masonry-wall
+      <div class="col-12 col-md-8">
+        <div class="portfolio__artwork-content">
+          <masonry-wall
           :items="items"
           :column-width="400"
           :min-columns="2"
-          :gap="8">
+          :gap="12">
           <template #default="{ item, index }">
             <div
               data-aos="fade-up"
               data-aos-duration="1200"
+              data-aos-delay="200"
               data-aos-easing="ease-in-out"
               data-aos-once="true"
               class="portfolio__artwork-content-item flex items-center justify-center"
@@ -44,6 +53,7 @@
             </div>
           </template>
         </masonry-wall>
+        </div>
       </div>
     </div>
   </section>
@@ -55,57 +65,22 @@ export default {
   setup() {
     const items = [
       {
-        image: '/illustration/arknights_hibiscus.jpg',
+        image: '/img/illustration/arknights_hibiscus.jpg',
         type: 'artwork',
         title: 'arknights / hibiscus',
       },
       {
-        image: '/illustration/arknights_specter.jpg',
-        type: 'artwork',
-        title: 'arknights / specter',
-      },
-      {
-        image: '/illustration/arknights_hibiscus.jpg',
-        type: 'artwork',
-        title: 'arknights / hibiscus',
-      },
-      {
-        image: '/illustration/arknights_specter.jpg',
-        type: 'artwork',
-        title: 'arknights / specter',
-      },
-      {
-        image: '/illustration/arknights_specter.jpg',
-        type: 'artwork',
-        title: 'arknights / specter',
-      },
-      {
-        image: '/illustration/arknights_hibiscus.jpg',
-        type: 'artwork',
-        title: 'arknights / hibiscus',
-      },
-      {
-        image: '/illustration/arknights_specter.jpg',
-        type: 'artwork',
-        title: 'arknights / specter',
-      },
-      {
-        image: '/illustration/arknights_specter.jpg',
-        type: 'artwork',
-        title: 'arknights / specter',
-      },
-      {
-        image: '/illustration/arknights_hibiscus.jpg',
-        type: 'artwork',
-        title: 'arknights / hibiscus',
-      },
-      {
-        image: '/illustration/arknights_specter.jpg',
+        image: '/img/illustration/arknights_specter.jpg',
         type: 'artwork',
         title: 'arknights / specter',
       },
     ]
     return { items }
+  },
+  data() {
+    return {
+      bg: 'dark',
+    }
   },
 }
 </script>
