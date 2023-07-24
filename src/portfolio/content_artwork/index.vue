@@ -1,24 +1,52 @@
 <template>
-  <div class="portfolio__artwork">
-    <masonry-wall
-      :items="items"
-      :ssr-columns="1"
-      :column-width="300"
-      :gap="0">
-      <template #default="{ item, index }">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true"
-          class="flex items-center justify-center"
-        >
-          <p><img v-bind:src="item.image" class="w-100"></p>
-          <p>{{ item.title }}</p>
+  <section class="portfolio__artwork">
+    <div class="row no-gutters">
+      <div class="col-12">
+        <div class="portfolio__artwork-icon">
+          <p class="portfolio__artwork-icon-text text-center m-0">illustration / photography works</p>
+          <p class="portfolio__artwork-icon-img text-center m-0"><img src="@/assets/img/icons/arrow_icon.svg"></p>
         </div>
-      </template>
-    </masonry-wall>
-  </div>
+      </div>
+      <div class="portfolio__artwork-title">
+        <div class="portfolio__artwork-title-border">
+          <h2 class="portfolio__artwork-title-text">SELECTED WORKS /</h2>
+          <p class="portfolio__artwork-title-sub">arknights</p>
+          <p class="portfolio__artwork-title-sub">other illustrations</p>
+          <p class="portfolio__artwork-title-sub">photography</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="portfolio__artwork-description">
+          <p class="portfolio__artwork-description-text m-0">scroll down to see more /</p>
+          <p class="portfolio__artwork-description-text m-0">+</p>
+          <p class="portfolio__artwork-description-text m-0">photoshop / illustrator / iphone 12 for photography</p>
+        </div>
+      </div>
+      <div class="portfolio__artwork-title-end portfolio__artwork-content col-12 col-md-8">
+        <masonry-wall
+          :items="items"
+          :column-width="400"
+          :min-columns="2"
+          :gap="8">
+          <template #default="{ item, index }">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              data-aos-easing="ease-in-out"
+              data-aos-once="true"
+              class="portfolio__artwork-content-item flex items-center justify-center"
+            >
+              <p class="portfolio__artwork-content-img"><img v-bind:src="item.image" class="w-100"></p>
+              <p class="portfolio__artwork-content-text">
+                <span class="portfolio__artwork-content-type">{{ item.type }}</span>
+                <span class="portfolio__artwork-content-title">{{ item.title }}</span>
+              </p>
+            </div>
+          </template>
+        </masonry-wall>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -28,19 +56,53 @@ export default {
     const items = [
       {
         image: '/illustration/arknights_hibiscus.jpg',
-        title: 'first',
+        type: 'artwork',
+        title: 'arknights / hibiscus',
       },
       {
         image: '/illustration/arknights_specter.jpg',
-        title: 'second',
+        type: 'artwork',
+        title: 'arknights / specter',
+      },
+      {
+        image: '/illustration/arknights_hibiscus.jpg',
+        type: 'artwork',
+        title: 'arknights / hibiscus',
       },
       {
         image: '/illustration/arknights_specter.jpg',
-        title: 'second',
+        type: 'artwork',
+        title: 'arknights / specter',
       },
       {
         image: '/illustration/arknights_specter.jpg',
-        title: 'second',
+        type: 'artwork',
+        title: 'arknights / specter',
+      },
+      {
+        image: '/illustration/arknights_hibiscus.jpg',
+        type: 'artwork',
+        title: 'arknights / hibiscus',
+      },
+      {
+        image: '/illustration/arknights_specter.jpg',
+        type: 'artwork',
+        title: 'arknights / specter',
+      },
+      {
+        image: '/illustration/arknights_specter.jpg',
+        type: 'artwork',
+        title: 'arknights / specter',
+      },
+      {
+        image: '/illustration/arknights_hibiscus.jpg',
+        type: 'artwork',
+        title: 'arknights / hibiscus',
+      },
+      {
+        image: '/illustration/arknights_specter.jpg',
+        type: 'artwork',
+        title: 'arknights / specter',
       },
     ]
     return { items }

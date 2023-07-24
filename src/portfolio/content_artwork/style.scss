@@ -1,10 +1,118 @@
 @use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
 
 .portfolio {
   &__artwork {
     position: relative;
     width: 100%;
     min-height: 100vh;
+    background: colors.$portfolio_Black;
     
+    &-icon {
+      padding: 12px 0;
+      font-size: 10px;
+      color: colors.$portfolio_Black;
+      background: colors.$portfolio_White;
+
+      & img {
+        width: 30px;
+        height: auto;
+      }
+    }
+
+    &-title {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 25%;
+      height: 50vh;
+      top: 50%;
+      left: 10%;
+      transform: translate(-10%, -50%);
+      padding: 24px 12px;
+      background: colors.$portfolio_White;
+      z-index: 1;
+
+      @media  #{media.$xsmall-and-down} {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+
+      &-border {
+        height: 100%;
+        padding: 12px;
+        border: 2px solid colors.$portfolio_Black;
+      }
+
+      &-text {
+        font-size: 2vw;
+        line-height: 0.8em;
+        font-family: "Playfair", "Manrope", sans-serif;
+        color: colors.$portfolio_Black;
+      }
+
+      &-sub {
+        font-size: 12px;
+        margin: 0;
+        font-family: "Playfair", "Manrope", sans-serif;
+        color: colors.$portfolio_Black;
+      }
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+      align-content: stretch;
+      height: 100%;
+      padding: 12px;
+      color: colors.$portfolio_White;
+      background: colors.$black;
+
+      @media  #{media.$xsmall-and-down} {
+        display: none;
+      }
+
+      &-text {
+        font-size: 12px;
+      }
+    }
+
+    &-content {
+      padding: 8px;
+
+      &-item {
+        cursor: url('@/assets/img/icons/cursor_icon.svg'), auto;
+      }
+
+      &-img {
+        margin: 0;
+      }
+  
+      &-text {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding : 8px 4px;
+        color: colors.$portfolio_White;
+        background: colors.$black;
+      }
+  
+      &-type {
+        font-size: 12px;
+        font-family: "Playfair", "Manrope", sans-serif;
+      }
+  
+      &-title {
+        font-size: 11px;
+        font-family: "Roboto", "Manrope", sans-serif;
+      }
+    }
   }
 }

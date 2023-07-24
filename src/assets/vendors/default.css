@@ -37,11 +37,6 @@ body {
   min-width: 320px;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

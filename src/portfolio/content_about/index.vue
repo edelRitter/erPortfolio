@@ -1,10 +1,10 @@
 <template>
-  <div class="portfolio__about">
-    <div class="row">
+  <section class="portfolio__about">
+    <div class="row no-gutters">
       <div class="col-6">test</div>
       <div class="col-6">test</div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

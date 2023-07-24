@@ -1,11 +1,35 @@
 <template>
-  <div class="portfolio__top">
+  <section class="portfolio__top">
     <div class="portfolio__top-hero m-0">
       <div class="portfolio__top-wrapper">
-        <span class="portfolio__top-subtitle">
+        <span
+          class="portfolio__top-subtitle"
+          data-aos="zoom-in"
+          data-aos-duration="1200"
+          data-aos-delay="200"
+          data-aos-easing="ease-in-out"
+          data-aos-once="true">
           DESIGNER /
-          <br>DEVELOPER /
-          <br>ILLUSTRATOR /
+        </span>
+        <br>
+        <span
+          class="portfolio__top-subtitle"
+          data-aos="zoom-in"
+          data-aos-duration="1200"
+          data-aos-delay="500"
+          data-aos-easing="ease-in-out"
+          data-aos-once="true">
+          DEVELOPER /
+        </span>
+        <br>
+        <span
+          class="portfolio__top-subtitle"
+          data-aos="zoom-in"
+          data-aos-duration="1200"
+          data-aos-delay="800"
+          data-aos-easing="ease-in-out"
+          data-aos-once="true">
+          ILLUSTRATOR /
         </span>
         <p class="portfolio__top-text m-0">-</p>
         <p class="portfolio__top-text m-0">porfolio website created by /</p>
@@ -17,7 +41,7 @@
     <video autoplay muted loop class="portfolio__top-video">
       <source src="@/assets/video/teamlab_video1.mp4" type="video/mp4">
     </video>
-  </div>
+  </section>
 </template>
 
 <script>
