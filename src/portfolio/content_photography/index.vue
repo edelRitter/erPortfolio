@@ -20,6 +20,7 @@
           </p>
         </swiper-slide>
       </swiper>
+      <p class="portfolio-photography__notice m-0 d-block d-md-none">swipe left / right to see more photography</p>
     </div>
   </section>
 </template>

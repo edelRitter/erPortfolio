@@ -33,6 +33,11 @@
       }
     }
 
+    &__notice {
+      font-size: 12px;
+      color: colors.$portfolio_White;
+    }
+
     &__content {
       &-img {
         display: block;

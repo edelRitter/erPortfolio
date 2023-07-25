@@ -64,6 +64,11 @@ export default {
           bg: 'dark',
         },
         {
+          text: 'PHOTOGRAPHY',
+          id: 'portfolioPhotography',
+          bg: 'dark',
+        },
+        {
           text: 'ABOUT',
           id: 'portfolioAbout',
           bg: 'light',
