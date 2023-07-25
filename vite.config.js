@@ -21,11 +21,32 @@ export default defineConfig({
     },
   }, 
   build: {
-		entry: 'src/main.js',
-		rollupOptions: {
-			output: {
-				dir: 'docs/',
-			}
-		}
-	}
+    outDir: 'docs/',
+    sourcemap: true,
+    manifest: true,
+    reportCompressedSize: true,
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'js/[name].js',
+        entryFileNames: 'js/[name].js',
+
+        assetFileNames: ({ name }) => {
+          if (/\.(mp4|webm)$/.test(name ?? '')) {
+            return 'video/[name][extname]';
+          }
+
+          if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
+            return 'img/[name][extname]';
+          }
+
+          if (/\.css$/.test(name ?? '')) {
+            return 'css/[name][extname]';
+          }
+
+          return '[name][extname]';
+        },
+      },
+    },
+  },
 })

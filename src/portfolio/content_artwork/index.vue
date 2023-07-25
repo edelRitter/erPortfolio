@@ -60,17 +60,20 @@
 </template>
 
 <script>
+import hibiscus from '@/assets/img/illustration/arknights_hibiscus.jpg';
+import specter from '@/assets/img/illustration/arknights_specter.jpg';
+
 export default {
   name: 'Artwork',
   setup() {
     const items = [
       {
-        image: '/img/illustration/arknights_hibiscus.jpg',
+        image: hibiscus,
         type: 'artwork',
         title: 'arknights / hibiscus',
       },
       {
-        image: '/img/illustration/arknights_specter.jpg',
+        image: specter,
         type: 'artwork',
         title: 'arknights / specter',
       },

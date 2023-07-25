@@ -1,0 +1,56 @@
+{
+  "index.css": {
+    "file": "css/index.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "assets": [
+      "img/twitter_icon.svg",
+      "img/discord_icon.svg",
+      "img/email_icon.svg",
+      "video/teamlab_video1.mp4",
+      "img/arknights_hibiscus.jpg",
+      "img/arknights_specter.jpg",
+      "img/arrow_icon.svg",
+      "img/stock_profile.jpg"
+    ],
+    "css": [
+      "css/index.css"
+    ],
+    "file": "js/index.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "src/assets/img/icons/arrow_icon.svg": {
+    "file": "img/arrow_icon.svg",
+    "src": "src/assets/img/icons/arrow_icon.svg"
+  },
+  "src/assets/img/icons/discord_icon.svg": {
+    "file": "img/discord_icon.svg",
+    "src": "src/assets/img/icons/discord_icon.svg"
+  },
+  "src/assets/img/icons/email_icon.svg": {
+    "file": "img/email_icon.svg",
+    "src": "src/assets/img/icons/email_icon.svg"
+  },
+  "src/assets/img/icons/twitter_icon.svg": {
+    "file": "img/twitter_icon.svg",
+    "src": "src/assets/img/icons/twitter_icon.svg"
+  },
+  "src/assets/img/illustration/arknights_hibiscus.jpg": {
+    "file": "img/arknights_hibiscus.jpg",
+    "src": "src/assets/img/illustration/arknights_hibiscus.jpg"
+  },
+  "src/assets/img/illustration/arknights_specter.jpg": {
+    "file": "img/arknights_specter.jpg",
+    "src": "src/assets/img/illustration/arknights_specter.jpg"
+  },
+  "src/assets/img/photography/stock_profile.jpg": {
+    "file": "img/stock_profile.jpg",
+    "src": "src/assets/img/photography/stock_profile.jpg"
+  },
+  "src/assets/video/teamlab_video1.mp4": {
+    "file": "video/teamlab_video1.mp4",
+    "src": "src/assets/video/teamlab_video1.mp4"
+  }
+}

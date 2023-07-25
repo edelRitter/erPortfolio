@@ -38,7 +38,7 @@
         <socialNetworking :class="this.alignment" />
       </div>
     </div>
-    <video autoplay muted loop class="portfolio__top-video">
+    <video playsinline autoplay muted loop class="portfolio__top-video">
       <source src="@/assets/video/teamlab_video1.mp4" type="video/mp4">
     </video>
   </section>
