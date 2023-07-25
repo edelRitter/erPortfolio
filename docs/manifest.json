@@ -7,7 +7,8 @@
     "assets": [
       "img/twitter_icon.svg",
       "img/discord_icon.svg",
-      "img/email_icon.svg",
+      "img/pixiv_icon.svg",
+      "img/github_icon.svg",
       "video/teamlab_video1.mp4",
       "img/arknights_hibiscus.jpg",
       "img/arknights_specter.jpg",
@@ -29,9 +30,13 @@
     "file": "img/discord_icon.svg",
     "src": "src/assets/img/icons/discord_icon.svg"
   },
-  "src/assets/img/icons/email_icon.svg": {
-    "file": "img/email_icon.svg",
-    "src": "src/assets/img/icons/email_icon.svg"
+  "src/assets/img/icons/github_icon.svg": {
+    "file": "img/github_icon.svg",
+    "src": "src/assets/img/icons/github_icon.svg"
+  },
+  "src/assets/img/icons/pixiv_icon.svg": {
+    "file": "img/pixiv_icon.svg",
+    "src": "src/assets/img/icons/pixiv_icon.svg"
   },
   "src/assets/img/icons/twitter_icon.svg": {
     "file": "img/twitter_icon.svg",
