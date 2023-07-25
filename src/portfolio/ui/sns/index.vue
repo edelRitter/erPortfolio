@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-catalog__sns">
+  <div class="ui-catalog__sns" :class="{ align: center }">
     <p class="m-0">
       <a href="#">
         <img src="@/assets/img/icons/twitter_icon.svg">
@@ -21,6 +21,15 @@
 <script>
 export default {
   name: 'socialNetworking',
+  data: function() {
+    return {
+      uiCatalogAlignment: [
+        'ui-catalog__sns-left',
+        'ui-catalog__sns-center',
+        'ui-catalog__sns-right'
+      ]
+    };
+  },
 }
 </script>
 

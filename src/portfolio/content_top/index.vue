@@ -32,10 +32,10 @@
           ILLUSTRATOR /
         </span>
         <p class="portfolio__top-text m-0">-</p>
-        <p class="portfolio__top-text m-0">porfolio website created by /</p>
+        <p class="portfolio__top-text m-0">porfolio website created by</p>
         <p class="portfolio__top-text m-0">-</p>
         <h1 class="portfolio__top-title">edelRitter</h1>
-        <socialNetworking />
+        <socialNetworking :class="this.alignment" />
       </div>
     </div>
     <video autoplay muted loop class="portfolio__top-video">
@@ -52,8 +52,15 @@ export default {
   components: {
     socialNetworking
   },
+  props: {
+    uiCatalogAlignment: {
+      type: String,
+      align: 'ui-catalog__sns-right',
+    }
+  },
   data() {
     return {
+      alignment: 'ui-catalog__sns-right',
       bg: 'dark',
     }
   },

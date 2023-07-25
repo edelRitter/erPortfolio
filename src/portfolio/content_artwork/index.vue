@@ -17,9 +17,9 @@
         >
         <div class="portfolio__artwork-title-border">
           <h2 class="portfolio__artwork-title-text">SELECTED WORKS /</h2>
-          <p class="portfolio__artwork-title-sub">arknights</p>
-          <p class="portfolio__artwork-title-sub">other illustrations</p>
-          <p class="portfolio__artwork-title-sub">photography</p>
+          <p class="portfolio__artwork-title-sub">arknights /</p>
+          <p class="portfolio__artwork-title-sub">other illustrations /</p>
+          <p class="portfolio__artwork-title-sub">photography /</p>
         </div>
       </div>
       <div class="col-12 col-md-4">

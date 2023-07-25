@@ -3,10 +3,26 @@
 .ui-catalog {
   &__sns {
     display: flex;
-    margin: 8px 0;
-    margin-left: auto;
-    max-width: 120px;
+    padding: 8px 0;
+    max-width: 140px;
     justify-content: space-between;
     align-items: center;
+
+    &-left {
+      margin-right: auto;
+    }
+
+    &-center {
+      margin: 0 auto;
+    }
+
+    &-right {
+      margin-left: auto;
+    }
+
+    & img {
+      width: 30px;
+      height: auto;
+    }
   }
 }
