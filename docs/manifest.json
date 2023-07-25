@@ -10,8 +10,8 @@
       "img/pixiv_icon.svg",
       "img/github_icon.svg",
       "video/teamlab_video1.mp4",
-      "img/arknights_hibiscus.jpg",
-      "img/arknights_specter.jpg",
+      "img/arknights_hibiscus.png",
+      "img/arknights_specter.png",
       "img/arknights_w.png",
       "img/arknights_penance.png",
       "img/arknights_ajimu.png",
@@ -52,17 +52,17 @@
     "file": "img/arknights_ajimu.png",
     "src": "src/assets/img/illustration/arknights_ajimu.png"
   },
-  "src/assets/img/illustration/arknights_hibiscus.jpg": {
-    "file": "img/arknights_hibiscus.jpg",
-    "src": "src/assets/img/illustration/arknights_hibiscus.jpg"
+  "src/assets/img/illustration/arknights_hibiscus.png": {
+    "file": "img/arknights_hibiscus.png",
+    "src": "src/assets/img/illustration/arknights_hibiscus.png"
   },
   "src/assets/img/illustration/arknights_penance.png": {
     "file": "img/arknights_penance.png",
     "src": "src/assets/img/illustration/arknights_penance.png"
   },
-  "src/assets/img/illustration/arknights_specter.jpg": {
-    "file": "img/arknights_specter.jpg",
-    "src": "src/assets/img/illustration/arknights_specter.jpg"
+  "src/assets/img/illustration/arknights_specter.png": {
+    "file": "img/arknights_specter.png",
+    "src": "src/assets/img/illustration/arknights_specter.png"
   },
   "src/assets/img/illustration/arknights_w.png": {
     "file": "img/arknights_w.png",
