@@ -7,8 +7,8 @@
           <h2
             class="portfolio__about-title"
             data-aos="fade-right"
-            data-aos-duration="1200"
-            data-aos-delay="500"
+            data-aos-duration="1000"
+            data-aos-delay="200"
             data-aos-easing="ease-in-out"
             data-aos-once="true">
             <span>CREATIVE /</span>

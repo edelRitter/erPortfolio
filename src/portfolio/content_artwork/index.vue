@@ -62,6 +62,13 @@
 <script>
 import hibiscus from '@/assets/img/illustration/arknights_hibiscus.jpg';
 import specter from '@/assets/img/illustration/arknights_specter.jpg';
+import w from '@/assets/img/illustration/arknights_w.png';
+import penance from '@/assets/img/illustration/arknights_penance.png';
+import ajimu from '@/assets/img/illustration/arknights_ajimu.png';
+
+import teamlab1 from '@/assets/img/photography/teamlab_1.png';
+import teamlab2 from '@/assets/img/photography/teamlab_2.png';
+import teamlab3 from '@/assets/img/photography/teamlab_3.png';
 
 export default {
   name: 'Artwork',
@@ -76,6 +83,36 @@ export default {
         image: specter,
         type: 'artwork',
         title: 'arknights / specter',
+      },
+      {
+        image: w,
+        type: 'artwork',
+        title: 'arknights / W',
+      },
+      {
+        image: penance,
+        type: 'artwork',
+        title: 'arknights / penance',
+      },
+      {
+        image: ajimu,
+        type: 'artwork',
+        title: 'arknights / angelina',
+      },
+      {
+        image: teamlab1,
+        type: 'photo',
+        title: 'teamLab / exhibit',
+      },
+      {
+        image: teamlab2,
+        type: 'photo',
+        title: 'teamLab / exhibit',
+      },
+      {
+        image: teamlab3,
+        type: 'photo',
+        title: 'teamLab / exhibit',
       },
     ]
     return { items }
