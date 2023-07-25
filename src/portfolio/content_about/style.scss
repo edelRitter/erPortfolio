@@ -8,19 +8,31 @@
     min-height: 100vh;
 
     &-title {
-      font-size: 8vw;
-      line-height: 0.8em;
-      letter-spacing: -0.04em;
-      font-family: "Roboto", "Manrope", sans-serif;
+      padding: 20px;
+      color: colors.$portfolio_White;
+      background: colors.$portfolio_Black;
 
-      @media  #{media.$xsmall-and-down} {
-        font-size: 12vw;
+      &-text {
+        font-size: 8vw;
+        line-height: 0.8em;
+        letter-spacing: -0.04em;
+        font-family: "Roboto", "Manrope", sans-serif;
+  
+        @media  #{media.$xsmall-and-down} {
+          font-size: 12vw;
+        }
       }
     }
 
     &-profile {
       width: 100%;
-      padding: 12px;
+      padding: 0 12px 12px 12px;
+      color: colors.$portfolio_Black;
+      background: colors.$portfolio_White;
+
+      @media  #{media.$xsmall-and-down} {
+        padding: 12px;
+      }
 
       &-wrap {
         padding: 12px;

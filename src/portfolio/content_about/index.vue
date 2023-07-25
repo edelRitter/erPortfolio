@@ -2,10 +2,10 @@
   <section class="portfolio__about">
     <div class="row no-gutters">
       <div class="col-12 col-md-8">
-        <p><img class="w-100" src="@/assets/img/photography/stock_profile.jpg"></p>
-        <div class="portfolio__about-profile">
+        <p class="m-0"><img class="w-100" src="@/assets/img/photography/stock_profile.jpg"></p>
+        <div class="portfolio__about-title">
           <h2
-            class="portfolio__about-title"
+            class="portfolio__about-title-text"
             data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="200"

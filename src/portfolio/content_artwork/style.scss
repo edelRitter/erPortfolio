@@ -12,7 +12,7 @@
       padding: 12px 0;
       font-size: 10px;
       color: colors.$portfolio_White;
-      background: colors.$black;
+      background: colors.$portfolio_Black;
 
       & img {
         width: 30px;
@@ -31,7 +31,7 @@
       left: 5%;
       transform: translate(-5%, -50%);
       padding: 24px 12px;
-      background: colors.$black;
+      background: colors.$portfolio_Black;
       z-index: 1;
 
       @media  #{media.$xsmall-and-down} {
@@ -46,7 +46,7 @@
       &-border {
         height: 100%;
         padding: 12px;
-        border: 2px solid colors.$portfolio_Black;
+        border: 2px solid colors.$portfolio_White;
       }
 
       &-text {
@@ -72,8 +72,9 @@
       align-content: stretch;
       height: 100%;
       padding: 12px;
-      color: colors.$portfolio_Black;
-      background: colors.$portfolio_White;
+      border-radius: 8px;
+      color: colors.$portfolio_White;
+      background: colors.$black;
 
       @media  #{media.$xsmall-and-down} {
         display: none;
@@ -86,6 +87,7 @@
 
     &-content {
       padding: 12px;
+      background: colors.$portfolio_White;
 
       &-item {
         border-radius: 12px;

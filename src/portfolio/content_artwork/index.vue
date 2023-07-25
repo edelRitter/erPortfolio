@@ -60,8 +60,8 @@
 </template>
 
 <script>
-import hibiscus from '@/assets/img/illustration/arknights_hibiscus.jpg';
-import specter from '@/assets/img/illustration/arknights_specter.jpg';
+import hibiscus from '@/assets/img/illustration/arknights_hibiscus.png';
+import specter from '@/assets/img/illustration/arknights_specter.png';
 import w from '@/assets/img/illustration/arknights_w.png';
 import penance from '@/assets/img/illustration/arknights_penance.png';
 import ajimu from '@/assets/img/illustration/arknights_ajimu.png';
@@ -101,17 +101,17 @@ export default {
       },
       {
         image: teamlab1,
-        type: 'photo',
+        type: 'photography',
         title: 'teamLab / exhibit',
       },
       {
         image: teamlab2,
-        type: 'photo',
+        type: 'photography',
         title: 'teamLab / exhibit',
       },
       {
         image: teamlab3,
-        type: 'photo',
+        type: 'photography',
         title: 'teamLab / exhibit',
       },
     ]
