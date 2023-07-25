@@ -69,6 +69,7 @@
     margin: 0;
     padding: 0;
     opacity: 0;
+    visibility: hidden;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -78,6 +79,7 @@
 
     &.is-active {
       opacity: 1;
+      visibility: visible;
     }
 
     &-title {
