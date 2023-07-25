@@ -1,0 +1,126 @@
+@use '@/assets/scss/_colors.scss' as colors;
+
+.menu {
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+  }
+
+  &__button {
+    appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+
+    &-input {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+      z-index: 2;
+    }
+
+    &-hamburger {
+      display: flex;
+      width: 20px;
+      height: 2px;
+      background-color: colors.$portfolio_Black;
+      border-radius: 5px;
+      transition: all .5s ease;
+      z-index: 3;
+  
+      &::before, 
+      &::after{
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: colors.$portfolio_Black;
+        border-radius: 5px;
+        transition: all .5s ease;
+      }
+  
+      &::before {
+        transform: translateY(-6px);
+      }
+      
+      &::after{
+        transform: translateY(6px);
+      }
+    }
+  }
+
+  &__sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 75%;
+    max-width: 400px;
+    top: 0;
+    right: -100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .6s ease;
+    background-color: colors.$portfolio_White;
+    z-index: 2;
+
+    &.is-active {
+      right: 0;
+    }
+
+    &-title {
+      padding: 6px 0 6px 24px;
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: -0.05em;
+      font-family: "Playfair", serif;
+      color: colors.$portfolio_Black;
+    }
+  }
+
+  &__background {
+    position: fixed;
+    display: block;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .6s ease;
+    z-index: 0;
+
+    &.is-active {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+
+/** checked state */
+.menu__button-input:checked ~.menu__button-hamburger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.menu__button-input:checked ~.menu__button-hamburger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu__button-input:checked ~.menu__button-hamburger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}

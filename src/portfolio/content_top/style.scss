@@ -1,0 +1,66 @@
+@use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
+
+.portfolio {
+  &__top {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    &-wrapper {
+      width: 100%;
+      padding: 12px;
+    }
+
+    &-video {
+      position: absolute;
+      right: 0;
+      top: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: 0;
+    }
+
+    &-hero {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+      height: 70%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: colors.$portfolio_Black;
+      background-color: colors.$portfolio_White;
+      z-index: 1;
+
+      @media  #{media.$xsmall-and-down} {
+        width: 90%;
+        height: 50%;
+      }
+    }
+
+    &-title {
+      font-size: 24px;
+      letter-spacing: -0.05em;
+      font-family: 'Playfair', 'Roboto', 'Manrope',sans-serif;
+    }
+
+    &-subtitle {
+      font-size: 8vw;
+      line-height: 0.8em;
+      letter-spacing: -0.04em;
+      font-family: "Roboto", "Manrope", sans-serif;
+
+      @media  #{media.$xsmall-and-down} {
+        font-size: 12vw;
+      }
+    }
+
+    &-text {
+      font-size: 12px;
+      text-indent: 0.7%;
+    }
+  }
+}

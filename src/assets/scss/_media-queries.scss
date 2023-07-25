@@ -1,0 +1,32 @@
+/* Media Queries */
+
+/*
+  tiniest - smallest size we support for phone (iphone5 size)
+  xsmall - standard size we support for phone (iphone6/7/8 size)
+  small to extra-large is the same with bootstrap's breakpoint
+*/
+
+$tiniest-only: "only screen and (max-width: 320px)";
+$tiny-only: "only screen and (min-width: 321px) and (max-width: 374px)";
+$xsmall-only: "only screen and (min-width: 375px) and (max-width: 575px)";
+$small-only: "only screen and (min-width: 576px) and (max-width: 767px)";
+$medium-only: "only screen and (min-width: 768px) and (max-width: 991px)";
+$large-only: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$extra-large-only: "only screen and (min-width: 1200px)";
+
+$tiny-and-up: "only screen and (min-width: 321px)";
+$tiny-and-down: "only screen and (max-width: 374px)";
+
+$xsmall-and-up: "only screen and (min-width: 375px)";
+$xsmall-and-down: "only screen and (max-width: 575px)";
+
+$small-and-up: "only screen and (min-width: 576px)";
+$small-and-down: "only screen and (max-width: 767px)";
+
+$medium-and-up: "only screen and (min-width: 768px)";
+$medium-and-down: "only screen and (max-width: 991px)";
+
+$large-and-up: "only screen and (min-width: 992px)";
+$large-and-down: "only screen and (max-width: 1199px)";
+
+$extra-large-and-up: "only screen and (min-width: 1200px)";
