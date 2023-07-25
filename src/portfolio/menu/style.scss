@@ -6,6 +6,7 @@
     top: 0;
     right: 0;
     z-index: 9;
+    background: colors.$portfolio_Black;
   }
 
   &__button {
@@ -13,8 +14,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin: 0;
     background-color: transparent;
     border: none;
@@ -24,8 +25,8 @@
 
     &-input {
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       opacity: 0;
       z-index: 4;
     }
@@ -34,7 +35,7 @@
       display: flex;
       width: 20px;
       height: 2px;
-      background-color: colors.$portfolio_Black;
+      background-color: colors.$portfolio_White;
       border-radius: 5px;
       transition: all .5s ease;
       z-index: 3;
@@ -45,7 +46,7 @@
         position: absolute;
         width: 20px;
         height: 2px;
-        background: colors.$portfolio_Black;
+        background: colors.$portfolio_White;
         border-radius: 5px;
         transition: all .5s ease;
       }
@@ -140,17 +141,10 @@
 
 .menu__button-input.is-active ~.menu__button-hamburger::before {
   transform: rotate(45deg) translate(35px, -35px);
+  background-color: colors.$portfolio_Black;
 }
 
 .menu__button-input.is-active ~.menu__button-hamburger::after {
   transform: rotate(-45deg) translate(35px, 35px);
-}
-
-.menu.darkBg .menu__button-hamburger {
-  background-color: colors.$portfolio_White;
-  
-  &::before, 
-  &::after{
-    background: colors.$portfolio_White;
-  }
+  background-color: colors.$portfolio_Black;
 }

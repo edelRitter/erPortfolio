@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="menu"
-    :class="{ darkBg: dark }"
-    @scroll="handleScroll">
+  <div class="menu">
     <div class="menu__wrapper">
     <label for="navigation" class="menu__button">
       <button
@@ -56,22 +53,18 @@ export default {
         {
           text: 'TOP',
           id: 'portfolioTop',
-          bg: 'dark',
         },
         {
           text: 'ARTWORK',
           id: 'portfolioArtwork',
-          bg: 'dark',
         },
         {
           text: 'PHOTOGRAPHY',
           id: 'portfolioPhotography',
-          bg: 'dark',
         },
         {
           text: 'ABOUT',
           id: 'portfolioAbout',
-          bg: 'light',
         }
       ]
     }
@@ -86,16 +79,6 @@ export default {
       // smooth scroll
       window.scrollTo({ top: position, behavior: "smooth" });
     },
-    handleScroll() {
-      this.scrollTop = window.scrollY;
-      console.log(this.scrollTop);
-    },
-  },
-  created () {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  unmounted () {
-    window.removeEventListener('scroll', this.handleScroll);
   },
 }
 </script>
