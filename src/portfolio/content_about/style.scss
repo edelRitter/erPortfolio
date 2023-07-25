@@ -2,19 +2,19 @@
 @use '@/assets/scss/_media-queries.scss' as media;
 
 .portfolio {
-  &__about {
+  &-about {
     position: relative;
     width: 100%;
     min-height: 100vh;
 
-    &-title {
+    &__title {
       padding: 20px;
       color: colors.$portfolio_White;
       background: colors.$portfolio_Black;
 
       &-text {
         font-size: 8vw;
-        line-height: 0.8em;
+        line-height: 0.9em;
         letter-spacing: -0.04em;
         font-family: "Roboto", "Manrope", sans-serif;
   
@@ -24,9 +24,9 @@
       }
     }
 
-    &-profile {
+    &__profile {
       width: 100%;
-      padding: 0 12px 12px 12px;
+      padding: 12px;
       color: colors.$portfolio_Black;
       background: colors.$portfolio_White;
 

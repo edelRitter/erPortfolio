@@ -3,6 +3,7 @@
     <Menu />
     <Top id="portfolioTop" />
     <Artwork id="portfolioArtwork" />
+    <Photography id="portfolioPhotography" />
     <About id="portfolioAbout" />
   </div>
 </template>
@@ -11,6 +12,7 @@
 import Menu from '@/portfolio/menu/index.vue'
 import Top from '@/portfolio/content_top/index.vue'
 import Artwork from '@/portfolio/content_artwork/index.vue'
+import Photography from '@/portfolio/content_photography/index.vue'
 import About from '@/portfolio/content_about/index.vue'
 </script>
 

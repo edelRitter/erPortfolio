@@ -1,36 +1,36 @@
 <template>
-  <section class="portfolio__artwork">
+  <section class="portfolio-artwork">
     <div class="row no-gutters">
       <div class="col-12">
-        <div class="portfolio__artwork-icon">
-          <p class="portfolio__artwork-icon-text text-center m-0">illustration / photography works</p>
-          <p class="portfolio__artwork-icon-img text-center m-0"><img src="@/assets/img/icons/arrow_icon.svg"></p>
+        <div class="portfolio-artwork__icon">
+          <p class="portfolio-artwork__icon-text text-center m-0">illustration / photography works</p>
+          <p class="portfolio-artwork__icon-img text-center m-0"><img src="@/assets/img/icons/arrow_icon.svg"></p>
         </div>
       </div>
       <div
-        class="portfolio__artwork-title"
+        class="portfolio-artwork__title"
         data-aos="fade-right"
         data-aos-duration="1200"
         data-aos-delay="800"
         data-aos-easing="ease-in-out"
         data-aos-once="true"
         >
-        <div class="portfolio__artwork-title-border">
-          <h2 class="portfolio__artwork-title-text">SELECTED WORKS /</h2>
-          <p class="portfolio__artwork-title-sub">arknights /</p>
-          <p class="portfolio__artwork-title-sub">other illustrations /</p>
-          <p class="portfolio__artwork-title-sub">photography /</p>
+        <div class="portfolio-artwork__title-border">
+          <h2 class="portfolio-artwork__title-text">SELECTED WORKS /</h2>
+          <p class="portfolio-artwork__title-sub">arknights /</p>
+          <p class="portfolio-artwork__title-sub">other illustrations /</p>
+          <p class="portfolio-artwork__title-sub">photography /</p>
         </div>
       </div>
       <div class="col-12 col-md-4">
-        <div class="portfolio__artwork-description">
-          <p class="portfolio__artwork-description-text m-0">scroll down to see more /</p>
-          <p class="portfolio__artwork-description-text m-0">+</p>
-          <p class="portfolio__artwork-description-text m-0">photoshop / illustrator / iphone 12 for photography</p>
+        <div class="portfolio-artwork__description">
+          <p class="portfolio-artwork__description-text m-0">scroll down to see more /</p>
+          <p class="portfolio-artwork__description-text m-0">+</p>
+          <p class="portfolio-artwork__description-text m-0">swipe left / right to see more photography</p>
         </div>
       </div>
       <div class="col-12 col-md-8">
-        <div class="portfolio__artwork-content">
+        <div class="portfolio-artwork__content">
           <masonry-wall
           :items="items"
           :column-width="400"
@@ -43,12 +43,12 @@
               data-aos-delay="200"
               data-aos-easing="ease-in-out"
               data-aos-once="true"
-              class="portfolio__artwork-content-item flex items-center justify-center"
+              class="portfolio-artwork__content-item flex items-center justify-center"
             >
-              <p class="portfolio__artwork-content-img"><img v-bind:src="item.image" class="w-100"></p>
-              <p class="portfolio__artwork-content-text">
-                <span class="portfolio__artwork-content-type">{{ item.type }}</span>
-                <span class="portfolio__artwork-content-title">{{ item.title }}</span>
+              <p class="portfolio-artwork__content-img"><img v-bind:src="item.image" class="w-100"></p>
+              <p class="portfolio-artwork__content-text">
+                <span class="portfolio-artwork__content-type">{{ item.type }}</span>
+                <span class="portfolio-artwork__content-title">{{ item.title }}</span>
               </p>
             </div>
           </template>
@@ -65,10 +65,6 @@ import specter from '@/assets/img/illustration/arknights_specter.png';
 import w from '@/assets/img/illustration/arknights_w.png';
 import penance from '@/assets/img/illustration/arknights_penance.png';
 import ajimu from '@/assets/img/illustration/arknights_ajimu.png';
-
-import teamlab1 from '@/assets/img/photography/teamlab_1.png';
-import teamlab2 from '@/assets/img/photography/teamlab_2.png';
-import teamlab3 from '@/assets/img/photography/teamlab_3.png';
 
 export default {
   name: 'Artwork',
@@ -98,21 +94,6 @@ export default {
         image: ajimu,
         type: 'artwork',
         title: 'arknights / angelina',
-      },
-      {
-        image: teamlab1,
-        type: 'photography',
-        title: 'teamLab / exhibit',
-      },
-      {
-        image: teamlab2,
-        type: 'photography',
-        title: 'teamLab / exhibit',
-      },
-      {
-        image: teamlab3,
-        type: 'photography',
-        title: 'teamLab / exhibit',
       },
     ]
     return { items }

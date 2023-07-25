@@ -1,0 +1,65 @@
+@use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
+
+.portfolio {
+  &-photography {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    background: colors.$black;
+
+    &__wrapper {
+      padding: 40px 12px;
+
+      @media  #{media.$xsmall-and-down} {
+        padding: 20px 12px;
+      }
+    }
+
+    &__title {
+      padding: 20px;
+      color: colors.$portfolio_White;
+      background: colors.$portfolio_Black;
+
+      &-text {
+        font-size: 8vw;
+        line-height: 0.9em;
+        letter-spacing: -0.04em;
+        font-family: "Roboto", "Manrope", sans-serif;
+  
+        @media  #{media.$xsmall-and-down} {
+          font-size: 12vw;
+        }
+      }
+    }
+
+    &__content {
+      &-img {
+        display: block;
+        width: 100%;
+        height: 40vh;
+        border: none;
+      }
+
+      &-text {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 4px;
+        margin: -1px 0 0 0;
+        color: colors.$portfolio_White;
+        background: colors.$portfolio_Black;
+      }
+
+      &-type {
+        font-size: 11px;
+        font-family: "Playfair", "Manrope", sans-serif;
+      }
+  
+      &-title {
+        font-size: 11px;
+        font-family: "Roboto", "Manrope", sans-serif;
+      }
+    }
+  }
+}

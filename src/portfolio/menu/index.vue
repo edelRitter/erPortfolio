@@ -20,7 +20,8 @@
       <ul class="menu__sidebar-list">
         <li
           class="menu__sidebar-list-item"
-          v-for="(link, index) in navLinks" :key="index"
+          v-for="(link, index) in navLinks"
+          :key="index"
           @click=navScroll(link)
           v-on:click="toggleMenu">
           {{ link.text }}

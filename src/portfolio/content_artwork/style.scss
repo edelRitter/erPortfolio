@@ -2,13 +2,13 @@
 @use '@/assets/scss/_media-queries.scss' as media;
 
 .portfolio {
-  &__artwork {
+  &-artwork {
     position: relative;
     width: 100%;
     min-height: 100vh;
     background: colors.$portfolio_Black;
     
-    &-icon {
+    &__icon {
       padding: 12px 0;
       font-size: 10px;
       color: colors.$portfolio_White;
@@ -20,7 +20,7 @@
       }
     }
 
-    &-title {
+    &__title {
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -31,8 +31,12 @@
       left: 5%;
       transform: translate(-5%, -50%);
       padding: 24px 12px;
-      background: colors.$portfolio_Black;
+      background: colors.$portfolio_White;
       z-index: 1;
+
+      @media  #{media.$small-only} {
+        display: none;
+      }
 
       @media  #{media.$xsmall-and-down} {
         position: relative;
@@ -46,35 +50,40 @@
       &-border {
         height: 100%;
         padding: 12px;
-        border: 2px solid colors.$portfolio_White;
+        border: 2px solid colors.$portfolio_Black;
       }
 
       &-text {
         font-size: 24px;
         line-height: 0.8em;
         font-family: "Playfair", "Manrope", sans-serif;
-        color: colors.$portfolio_White;
+        color: colors.$portfolio_Black;
       }
 
       &-sub {
         font-size: 12px;
         margin: 0;
         font-family: "Playfair", "Manrope", sans-serif;
-        color: colors.$portfolio_White;
+        color: colors.$portfolio_Black;
       }
     }
 
-    &-description {
+    &__description {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: stretch;
       align-content: stretch;
-      height: 100%;
+      height: calc(100% - 24px);
+      margin: 12px 0 0 0;
       padding: 12px;
-      border-radius: 8px;
+      border-radius: 12px;
       color: colors.$portfolio_White;
       background: colors.$black;
+
+      @media  #{media.$small-only} {
+        display: none;
+      }
 
       @media  #{media.$xsmall-and-down} {
         display: none;
@@ -85,9 +94,9 @@
       }
     }
 
-    &-content {
+    &__content {
       padding: 12px;
-      background: colors.$portfolio_White;
+      background: colors.$portfolio_Black;
 
       &-item {
         border-radius: 12px;
