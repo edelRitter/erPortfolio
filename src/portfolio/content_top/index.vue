@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio__top" :bg="dark">
+  <section class="portfolio__top">
     <div class="portfolio__top-hero m-0">
       <div class="portfolio__top-wrapper">
         <span

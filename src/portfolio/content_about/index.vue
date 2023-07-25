@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio__about" :bg="light">
+  <section class="portfolio__about">
     <div class="row no-gutters">
       <div class="col-12 col-md-8">
         <p><img class="w-100" src="@/assets/img/photography/stock_profile.jpg"></p>

@@ -27,7 +27,7 @@
       width: 50px;
       height: 50px;
       opacity: 0;
-      z-index: 2;
+      z-index: 4;
     }
 
     &-hamburger {
@@ -63,21 +63,21 @@
   &__sidebar {
     position: fixed;
     height: 100vh;
-    width: 75%;
-    max-width: 400px;
+    width: 100%;
     top: 0;
-    right: -100vw;
+    right: 0;
     margin: 0;
     padding: 0;
+    opacity: 0;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    transition: all .6s ease;
+    transition: all 0.6s ease;
     background-color: colors.$portfolio_White;
     z-index: 2;
 
     &.is-active {
-      right: 0;
+      opacity: 1;
     }
 
     &-title {
@@ -85,8 +85,26 @@
       margin: 0;
       font-size: 32px;
       letter-spacing: -0.05em;
-      font-family: "Playfair", serif;
+      font-family: "Playfair", "Manrope", sans-serif;
       color: colors.$portfolio_Black;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0;
+      height: 50%;
+
+      &-item {
+        list-style-type: none;
+        font-size: 24px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "Roboto", "Manrope", sans-serif;
+        color: colors.$portfolio_Black;
+      }
     }
   }
 
@@ -106,21 +124,30 @@
 
     &.is-active {
       opacity: 1;
-      z-index: 1;
+      z-index: 2;
     }
   }
 }
 
 /** checked state */
-.menu__button-input:checked ~.menu__button-hamburger {
+.menu__button-input.is-active ~.menu__button-hamburger {
   transform: translateX(-50px);
   background: transparent;
 }
 
-.menu__button-input:checked ~.menu__button-hamburger::before {
+.menu__button-input.is-active ~.menu__button-hamburger::before {
   transform: rotate(45deg) translate(35px, -35px);
 }
 
-.menu__button-input:checked ~.menu__button-hamburger::after {
+.menu__button-input.is-active ~.menu__button-hamburger::after {
   transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.menu.darkBg .menu__button-hamburger {
+  background-color: colors.$portfolio_White;
+  
+  &::before, 
+  &::after{
+    background: colors.$portfolio_White;
+  }
 }
