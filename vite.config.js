@@ -13,16 +13,18 @@ export default defineConfig({
       '~/': `${__dirname}/public/`
     },
   },
-
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `$base-dir: '../';`,
+      },
+    },
+  }, 
   build: {
 		entry: 'src/main.js',
 		rollupOptions: {
 			output: {
 				dir: 'docs/',
-				entryFileNames: 'js/portfolio-app-[name].js',
-				assetFileNames: 'css/portfolio-[name].css',
-				chunkFileNames: "js/chunk-[name].js",
-				manualChunks: undefined,
 			}
 		}
 	}
