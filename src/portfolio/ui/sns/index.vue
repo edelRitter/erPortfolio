@@ -1,17 +1,17 @@
 <template>
   <div class="ui-catalog__sns" :class="{ align: center }">
     <p class="m-0">
-      <a href="#">
+      <a href="https://twitter.com/edelRitter9" target="_blank">
         <img src="@/assets/img/icons/twitter_icon.svg">
       </a>
     </p>
     <p class="m-0">
-      <a href="#">
+      <a href="https://discordapp.com/users/_edelritter">
         <img src="@/assets/img/icons/discord_icon.svg">
       </a>
     </p>
     <p class="m-0">
-      <a href="#">
+      <a href="mailto: yisshiki@gmail.com">
         <img src="@/assets/img/icons/email_icon.svg">
       </a>
     </p>
