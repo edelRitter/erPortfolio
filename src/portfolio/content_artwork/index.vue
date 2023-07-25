@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio__artwork" :bg="dark">
+  <section class="portfolio__artwork">
     <div class="row no-gutters">
       <div class="col-12">
         <div class="portfolio__artwork-icon">
