@@ -10,8 +10,8 @@
       <div
         class="portfolio-artwork__title"
         data-aos="fade-right"
-        data-aos-duration="1200"
-        data-aos-delay="800"
+        data-aos-duration="800"
+        data-aos-delay="400"
         data-aos-easing="ease-in-out"
         data-aos-once="true"
         >
@@ -39,7 +39,7 @@
           <template #default="{ item, index }">
             <div
               data-aos="fade-up"
-              data-aos-duration="1200"
+              data-aos-duration="1000"
               data-aos-delay="200"
               data-aos-easing="ease-in-out"
               data-aos-once="true"

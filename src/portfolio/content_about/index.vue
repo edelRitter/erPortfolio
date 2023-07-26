@@ -25,9 +25,9 @@
             </p>
           </div>
           <div class="portfolio-about__profile-me m-0">
-            <p class="portfolio-about__profile-me-desc">Hello, this is a portfolio website of Yohei. I create websites from UI / pages / frameworks. I also draw characters of video games and post them on SNS. Avid lover of photography, film and music.</p>
+            <p class="portfolio-about__profile-me-desc mb-4">Hello, this is a portfolio website of Yohei. I create websites from UI / pages / frameworks. I also draw characters of video games and post them on SNS. Avid lover of photography, film and music.</p>
             <p class="portfolio-about__profile-me-title m-0">USES /</p>
-            <p class="portfolio-about__profile-me-desc">adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS, Webpack, GIT / Github, JEST (other testing frameworks), esLint</p>
+            <p class="portfolio-about__profile-me-list w-100 mb-4">adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS, Webpack, GIT / Github, JEST (other testing frameworks), esLint</p>
             <p class="portfolio-about__profile-me-title m-0">LIKES /</p>
             <ul class="d-flex m-0 p-0">
               <li class="portfolio-about__profile-me-list"><strong>arknights :</strong> I Love arknights so much it deserves it's own category.</li>
