@@ -45,7 +45,13 @@
               data-aos-once="true"
               class="portfolio-artwork__content-item flex items-center justify-center"
             >
-              <p class="portfolio-artwork__content-img"><img v-bind:src="item.image" class="w-100"></p>
+              <p class="portfolio-artwork__content-img">
+                <img
+                  class="w-100"
+                  :data-artwork='item.id'
+                  :src="item.image"
+                  @click="showModal">
+              </p>
               <p class="portfolio-artwork__content-text">
                 <span class="portfolio-artwork__content-type">{{ item.type }}</span>
                 <span class="portfolio-artwork__content-title">{{ item.title }}</span>
@@ -55,11 +61,25 @@
         </masonry-wall>
         </div>
       </div>
+      <Modal
+        v-show="this.modalStatus !== ''"
+        :status="this.modalStatus"
+        @modalOff="closeModal">
+        <template v-slot:body>
+          <div class="test">
+            <img :src="modalImage" class="w-100">
+          </div> 
+        </template>
+      </Modal>
     </div>
   </section>
 </template>
 
 <script>
+import { ref } from 'vue'
+
+import Modal from '@/components/ui/modal/index.vue';
+
 import hibiscus from '@/assets/img/illustration/arknights_hibiscus.png';
 import specter from '@/assets/img/illustration/arknights_specter.png';
 import w from '@/assets/img/illustration/arknights_w.png';
@@ -68,40 +88,66 @@ import ajimu from '@/assets/img/illustration/arknights_ajimu.png';
 
 export default {
   name: 'Artwork',
+  components: {
+    Modal,
+  },
   setup() {
+    const modalStatus = ref('');
+    const modalImage = ref('');
+
     const items = [
       {
+        id: '1',
         image: hibiscus,
         type: 'artwork',
         title: 'arknights / hibiscus',
       },
       {
+        id: '2',
         image: specter,
         type: 'artwork',
         title: 'arknights / specter',
       },
       {
+        id: '3',
         image: w,
         type: 'artwork',
         title: 'arknights / W',
       },
       {
+        id: '4',
         image: penance,
         type: 'artwork',
         title: 'arknights / penance',
       },
       {
+        id: '5',
         image: ajimu,
         type: 'artwork',
         title: 'arknights / angelina',
       },
     ]
-    return { items }
-  },
-  data() {
-    return {
-      bg: 'dark',
+    return { 
+      items,
+      modalStatus,
+      modalImage,
     }
+  },
+  methods: {
+    showModal(event) {
+      this.modalStatus = 'confirmation';
+      const artworkData = event.target.dataset.artwork;
+      const itemObject = this.items.filter(res => res.id.indexOf(artworkData) !== -1);
+      const itemArtwork = itemObject[0].image;
+
+      console.log(itemArtwork);
+      
+      return this.modalImage = itemArtwork;
+    },
+    closeModal() {
+      this.modalStatus = '';
+      this.modalImage = '';
+    },
   },
 }
 </script>

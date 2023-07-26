@@ -39,5 +39,5 @@ export default {
 </script>
 
 <style>
-@import '@/portfolio/ui/sns/style.scss';
+@import '@/components/ui/sns/style.scss';
 </style>

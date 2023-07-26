@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import socialNetworking from '@/portfolio/ui/sns/index.vue'
+import socialNetworking from '@/components/ui/sns/index.vue'
 
 export default {
   name: 'About',
