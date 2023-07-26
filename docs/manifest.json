@@ -19,6 +19,9 @@
       "img/teamlab_1.png",
       "img/teamlab_2.png",
       "img/teamlab_3.png",
+      "img/teamlab_4.jpg",
+      "img/teamlab_5.jpg",
+      "img/teamlab_6.jpg",
       "img/stock_profile.jpg"
     ],
     "css": [
@@ -83,6 +86,18 @@
   "src/assets/img/photography/teamlab_3.png": {
     "file": "img/teamlab_3.png",
     "src": "src/assets/img/photography/teamlab_3.png"
+  },
+  "src/assets/img/photography/teamlab_4.jpg": {
+    "file": "img/teamlab_4.jpg",
+    "src": "src/assets/img/photography/teamlab_4.jpg"
+  },
+  "src/assets/img/photography/teamlab_5.jpg": {
+    "file": "img/teamlab_5.jpg",
+    "src": "src/assets/img/photography/teamlab_5.jpg"
+  },
+  "src/assets/img/photography/teamlab_6.jpg": {
+    "file": "img/teamlab_6.jpg",
+    "src": "src/assets/img/photography/teamlab_6.jpg"
   },
   "src/assets/video/teamlab_video1.mp4": {
     "file": "video/teamlab_video1.mp4",

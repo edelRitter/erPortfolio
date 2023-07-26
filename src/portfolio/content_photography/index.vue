@@ -39,9 +39,9 @@ import 'swiper/css/scrollbar';
 import teamLab1 from '@/assets/img/photography/teamlab_1.png';
 import teamLab2 from '@/assets/img/photography/teamlab_2.png';
 import teamLab3 from '@/assets/img/photography/teamlab_3.png';
-import teamLab4 from '@/assets/img/photography/teamlab_3.png';
-import teamLab5 from '@/assets/img/photography/teamlab_3.png';
-
+import teamLab4 from '@/assets/img/photography/teamlab_4.jpg';
+import teamLab5 from '@/assets/img/photography/teamlab_5.jpg';
+import teamLab6 from '@/assets/img/photography/teamlab_6.jpg';
 
 export default {
   name: 'Photography',
@@ -79,6 +79,11 @@ export default {
       },
       {
         image: teamLab5,
+        type: 'photography',
+        title: 'teamlab / exhibit',
+      },
+      {
+        image: teamLab6,
         type: 'photography',
         title: 'teamlab / exhibit',
       },

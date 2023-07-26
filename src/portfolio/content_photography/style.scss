@@ -47,11 +47,9 @@
       }
 
       &-text {
-        position: relative;
         display: flex;
         justify-content: space-between;
         padding: 4px;
-        margin: -1px 0 0 0;
         color: colors.$portfolio_White;
         background: colors.$portfolio_Black;
       }

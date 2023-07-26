@@ -6,6 +6,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
+    background: colors.$portfolio_Black;
 
     &__title {
       padding: 20px;
@@ -26,6 +27,7 @@
 
     &__profile {
       width: 100%;
+      height: 100%;
       padding: 12px;
       color: colors.$portfolio_Black;
       background: colors.$portfolio_White;
