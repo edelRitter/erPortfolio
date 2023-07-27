@@ -23,6 +23,13 @@
           font-size: 12vw;
         }
       }
+
+      &-desc {
+        margin: 40px 0 0 0;
+        line-height: 1.1em;
+        font-size: 40px;
+        font-family: "Playfair", "Manrope", sans-serif;
+      }
     }
 
     &__profile {
@@ -50,13 +57,17 @@
       &-me {
         padding: 24px 0;
 
-        &-desc {
-          font-size: 14px;
-          font-family: "Roboto", "Manrope", sans-serif;
+        &-logo {
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        &-logoimg {
+          max-width: 100px;
         }
 
         &-title {
-          font-size: 20px;
+          font-size: 24px;
           font-family: "Roboto", "Manrope", sans-serif;
         }
 

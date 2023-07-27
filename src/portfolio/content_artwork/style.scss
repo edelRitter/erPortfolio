@@ -7,6 +7,15 @@
     width: 100%;
     min-height: 100vh;
     background: colors.$portfolio_Black;
+
+    &__logo {
+      text-align: center;
+      margin: 0;
+    }
+
+    &__logoimg {
+      max-width: 100px;
+    }
     
     &__icon {
       padding: 12px 0;
@@ -26,7 +35,6 @@
       flex-direction: column;
       justify-content: center;
       width: 30%;
-      height: 30vh;
       top: 50%;
       left: 5%;
       transform: translate(-5%, -50%);
@@ -61,7 +69,7 @@
       }
 
       &-sub {
-        font-size: 12px;
+        font-size: 14px;
         margin: 0;
         font-family: "Playfair", "Manrope", sans-serif;
         color: colors.$portfolio_Black;
@@ -90,7 +98,7 @@
       }
 
       &-text {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
 
@@ -112,18 +120,18 @@
         display: flex;
         justify-content: space-between;
         margin: 0;
-        padding : 4px;
+        padding : 8px;
         color: colors.$portfolio_White;
         background: colors.$black;
       }
   
       &-type {
-        font-size: 11px;
+        font-size: 12px;
         font-family: "Playfair", "Manrope", sans-serif;
       }
   
       &-title {
-        font-size: 11px;
+        font-size: 12px;
         font-family: "Roboto", "Manrope", sans-serif;
       }
     }

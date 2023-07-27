@@ -15,17 +15,17 @@
             <br><span>MAKES /</span>
             <br><span>WONDERS /</span>
           </h2>
+          <p class="portfolio-about__title-desc">Hello, this is a portfolio website of Yohei. I create websites from UI / pages / frameworks. I also draw illustrations and post them on social media. Avid lover of photography, film and music.</p>
         </div>
       </div>
       <div class="col-12 col-md-4">
         <div class="portfolio-about__profile">
           <div class="portfolio-about__profile-wrap">
             <p class="portfolio-about__profile-name m-0">
-              edelRitter / Yohei I.
+              ABOUT
             </p>
           </div>
           <div class="portfolio-about__profile-me m-0">
-            <p class="portfolio-about__profile-me-desc mb-4">Hello, this is a portfolio website of Yohei. I create websites from UI / pages / frameworks. I also draw characters of video games and post them on SNS. Avid lover of photography, film and music.</p>
             <p class="portfolio-about__profile-me-title m-0">USES /</p>
             <p class="portfolio-about__profile-me-list w-100 mb-4">adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS, Webpack, GIT / Github, JEST (other testing frameworks), esLint</p>
             <p class="portfolio-about__profile-me-title m-0">LIKES /</p>
@@ -41,6 +41,9 @@
           <div class="portfolio-about__profile-sns">
             <socialNetworking :class="this.alignment" />
           </div>
+          <p class="portfolio-about__profile-me-logo">
+            <img class="portfolio-about__profile-me-logoimg" src="@/assets/img/illustration/logo_edelRitter.png">
+          </p>
         </div>
       </div>
     </div>

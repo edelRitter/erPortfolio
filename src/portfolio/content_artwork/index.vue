@@ -20,6 +20,9 @@
           <p class="portfolio-artwork__title-sub">arknights /</p>
           <p class="portfolio-artwork__title-sub">other illustrations /</p>
           <p class="portfolio-artwork__title-sub">photography /</p>
+          <p class="portfolio-artwork__logo">
+            <img class="portfolio-artwork__logoimg" src="@/assets/img/illustration/logo_edelRitter.png">
+          </p>
         </div>
       </div>
       <div class="col-12 col-md-4">

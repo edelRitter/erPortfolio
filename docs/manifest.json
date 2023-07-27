@@ -16,6 +16,7 @@
       "img/arknights_penance.png",
       "img/arknights_ajimu.png",
       "img/arrow_icon.svg",
+      "img/logo_edelRitter.png",
       "img/teamlab_1.png",
       "img/teamlab_2.png",
       "img/teamlab_3.png",
@@ -70,6 +71,10 @@
   "src/assets/img/illustration/arknights_w.png": {
     "file": "img/arknights_w.png",
     "src": "src/assets/img/illustration/arknights_w.png"
+  },
+  "src/assets/img/illustration/logo_edelRitter.png": {
+    "file": "img/logo_edelRitter.png",
+    "src": "src/assets/img/illustration/logo_edelRitter.png"
   },
   "src/assets/img/photography/stock_profile.jpg": {
     "file": "img/stock_profile.jpg",
