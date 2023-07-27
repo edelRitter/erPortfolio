@@ -55,16 +55,9 @@ export default {
   components: {
     socialNetworking
   },
-  props: {
-    uiCatalogAlignment: {
-      type: String,
-      align: 'ui-catalog__sns-center',
-    }
-  },
   data() {
     return {
       alignment: 'ui-catalog__sns-center',
-      bg: 'light',
     }
   },
 }

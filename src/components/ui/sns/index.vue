@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-catalog__sns" :class="{ align: center }">
+  <div class="ui-catalog__sns" :class="classes">
     <p class="m-0">
       <a href="https://twitter.com/edelRitter9" target="_blank">
         <img src="@/assets/img/icons/twitter_icon.svg">
@@ -24,15 +24,23 @@
 </template>
 
 <script>
+import { reactive, computed } from 'vue';
+
 export default {
   name: 'socialNetworking',
-  data: function() {
+  props: {
+    alignment: {
+      type: String,
+      validator: function (value) {
+        return ['left', 'center', 'right'].indexOf(value) !== -1;
+      },
+    },
+  },
+  setup(props) {
     return {
-      uiCatalogAlignment: [
-        'ui-catalog__sns-left',
-        'ui-catalog__sns-center',
-        'ui-catalog__sns-right'
-      ]
+      classes: computed(() => ({
+        [`${props.alignment || 'left'}`]: true,
+      })),
     };
   },
 }

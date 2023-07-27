@@ -34,10 +34,6 @@
 <script>
 import socialNetworking from '@/components/ui/sns/index.vue'
 
-import { ref, onMounted } from 'vue'
-
-const menuRef = ref(null)
-
 export default {
   name: 'Menu',
   components: {
@@ -48,7 +44,7 @@ export default {
       isActive: false,
       dark: false,
       scrollTop: 0,
-      alignment: 'ui-catalog__sns-right',
+      alignment: 'ui-catalog__sns-center',
       navLinks: [
         {
           text: 'TOP',
@@ -74,7 +70,6 @@ export default {
       this.isActive = !this.isActive
     },
     navScroll(link) {
-      const menu = document.querySelectorAll('menu');
       const position = document.getElementById(link.id).offsetTop;
       // smooth scroll
       window.scrollTo({ top: position, behavior: "smooth" });
