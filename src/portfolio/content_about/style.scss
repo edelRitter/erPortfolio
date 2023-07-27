@@ -25,10 +25,14 @@
       }
 
       &-desc {
-        margin: 40px 0 0 0;
+        margin: 80px 0;
         line-height: 1.1em;
         font-size: 40px;
         font-family: "Playfair", "Manrope", sans-serif;
+
+        @media  #{media.$xsmall-and-down} {
+          font-size: 4.6vw;
+        }
       }
     }
 
