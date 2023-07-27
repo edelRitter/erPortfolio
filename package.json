@@ -9,7 +9,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "yarn eslint src"
+    "lint": "yarn eslint src",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^4.1.0",
@@ -23,6 +25,13 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.1.1",
+    "@storybook/addon-interactions": "^7.1.1",
+    "@storybook/addon-links": "^7.1.1",
+    "@storybook/blocks": "^7.1.1",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/vue3": "^7.1.1",
+    "@storybook/vue3-vite": "^7.1.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-unit-jest": "^5.0.8",
@@ -34,7 +43,11 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-storybook": "^0.6.13",
     "eslint-plugin-vue": "^7.16.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.1.1",
     "vite": "^4.4.0"
   },
   "lint-staged": {
