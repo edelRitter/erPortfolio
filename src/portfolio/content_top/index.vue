@@ -35,7 +35,7 @@
         <p class="portfolio-top__text m-0">porfolio website created by</p>
         <p class="portfolio-top__text m-0">-</p>
         <h1 class="portfolio-top__title">edelRitter</h1>
-        <socialNetworkidf :class="this.alignment" />
+        <socialNetworking :class="this.alignment" />
       </div>
     </div>
     <video playsinline autoplay muted loop class="portfolio-top__video">

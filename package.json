@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "lint": "yarn eslint src"
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^4.1.0",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.3.4",
     "babel-eslint": "^10.1.0",
@@ -36,15 +37,9 @@
     "eslint-plugin-vue": "^7.16.0",
     "vite": "^4.4.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-merge": "yarn install"
-    }
-  },
   "lint-staged": {
     "*.{js,vue}": [
-      "vue-cli-service lint",
+      "eslint src --fix",
       "git add"
     ]
   }

@@ -20,7 +20,6 @@ module.exports = {
   },
   plugins: [
     'vue',
-    'jest',
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? WARN : OFF,
