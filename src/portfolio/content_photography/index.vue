@@ -26,16 +26,21 @@
       </swiper>
       <p class="portfolio-photography__notice m-0 d-block d-md-none">swipe left / right to see more photography</p>
     </div>
-    <Modal
-      v-show="this.modalStatus !== ''"
+    <Transition
+      name="modal-fade"
       :status="this.modalStatus"
-      @modalOff="closeModal">
-      <template v-slot:body>
-        <div class="test">
-          <img :src="modalImage" class="w-100">
-        </div> 
-      </template>
-    </Modal>
+      v-show="this.modalStatus !== ''">
+      <Modal
+        @modalOff="closeModal">
+        <template v-slot:body>
+          <div class="portfolio-modal__item">
+            <p class="m-0">
+              <img :src="modalImage" class="portfolio-modal__item-images">
+            </p>
+          </div> 
+        </template>
+      </Modal>
+    </Transition> 
   </section>
 </template>
 

@@ -61,18 +61,21 @@
         </masonry-wall>
         </div>
       </div>
-      <Modal
-        v-show="this.modalStatus !== ''"
+      <Transition
+        name="modal-fade"
         :status="this.modalStatus"
-        @modalOff="closeModal">
-        <template v-slot:body>
-          <div class="portfolio-modal__item">
-            <p class="m-0">
-              <img :src="modalImage" class="portfolio-modal__item-images">
-            </p>
-          </div> 
-        </template>
-      </Modal>
+        v-show="this.modalStatus !== ''">
+        <Modal
+          @modalOff="closeModal">
+          <template v-slot:body>
+            <div class="portfolio-modal__item">
+              <p class="m-0">
+                <img :src="modalImage" class="portfolio-modal__item-images">
+              </p>
+            </div> 
+          </template>
+        </Modal>
+      </Transition>
     </div>
   </section>
 </template>

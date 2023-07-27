@@ -1,24 +1,22 @@
 <template>
-  <transition name="modal-fade">
-    <div class="portfolio-modal">
-      <div class="portfolio-modal__content">
-        <p class="portfolio-modal__close" @click="closeModal"></p>
-        <div class="portfolio-modal__wrap">
-          <!-- default view -->
-          <div
-            class="portfolio-modal__opened"
-            v-show="status === 'confirmation'">
-              <slot name="body"> Default body content </slot>
-          </div>
-          <!-- /default view -->
+  <div class="portfolio-modal">
+    <div class="portfolio-modal__content">
+      <p class="portfolio-modal__close" @click="closeModal"></p>
+      <div class="portfolio-modal__wrap">
+        <!-- default view -->
+        <div
+          class="portfolio-modal__opened"
+          v-show="status === 'confirmation'">
+            <slot name="body"> Default body content </slot>
         </div>
-      </div>
-      <div
-        class="portfolio-modal__bg"
-        @click="closeModal">
+        <!-- /default view -->
       </div>
     </div>
-  </transition>
+    <div
+      class="portfolio-modal__bg"
+      @click="closeModal">
+    </div>
+  </div>
 </template>
 
 <script>
