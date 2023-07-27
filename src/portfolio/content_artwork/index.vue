@@ -16,10 +16,10 @@
         data-aos-once="true"
         >
         <div class="portfolio-artwork__title-border">
-          <h2 class="portfolio-artwork__title-text">SELECTED WORKS /</h2>
-          <p class="portfolio-artwork__title-sub">arknights /</p>
-          <p class="portfolio-artwork__title-sub">other illustrations /</p>
-          <p class="portfolio-artwork__title-sub">photography /</p>
+          <h2 class="portfolio-artwork__title-text">Selected Works /</h2>
+          <p class="portfolio-artwork__title-sub">ARKNIGHTS /</p>
+          <p class="portfolio-artwork__title-sub">OTHER ILLUSTRATIONS /</p>
+          <p class="portfolio-artwork__title-sub">PHOTOGRAPHY /</p>
           <p class="portfolio-artwork__logo">
             <img class="portfolio-artwork__logoimg" src="@/assets/img/illustration/logo_edelRitter.png">
           </p>

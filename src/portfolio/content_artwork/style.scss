@@ -27,6 +27,10 @@
         width: 30px;
         height: auto;
       }
+
+      &-text {
+        font-size: 10px;
+      }
     }
 
     &__title {
@@ -62,7 +66,7 @@
       }
 
       &-text {
-        font-size: 24px;
+        font-size: 28px;
         line-height: 0.8em;
         font-family: "Playfair", "Manrope", sans-serif;
         color: colors.$portfolio_Black;
@@ -71,7 +75,7 @@
       &-sub {
         font-size: 14px;
         margin: 0;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-family: "Roboto", "Manrope", sans-serif;
         color: colors.$portfolio_Black;
       }
     }
@@ -98,7 +102,7 @@
       }
 
       &-text {
-        font-size: 14px;
+        font-size: 12px;
       }
     }
 
