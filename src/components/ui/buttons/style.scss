@@ -1,0 +1,38 @@
+@use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
+
+.storybook-button {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+
+  &--primary {
+    color: colors.$portfolio_White;
+    background-color: colors.$portfolio_Black;
+  }
+
+  &--secondary {
+    color: colors.$portfolio_Black;
+    background-color: colors.$portfolio_White;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  }
+
+  &--small {
+    font-size: 12x;
+    padding: 10px 16px;
+  }
+
+  &--medium {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+
+  &--large {
+    font-size: 14px;
+    padding: 14px 40px;
+  }
+}

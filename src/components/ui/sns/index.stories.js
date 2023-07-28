@@ -2,7 +2,7 @@ import socialNetworking from './index.vue';
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 export default {
-  title: 'ui/sns/buttons',
+  title: 'ui/sns/socialnetworking',
   component: socialNetworking,
   tags: ['autodocs'],
   argTypes: {
