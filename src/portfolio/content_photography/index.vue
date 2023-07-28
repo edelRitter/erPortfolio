@@ -1,6 +1,13 @@
 <template>
   <section class="portfolio-photography">
-    <div class="portfolio-photography__wrapper">
+    <div
+      class="portfolio-photography__wrapper"
+      data-aos="fade-left"
+      data-aos-duration="1200"
+      data-aos-delay="600"
+      data-aos-easing="ease-in-out"
+      data-aos-once="true"
+      >
       <swiper
         class="portfolio-photography__list"
         :slides-per-view="2"
