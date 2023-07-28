@@ -60,18 +60,18 @@
           <div 
             class="portfolio-about__profile-sns"
             data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-offset="300"
-            data-aos-delay="600"
+            data-aos-duration="1000"
+            data-aos-offset="80"
+            data-aos-delay="400"
             data-aos-easing="ease-out-cubic">
             <socialNetworking :class="this.alignment" />
           </div>
           <p 
             class="portfolio-about__profile-me-logo"
             data-aos="fade"
-            data-aos-duration="1200"
-            data-aos-offset="200"
-            data-aos-delay="600"
+            data-aos-duration="1000"
+            data-aos-offset="80"
+            data-aos-delay="400"
             data-aos-easing="ease-out-cubic">
             <img class="portfolio-about__profile-me-logoimg" src="@/assets/img/illustration/logo_edelRitter.png">
           </p>

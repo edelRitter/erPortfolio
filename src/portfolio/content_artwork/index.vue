@@ -38,7 +38,6 @@
               data-aos="fade-up"
               data-aos-duration="1200"
               data-aos-delay="400"
-              data-aos-offset="200"
               data-aos-easing="ease-out-cubic"
               class="portfolio-artwork__content-item flex items-center justify-center"
             >
