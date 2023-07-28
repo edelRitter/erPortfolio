@@ -62,6 +62,10 @@
         margin: 0;
         font-family: "Playfair", "Manrope", sans-serif;
         color: colors.$portfolio_Black;
+
+        &-sub {
+          color: colors.$portfolio_Gray700;
+        }
       }
     }
 

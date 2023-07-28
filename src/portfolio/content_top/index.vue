@@ -7,8 +7,7 @@
           data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="200"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true">
+          data-aos-easing="ease-out-cubic">
           DESIGNER /
         </span>
         <br>
@@ -17,8 +16,7 @@
           data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="500"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true">
+          data-aos-easing="ease-out-cubic">
           DEVELOPER /
         </span>
         <br>
@@ -27,8 +25,7 @@
           data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="800"
-          data-aos-easing="ease-in-out"
-          data-aos-once="true">
+          data-aos-easing="ease-out-cubic">
           ILLUSTRATOR /
         </span>
         <p class="portfolio-top__text m-0">-</p>

@@ -5,9 +5,8 @@
       data-aos="fade-left"
       data-aos-duration="1200"
       data-aos-offset="200"
-      data-aos-delay="200"
-      data-aos-easing="ease-in-out"
-      data-aos-once="true"
+      data-aos-delay="400"
+      data-aos-easing="ease-out-cubic"
       >
       <swiper
         class="portfolio-photography__list"
