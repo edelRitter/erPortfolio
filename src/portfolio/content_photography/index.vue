@@ -79,37 +79,37 @@ export default {
       {
         id: '1',
         image: teamLab1,
-        type: 'photography',
+        type: 'photo',
         title: 'teamlab / exhibit',
       },
       {
         id: '2',
         image: teamLab2,
-        type: 'photograph2',
+        type: 'photo',
         title: 'teamlab / exhibit',
       },
       {
         id: '3',
         image: teamLab3,
-        type: 'photography',
+        type: 'photo',
         title: 'teamlab / exhibit',
       },
       {
         id: '4',
         image: teamLab4,
-        type: 'photography',
+        type: 'photo',
         title: 'teamlab / exhibit',
       },
       {
         id: '5',
         image: teamLab5,
-        type: 'photography',
+        type: 'photo',
         title: 'teamlab / exhibit',
       },
       {
         id: '6',
         image: teamLab6,
-        type: 'photography',
+        type: 'photo',
         title: 'teamlab / exhibit',
       },
     ]

@@ -22,7 +22,7 @@
         <div class="portfolio-about__profile">
           <div class="portfolio-about__profile-wrap">
             <p class="portfolio-about__profile-name m-0">
-              edelRitter
+              About me / edelRitter
             </p>
           </div>
           <div class="portfolio-about__profile-me m-0">
