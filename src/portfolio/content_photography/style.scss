@@ -4,6 +4,7 @@
 .portfolio {
   &-photography {
     position: relative;
+    overflow: hidden;
     width: 100%;
     min-height: 50vh;
     background: colors.$black;
