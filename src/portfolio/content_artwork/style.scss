@@ -33,7 +33,7 @@
       top: 50%;
       left: 5%;
       transform: translate(-5%, -50%);
-      padding: 24px 12px;
+      padding: 12px;
       background: colors.$portfolio_White;
       z-index: 1;
 
@@ -59,6 +59,7 @@
       &-text {
         font-size: 24px;
         line-height: 0.8em;
+        margin: 0;
         font-family: "Playfair", "Manrope", sans-serif;
         color: colors.$portfolio_Black;
       }

@@ -1,22 +1,22 @@
 <template>
   <section class="portfolio-artwork">
+    <div
+      class="portfolio-artwork__title"
+      data-aos="fade-right"
+      data-aos-duration="800"
+      data-aos-delay="400"
+      data-aos-easing="ease-in-out"
+      data-aos-once="true"
+      >
+      <div class="portfolio-artwork__title-border">
+        <h2 class="portfolio-artwork__title-text">Selected Works / Projects</h2>
+      </div>
+    </div>
     <div class="row no-gutters">
       <div class="col-12">
         <div class="portfolio-artwork__icon">
           <p class="portfolio-artwork__icon-text text-center m-0">illustration / photography works</p>
           <p class="portfolio-artwork__icon-img text-center m-0"><img src="@/assets/img/icons/arrow_icon.svg"></p>
-        </div>
-      </div>
-      <div
-        class="portfolio-artwork__title"
-        data-aos="fade-right"
-        data-aos-duration="800"
-        data-aos-delay="400"
-        data-aos-easing="ease-in-out"
-        data-aos-once="true"
-        >
-        <div class="portfolio-artwork__title-border">
-          <h2 class="portfolio-artwork__title-text">Selected Works / Projects</h2>
         </div>
       </div>
       <div class="col-12 col-md-4">
