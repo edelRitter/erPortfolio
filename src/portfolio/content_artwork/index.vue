@@ -3,8 +3,8 @@
     <div
       class="portfolio-artwork__title"
       data-aos="fade-right"
-      data-aos-duration="800"
-      data-aos-delay="600"
+      data-aos-duration="1000"
+      data-aos-offset="80"
       data-aos-easing="ease-in-out"
       data-aos-once="true"
       >
@@ -36,8 +36,9 @@
           <template #default="{ item, index }">
             <div
               data-aos="fade-up"
-              data-aos-duration="1200"
+              data-aos-duration="1000"
               data-aos-delay="200"
+              data-aos-offset="200"
               data-aos-easing="ease-in-out"
               data-aos-once="true"
               class="portfolio-artwork__content-item flex items-center justify-center"

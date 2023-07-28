@@ -8,6 +8,7 @@
             class="portfolio-about__title-text"
             data-aos="fade-right"
             data-aos-duration="1200"
+            data-aos-offset="200"
             data-aos-delay="200"
             data-aos-easing="ease-in-out"
             data-aos-once="true">

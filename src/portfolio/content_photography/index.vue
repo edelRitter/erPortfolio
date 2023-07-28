@@ -4,7 +4,8 @@
       class="portfolio-photography__wrapper"
       data-aos="fade-left"
       data-aos-duration="1200"
-      data-aos-delay="600"
+      data-aos-offset="200"
+      data-aos-delay="200"
       data-aos-easing="ease-in-out"
       data-aos-once="true"
       >
