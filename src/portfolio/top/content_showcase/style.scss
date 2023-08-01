@@ -1,0 +1,9 @@
+@use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
+
+.portfolio {
+  &-showcase {
+    min-height: 100vh;
+	  overflow-x: hidden;
+  }
+}

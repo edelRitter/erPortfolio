@@ -79,5 +79,5 @@ export default {
 </script>
 
 <style>
-@import '@/portfolio/menu/style.scss';
+@import './style.scss';
 </style>

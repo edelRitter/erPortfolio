@@ -16,15 +16,15 @@
     left: 0;
     right: 0;
     transform: translate(0%, -50%);
-    width: 90vw;
-    height: 90vh;
+    width: 86vw;
+    height: 86vh;
     padding: 12px;
     margin: 0 auto;
     border-radius: 4px;
-    background: #ffffff;
     z-index: 8;
 
     @media  #{media.$xsmall-and-down} {
+      width: 94vw;
       height: auto;
     }
   }

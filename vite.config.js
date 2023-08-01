@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import * as path from 'path';
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
+      '~bootstrap': resolve(__dirname, 'node_modules/bootstrap'),
       '@/': `${__dirname}/src/`,
       '~/': `${__dirname}/public/`
     },
@@ -27,6 +27,9 @@ export default defineConfig({
     reportCompressedSize: true,
     emptyOutDir: true,
     rollupOptions: {
+      input: {
+        top: resolve(__dirname, 'index.html'),
+      },
       output: {
         chunkFileNames: 'js/[name].js',
         entryFileNames: 'js/[name].js',

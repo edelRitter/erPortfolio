@@ -58,5 +58,5 @@ export default {
 </script>
 
 <style>
-@import '@/portfolio/content_top/style.scss';
+@import './style.scss';
 </style>

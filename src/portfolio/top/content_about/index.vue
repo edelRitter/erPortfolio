@@ -1,8 +1,10 @@
 <template>
   <section class="portfolio-about">
     <div class="row no-gutters">
-      <div class="col-12 col-md-8">
+      <div class="col-12">
         <p class="m-0"><img class="w-100" src="@/assets/img/photography/stock_profile.jpg"></p>
+      </div>
+      <div class="col-12 col-md-6">
         <div class="portfolio-about__title">
           <h2 class="portfolio-about__title-text">
             <p
@@ -37,7 +39,7 @@
           </p>
         </div>
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-6">
         <div class="portfolio-about__profile">
           <div class="portfolio-about__profile-wrap">
             <p class="portfolio-about__profile-name m-0">
@@ -98,5 +100,5 @@ export default {
 </script>
 
 <style>
-@import '@/portfolio/content_about/style.scss';
+@import './style.scss';
 </style>

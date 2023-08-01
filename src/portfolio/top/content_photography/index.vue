@@ -156,5 +156,5 @@ export default {
 </script>
 
 <style>
-@import '@/portfolio/content_photography/style.scss';
+@import './style.scss';
 </style>

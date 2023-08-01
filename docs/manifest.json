@@ -28,7 +28,7 @@
     "css": [
       "css/index.css"
     ],
-    "file": "js/index.js",
+    "file": "js/top.js",
     "isEntry": true,
     "src": "index.html"
   },
