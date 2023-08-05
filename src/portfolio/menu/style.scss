@@ -3,9 +3,10 @@
 .menu {
   &__wrapper {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 4px;
+    right: 4px;
     z-index: 9;
+    background: colors.$portfolio_Black;
   }
 
   &__button {
@@ -13,8 +14,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
     margin: 0;
     background-color: transparent;
     border: none;
@@ -24,18 +25,17 @@
 
     &-input {
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 36px;
+      height: 36px;
       opacity: 0;
-      z-index: 2;
+      z-index: 4;
     }
 
     &-hamburger {
       display: flex;
-      width: 20px;
-      height: 2px;
-      background-color: colors.$portfolio_Black;
-      border-radius: 5px;
+      width: 18px;
+      height: 1px;
+      background-color: colors.$portfolio_White;
       transition: all .5s ease;
       z-index: 3;
   
@@ -43,19 +43,18 @@
       &::after{
         content: '';
         position: absolute;
-        width: 20px;
-        height: 2px;
-        background: colors.$portfolio_Black;
-        border-radius: 5px;
+        width: 18px;
+        height: 1px;
+        background: colors.$portfolio_White;
         transition: all .5s ease;
       }
   
       &::before {
-        transform: translateY(-6px);
+        transform: translateY(-5px);
       }
       
       &::after{
-        transform: translateY(6px);
+        transform: translateY(5px);
       }
     }
   }
@@ -63,30 +62,52 @@
   &__sidebar {
     position: fixed;
     height: 100vh;
-    width: 75%;
-    max-width: 400px;
+    width: 100%;
     top: 0;
-    right: -100vw;
+    right: 0;
     margin: 0;
     padding: 0;
+    opacity: 0;
+    visibility: hidden;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    transition: all .6s ease;
+    transition: all 0.4s ease;
     background-color: colors.$portfolio_White;
     z-index: 2;
 
     &.is-active {
-      right: 0;
+      opacity: 1;
+      visibility: visible;
     }
 
     &-title {
-      padding: 6px 0 6px 24px;
+      padding: 4px 0 4px 12px;
       margin: 0;
       font-size: 32px;
       letter-spacing: -0.05em;
-      font-family: "Playfair", serif;
+      font-family: "Playfair", "Manrope", sans-serif;
       color: colors.$portfolio_Black;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      height: 50%;
+
+      &-item {
+        margin: 8px 0;
+        list-style-type: none;
+        font-size: 24px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "Roboto", "Manrope", sans-serif;
+        color: colors.$portfolio_Black;
+      }
     }
   }
 
@@ -106,21 +127,23 @@
 
     &.is-active {
       opacity: 1;
-      z-index: 1;
+      z-index: 2;
     }
   }
 }
 
 /** checked state */
-.menu__button-input:checked ~.menu__button-hamburger {
+.menu__button-input.is-active ~.menu__button-hamburger {
   transform: translateX(-50px);
   background: transparent;
 }
 
-.menu__button-input:checked ~.menu__button-hamburger::before {
+.menu__button-input.is-active ~.menu__button-hamburger::before {
   transform: rotate(45deg) translate(35px, -35px);
+  background-color: colors.$portfolio_Black;
 }
 
-.menu__button-input:checked ~.menu__button-hamburger::after {
+.menu__button-input.is-active ~.menu__button-hamburger::after {
   transform: rotate(-45deg) translate(35px, 35px);
+  background-color: colors.$portfolio_Black;
 }

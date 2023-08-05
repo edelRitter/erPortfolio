@@ -1,0 +1,111 @@
+{
+  "index.css": {
+    "file": "css/index.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "assets": [
+      "img/twitter_icon.svg",
+      "img/discord_icon.svg",
+      "img/pixiv_icon.svg",
+      "img/github_icon.svg",
+      "video/teamlab_video1.mp4",
+      "img/arknights_hibiscus.png",
+      "img/arknights_specter.png",
+      "img/arknights_w.png",
+      "img/arknights_penance.png",
+      "img/arknights_ajimu.png",
+      "img/arrow_icon.svg",
+      "img/teamlab_1.png",
+      "img/teamlab_2.png",
+      "img/teamlab_3.png",
+      "img/teamlab_4.jpg",
+      "img/teamlab_5.jpg",
+      "img/teamlab_6.jpg",
+      "img/stock_profile.jpg",
+      "img/logo_edelRitter.png"
+    ],
+    "css": [
+      "css/index.css"
+    ],
+    "file": "js/top.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "src/assets/img/icons/arrow_icon.svg": {
+    "file": "img/arrow_icon.svg",
+    "src": "src/assets/img/icons/arrow_icon.svg"
+  },
+  "src/assets/img/icons/discord_icon.svg": {
+    "file": "img/discord_icon.svg",
+    "src": "src/assets/img/icons/discord_icon.svg"
+  },
+  "src/assets/img/icons/github_icon.svg": {
+    "file": "img/github_icon.svg",
+    "src": "src/assets/img/icons/github_icon.svg"
+  },
+  "src/assets/img/icons/pixiv_icon.svg": {
+    "file": "img/pixiv_icon.svg",
+    "src": "src/assets/img/icons/pixiv_icon.svg"
+  },
+  "src/assets/img/icons/twitter_icon.svg": {
+    "file": "img/twitter_icon.svg",
+    "src": "src/assets/img/icons/twitter_icon.svg"
+  },
+  "src/assets/img/illustration/arknights_ajimu.png": {
+    "file": "img/arknights_ajimu.png",
+    "src": "src/assets/img/illustration/arknights_ajimu.png"
+  },
+  "src/assets/img/illustration/arknights_hibiscus.png": {
+    "file": "img/arknights_hibiscus.png",
+    "src": "src/assets/img/illustration/arknights_hibiscus.png"
+  },
+  "src/assets/img/illustration/arknights_penance.png": {
+    "file": "img/arknights_penance.png",
+    "src": "src/assets/img/illustration/arknights_penance.png"
+  },
+  "src/assets/img/illustration/arknights_specter.png": {
+    "file": "img/arknights_specter.png",
+    "src": "src/assets/img/illustration/arknights_specter.png"
+  },
+  "src/assets/img/illustration/arknights_w.png": {
+    "file": "img/arknights_w.png",
+    "src": "src/assets/img/illustration/arknights_w.png"
+  },
+  "src/assets/img/illustration/logo_edelRitter.png": {
+    "file": "img/logo_edelRitter.png",
+    "src": "src/assets/img/illustration/logo_edelRitter.png"
+  },
+  "src/assets/img/photography/stock_profile.jpg": {
+    "file": "img/stock_profile.jpg",
+    "src": "src/assets/img/photography/stock_profile.jpg"
+  },
+  "src/assets/img/photography/teamlab_1.png": {
+    "file": "img/teamlab_1.png",
+    "src": "src/assets/img/photography/teamlab_1.png"
+  },
+  "src/assets/img/photography/teamlab_2.png": {
+    "file": "img/teamlab_2.png",
+    "src": "src/assets/img/photography/teamlab_2.png"
+  },
+  "src/assets/img/photography/teamlab_3.png": {
+    "file": "img/teamlab_3.png",
+    "src": "src/assets/img/photography/teamlab_3.png"
+  },
+  "src/assets/img/photography/teamlab_4.jpg": {
+    "file": "img/teamlab_4.jpg",
+    "src": "src/assets/img/photography/teamlab_4.jpg"
+  },
+  "src/assets/img/photography/teamlab_5.jpg": {
+    "file": "img/teamlab_5.jpg",
+    "src": "src/assets/img/photography/teamlab_5.jpg"
+  },
+  "src/assets/img/photography/teamlab_6.jpg": {
+    "file": "img/teamlab_6.jpg",
+    "src": "src/assets/img/photography/teamlab_6.jpg"
+  },
+  "src/assets/video/teamlab_video1.mp4": {
+    "file": "video/teamlab_video1.mp4",
+    "src": "src/assets/video/teamlab_video1.mp4"
+  }
+}

@@ -2,7 +2,12 @@
   <div class="menu">
     <div class="menu__wrapper">
     <label for="navigation" class="menu__button">
-      <input type="checkbox" id="navigation" class="menu__button-input" v-on:click="toggleMenu"/>
+      <button
+        id="navigation"
+        class="menu__button-input"
+        v-on:click="toggleMenu"
+        :class="{'is-active': isActive}">
+      </button>
       <span class="menu__button-hamburger"></span>
     </label>
     <menu class="menu__sidebar" :class="{'is-active': isActive}">
@@ -10,11 +15,16 @@
         edelRitter
       </h2>
       <ul class="menu__sidebar-list">
-        <li><a href="#">menu1</a></li>
-        <li><a href="#">menu2</a></li>
-        <li><a href="#">menu3</a></li>
-        <li><a href="#">menu4</a></li>
+        <li
+          class="menu__sidebar-list-item"
+          v-for="(link, index) in navLinks"
+          :key="index"
+          @click=navScroll(link)
+          v-on:click="toggleMenu">
+          {{ link.text }}
+        </li>
       </ul>
+      <socialNetworking :class="this.alignment" />
     </menu>
     </div>
     <div class="menu__background" :class="{'is-active': isActive}"></div>
@@ -22,19 +32,52 @@
 </template>
 
 <script>
+import socialNetworking from '@/components/ui/sns/index.vue'
+
 export default {
   name: 'Menu',
+  components: {
+    socialNetworking
+  },
   data: () => {
-    return {isActive: false}
+    return {
+      isActive: false,
+      dark: false,
+      scrollTop: 0,
+      alignment: 'ui-catalog__sns-center',
+      navLinks: [
+        {
+          text: 'TOP',
+          id: 'portfolioTop',
+        },
+        {
+          text: 'ARTWORK',
+          id: 'portfolioArtwork',
+        },
+        {
+          text: 'PHOTOGRAPHY',
+          id: 'portfolioPhotography',
+        },
+        {
+          text: 'ABOUT',
+          id: 'portfolioAbout',
+        }
+      ]
+    }
   },
   methods: {
     toggleMenu () {
       this.isActive = !this.isActive
-    }
-  }
+    },
+    navScroll(link) {
+      const position = document.getElementById(link.id).offsetTop;
+      // smooth scroll
+      window.scrollTo({ top: position, behavior: "smooth" });
+    },
+  },
 }
 </script>
 
 <style>
-@import '@/portfolio/menu/style.scss';
+@import './style.scss';
 </style>
