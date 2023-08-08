@@ -4,7 +4,7 @@
       <div class="row no-gutters">
         <div class="col-12 col-md-6 portfolio-showcase__all-left">
           <div class="portfolio-showcase__all-left-container">
-            <p class="m-0">EDELRITTER</p>
+            <p class="m-0"><img src="@/assets/img/photography/stock_art.jpg" class="w-100"></p>
           </div>
         </div>
         <div
