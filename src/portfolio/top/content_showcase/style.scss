@@ -1,9 +1,179 @@
 @use '@/assets/scss/_colors.scss' as colors;
 @use '@/assets/scss/_media-queries.scss' as media;
 
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
+}
+
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@include keyframes(hide) {
+  100% {
+    fill: transparent;
+  }
+}
+
+@include keyframes(expand) {
+  0% {}
+  25% {
+    -webkit-clip-path: polygon(0vw 0vh, 55vw 40vh, 55vw 58vh, 45vw 58vh);
+    clip-path: polygon(0vw 0vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+    fill: white;
+  }
+  50% {
+    -webkit-clip-path: polygon(0vw 0vh, 100vw 0vh, 55vw 60vh, 45vw 60vh);
+    clip-path: polygon(0vw 0vh, 100vw 0vh, 55vw 60vh, 45vw 60vh);
+    fill: colors.$portfolio_Yellow;
+  }
+  75% {
+    -webkit-clip-path: polygon(0vw 0vh, 100vw 0vh, 55vw 60vh, 0vw 100vh);
+    clip-path: polygon(0vw 0vh, 100vw 0vh, 55vw 60vh, 0vw 100vh);
+    fill: white;
+  }
+  100% {
+    -webkit-clip-path: polygon(0vw 0vh, 100vw 0vh, 100vw 100vh, 0vw 100vh);
+    clip-path: polygon(0vw 0vh, 100vw 0vh, 100vw 100vh, 0vw 100vh);
+    fill: colors.$portfolio_Yellow;
+  }
+}
+
 .portfolio {
   &-showcase {
-    min-height: 100vh;
-	  overflow-x: hidden;
+    position: relative;
+
+    &__all {
+      width: 100%;
+
+      &-left {
+        height: 100%;
+        color: colors.$portfolio_Black;
+        background: colors.$portfolio_White;
+        font-family: "Playfair", "Manrope", sans-serif;
+
+        &-container {
+          font-size: 100px;
+          padding: 24px;
+
+          @media  #{media.$xsmall-and-down} {
+            font-size: 12vw;
+            padding: 10vh 0;
+          }
+        }
+      }
+
+      &-right {
+        height: 100%;
+        font-size: 100px;
+        letter-spacing: -0.05em;
+        line-height: 0.8em;
+        font-family: "Roboto", "Manrope", sans-serif;
+        color: colors.$portfolio_White;
+        background: colors.$portfolio_Black;
+
+        @media  #{media.$xsmall-and-down} {
+          font-size: 7vw;
+        }
+
+        & p {
+          line-height: 1em;
+          word-break: break-all;
+        }
+      }
+    }
+
+    &__splash {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      overflow: hidden;
+      z-index: 0;
+
+      &.is-active {
+        position: fixed;
+        display: flex;
+        z-index: 5;
+      }
+
+      &-svg {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+
+        svg {
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+
+          rect {
+            width: 100%;
+            height: 100%;
+            fill: colors.$portfolio_Yellow;
+            stroke: 0;
+            -webkit-clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+            clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+            @include animation('expand 0.7s ease-in forwards');
+          }
+        }
+      }
+
+      &-contents {
+        position: relative;
+        overflow-y: scroll;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in 0.9s;
+  
+        &.is-active {
+          position: fixed;
+          top: 0;
+          opacity: 1;
+          height: 100%;
+          visibility: visible;
+          z-index: 6;
+        }
+
+        &-close {
+          font-size: 24px;
+          letter-spacing: -0.05em;
+          text-align: center;
+          font-family: "Playfair", "Manrope", sans-serif;
+          color: colors.$portfolio_Black;
+        }
+      }
+    }
   }
 }

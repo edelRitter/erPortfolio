@@ -5,7 +5,7 @@
       <button
         id="navigation"
         class="menu__button-input"
-        v-on:click="toggleMenu"
+        @click="toggleMenu"
         :class="{'is-active': isActive}">
       </button>
       <span class="menu__button-hamburger"></span>
