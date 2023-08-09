@@ -51,6 +51,10 @@
             </p>
           </div>
           <div class="portfolio-about__profile-me m-0">
+            <div class="portfolio-about__profile-me-picture">
+              <p class="portfolio-about__profile-me-picture-img m-0"><img src="@/assets/img/photography/stock_profile2.jpg" class="w-100"></p>
+              <p class="portfolio-about__profile-me-picture-txt">Yohei I. /<br><span class="portfolio-about__profile-me-picture-txt-japanese">I. / 庸平</span></p>
+            </div>
             <p class="portfolio-about__profile-me-title m-0">EXPERTISE /</p>
             <p class="portfolio-about__profile-me-list w-100 mb-4">adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS, Webpack, GIT / Github, JEST (other testing frameworks), esLint</p>
             <p class="portfolio-about__profile-me-title m-0">LIKES /</p>
