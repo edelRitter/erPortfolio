@@ -1,17 +1,18 @@
 <template>
   <section class="portfolio-showcase">
     <div class="portfolio-showcase__all">
-      <div class="row no-gutters">
-        <div class="col-12 col-md-6 portfolio-showcase__all-left">
-          <div class="portfolio-showcase__all-left-container">
-            <p class="m-0"><img src="@/assets/img/photography/stock_art.jpg" class="w-100"></p>
-          </div>
-        </div>
-        <div
-          class="col-12 col-md-6 portfolio-showcase__all-right"
-          @click="toggleShowcase">
-          <p class="m-0">SEE ALL /</p>
-          <p class="m-0">ARTWORKS /</p>
+      <div class="portfolio-showcase__content-wrap">
+        <div class="portfolio-showcase__content-main" @click="toggleShowcase">
+          <p class="portfolio-showcase__content-txt m-0">ALL WORKS /&nbsp;</p>
+          <p
+            class="portfolio-showcase__content-img m-0"
+            data-aos="fade"
+            data-aos-duration="600"
+            data-aos-offset="200"
+            data-aos-delay="400"
+            data-aos-easing="ease-out-cubic">
+            <img class="w-100" src="@/assets/img/icons/cursor_icon.svg">
+          </p>
         </div>
       </div>
     </div>
@@ -31,27 +32,7 @@
         class="portfolio-showcase__splash-contents-close"
         @click="toggleShowcase">test
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="800"
-        data-aos-easing="ease-out-cubic">
-        <p class="m-0"><img class="w-100" src="https://sell.car.rakuten.co.jp/assets/img/top/img_choose-reason02.jpg"></p>
-      </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="800"
-        data-aos-easing="ease-out-cubic">
-        <p class="m-0"><img class="w-100" src="https://sell.car.rakuten.co.jp/assets/img/top/img_choose-reason02.jpg"></p>
-      </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="800"
-        data-aos-easing="ease-out-cubic">
-        <p class="m-0"><img class="w-100" src="https://sell.car.rakuten.co.jp/assets/img/top/img_choose-reason02.jpg"></p>
-      </div>
+
     </div>
   </section>
 </template>

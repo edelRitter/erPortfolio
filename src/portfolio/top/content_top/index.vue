@@ -6,7 +6,8 @@
           class="portfolio-top__subtitle"
           data-aos="zoom-in"
           data-aos-duration="1200"
-          data-aos-delay="200"
+          data-aos-delay="300"
+          data-aos-once="true"
           data-aos-easing="ease-out-cubic">
           DESIGNER /
         </span>
@@ -15,7 +16,8 @@
           class="portfolio-top__subtitle"
           data-aos="zoom-in"
           data-aos-duration="1200"
-          data-aos-delay="500"
+          data-aos-delay="600"
+          data-aos-once="true"
           data-aos-easing="ease-out-cubic">
           DEVELOPER /
         </span>
@@ -24,7 +26,8 @@
           class="portfolio-top__subtitle"
           data-aos="zoom-in"
           data-aos-duration="1200"
-          data-aos-delay="800"
+          data-aos-delay="900"
+          data-aos-once="true"
           data-aos-easing="ease-out-cubic">
           ILLUSTRATOR /
         </span>

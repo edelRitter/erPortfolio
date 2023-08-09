@@ -13,6 +13,7 @@
               data-aos-duration="800"
               data-aos-offset="300"
               data-aos-delay="200"
+              data-aos-once="true"
               data-aos-easing="ease-out-cubic">CREATIVE /</p>
             <p
               class="m-0"
@@ -20,6 +21,7 @@
               data-aos-duration="800"
               data-aos-offset="300"
               data-aos-delay="400"
+              data-aos-once="true"
               data-aos-easing="ease-out-cubic">MAKES /</p>
             <p
               class="m-0"
@@ -27,6 +29,7 @@
               data-aos-duration="800"
               data-aos-offset="300"
               data-aos-delay="600"
+              data-aos-once="true"
               data-aos-easing="ease-out-cubic">WONDERS /</p>
           </h2>
           <p 
@@ -34,6 +37,7 @@
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-delay="800"
+            data-aos-once="true"
             data-aos-easing="ease-out-cubic">
             Hello, this is a portfolio website of Yohei. I create websites from UI / pages / frameworks. I also draw illustrations and post them on social media. Avid lover of photography, film and music.
           </p>
@@ -51,7 +55,7 @@
             <p class="portfolio-about__profile-me-list w-100 mb-4">adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS, Webpack, GIT / Github, JEST (other testing frameworks), esLint</p>
             <p class="portfolio-about__profile-me-title m-0">LIKES /</p>
             <ul class="d-flex m-0 p-0">
-              <li class="portfolio-about__profile-me-list"><strong>arknights :</strong> I Love arknights so much it deserves it's own category.</li>
+              <li class="portfolio-about__profile-me-list"><strong>arknights :</strong> The music and characters are phenomenal. Developed by Hypergryph</li>
               <li class="portfolio-about__profile-me-list"><b>music :</b> Eli Noir, M2U, hybrid, Siames, AJURIKA, Caravan Palace, nujabes, Masashi Hamauzu, Adam Gubman, Nomak, Starset, etc.</li>
             </ul>
             <ul class="d-flex m-0 p-0">

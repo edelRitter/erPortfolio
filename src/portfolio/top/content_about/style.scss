@@ -45,12 +45,13 @@
       background: colors.$portfolio_White;
 
       @media  #{media.$xsmall-and-down} {
-        padding: 12px;
+        padding: 20px;
       }
 
       &-wrap {
-        padding: 12px;
-        border: 2px solid colors.$portfolio_Black;
+        padding: 12px 0;
+        border-bottom: 1px solid colors.$portfolio_Black;
+        border-top: 1px solid colors.$portfolio_Black;
       }
 
       &-name {
@@ -76,15 +77,15 @@
         }
 
         &-title {
-          font-size: 24px;
-          font-family: "Roboto", "Manrope", sans-serif;
+          font-size: 20px;
+          font-family: "Raleway", "Manrope", sans-serif;
         }
 
         &-list {
           list-style-type: none;
           width: 50%;
           margin: 0;
-          padding: 4px 8px 4px 0;
+          padding: 4px 12px 4px 0;
           font-size: 14px;
           font-family: "Playfair", "Manrope", sans-serif;
         }
