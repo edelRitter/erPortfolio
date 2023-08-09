@@ -23,6 +23,7 @@
       "img/teamlab_5.jpg",
       "img/teamlab_6.jpg",
       "img/stock_profile.jpg",
+      "img/stock_profile2.jpg",
       "img/logo_edelRitter.png"
     ],
     "css": [
@@ -79,6 +80,10 @@
   "src/assets/img/photography/stock_profile.jpg": {
     "file": "img/stock_profile.jpg",
     "src": "src/assets/img/photography/stock_profile.jpg"
+  },
+  "src/assets/img/photography/stock_profile2.jpg": {
+    "file": "img/stock_profile2.jpg",
+    "src": "src/assets/img/photography/stock_profile2.jpg"
   },
   "src/assets/img/photography/teamlab_1.png": {
     "file": "img/teamlab_1.png",
