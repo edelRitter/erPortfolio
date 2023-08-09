@@ -6,10 +6,9 @@
       data-aos-duration="1200"
       data-aos-offset="80"
       data-aos-easing="ease-out-cubic"
-      data-aos-once="true"
-      >
+      data-aos-once="true">
       <div class="portfolio-artwork__title-border">
-        <h2 class="portfolio-artwork__title-text">SELECTED / <span class="portfolio-artwork__title-text-sub">Works</span></h2>
+        <h2 class="portfolio-artwork__title-text">SELECTED / <span class="portfolio-artwork__title-text-sub">WORKS</span></h2>
       </div>
     </div>
     <div class="row no-gutters">
@@ -39,8 +38,7 @@
               data-aos-duration="1200"
               data-aos-delay="400"
               data-aos-easing="ease-out-cubic"
-              class="portfolio-artwork__content-item flex items-center justify-center"
-            >
+              class="portfolio-artwork__content-item flex items-center justify-center">
               <p class="portfolio-artwork__content-img">
                 <img
                   class="w-100"

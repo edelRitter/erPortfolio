@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import Top from './Top.vue'
+import App from './App.vue'
 
 /** plugin AOS */
 import AOS from 'aos'
@@ -16,7 +16,7 @@ function onDomReady() {
 document.addEventListener('DOMContentLoaded', onDomReady)
 
 /** Mount APP */
-createApp(Top)
+createApp(App)
   .use(AOS.init())
   .use(MasonryWall)
   .mount("#app");

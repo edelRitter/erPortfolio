@@ -33,7 +33,7 @@
       top: 50%;
       left: 5%;
       transform: translate(-5%, -50%);
-      padding: 12px;
+      padding: 20px;
       background: colors.$portfolio_White;
       z-index: 1;
 
@@ -52,8 +52,9 @@
 
       &-border {
         height: 100%;
-        padding: 12px;
-        border: 2px solid colors.$portfolio_Black;
+        padding: 8px 0;
+        border-bottom: 1px solid colors.$portfolio_Black;
+        border-top: 1px solid colors.$portfolio_Black;
       }
 
       &-text {
@@ -120,8 +121,8 @@
       }
   
       &-type {
-        font-size: 13px;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-size: 11px;
+        font-family: "Raleway", "Manrope", sans-serif;
       }
   
       &-title {

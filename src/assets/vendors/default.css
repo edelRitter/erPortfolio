@@ -37,6 +37,18 @@ body {
   min-width: 320px;
 }
 
+body.is-fixed {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #333333;
+  z-index: 0;
+}
+
+body.is-fixed #portfolioTop {
+  opacity: 0;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

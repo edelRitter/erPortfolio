@@ -1,12 +1,75 @@
 <template>
   <section class="portfolio-showcase">
-
+    <div class="portfolio-showcase__all">
+      <div class="portfolio-showcase__all-wrap">
+        <div class="portfolio-showcase__all-main" @click="toggleShowcase">
+          <p class="portfolio-showcase__all-txt m-0">ALL WORKS /&nbsp;</p>
+          <p
+            class="portfolio-showcase__all-img m-0"
+            data-aos="fade"
+            data-aos-duration="600"
+            data-aos-offset="200"
+            data-aos-delay="400"
+            data-aos-easing="ease-out-cubic">
+            <img class="w-100" src="@/assets/img/icons/cursor_icon.svg">
+          </p>
+        </div>
+      </div>
+    </div>
+    <div 
+      class="portfolio-showcase__splash"
+      :class="{'is-active': isActive}">
+      <div class="portfolio-showcase__splash-svg">
+        <svg width="100%" height="100%">
+          <rect width="100%" height="100%" ></rect>
+        </svg>
+      </div>
+    </div>
+    <div
+      class="portfolio-showcase__splash-contents"
+      :class="{'is-active': isActive}">
+      <div 
+        class="portfolio-showcase__splash-contents-close"
+        :class="{'d-block': isActive}"
+        @click="toggleShowcase">CLOSE /
+      </div>
+      <div class="portfolio-showcase__splash-contents-list">
+        <p><img src="@/assets/img/illustration/arknights_ajimu.png" class="w-100"></p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p><img src="@/assets/img/illustration/arknights_hibiscus.png" class="w-100"></p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p><img src="@/assets/img/illustration/arknights_penance.png" class="w-100"></p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p><img src="@/assets/img/illustration/arknights_specter.png" class="w-100"></p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+        <p>test testtest testtest testtest testtest test</p>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
 export default {
   name: 'showcase',
+  data: () => {
+    return {
+      isActive: false,
+    }
+  },
+  methods: {
+    toggleShowcase () {
+      document.body.classList.toggle('is-fixed');
+      this.isActive = !this.isActive
+    },
+  },
 }
 </script>
 
