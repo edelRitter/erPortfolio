@@ -26,10 +26,10 @@ export default defineConfig({
     manifest: true,
     reportCompressedSize: true,
     emptyOutDir: true,
+    main: {
+      entry: resolve(__dirname, 'index.html'),
+    },
     rollupOptions: {
-      input: {
-        top: resolve(__dirname, 'index.html'),
-      },
       output: {
         chunkFileNames: 'js/[name].js',
         entryFileNames: 'js/[name].js',
