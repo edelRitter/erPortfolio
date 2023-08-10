@@ -3,7 +3,7 @@
     <div class="portfolio-showcase__all">
       <div class="portfolio-showcase__all-wrap">
         <div class="portfolio-showcase__all-main" @click="toggleShowcase">
-          <p class="portfolio-showcase__all-txt m-0">ALL WORKS /&nbsp;</p>
+          <p class="portfolio-showcase__all-text m-0">ALL WORKS /&nbsp;</p>
           <p
             class="portfolio-showcase__all-img m-0"
             data-aos="fade"
@@ -34,31 +34,20 @@
         @click="toggleShowcase">CLOSE /
       </div>
       <div class="portfolio-showcase__splash-contents-list">
-        <p><img src="@/assets/img/illustration/arknights_ajimu.png" class="w-100"></p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p><img src="@/assets/img/illustration/arknights_hibiscus.png" class="w-100"></p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p><img src="@/assets/img/illustration/arknights_penance.png" class="w-100"></p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p><img src="@/assets/img/illustration/arknights_specter.png" class="w-100"></p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
-        <p>test testtest testtest testtest testtest test</p>
+        <showcaseItem />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import showcaseItem from '@/portfolio/top/content_showcase/slots/index.vue'
+
 export default {
   name: 'showcase',
+  components: {
+    showcaseItem
+  },
   data: () => {
     return {
       isActive: false,

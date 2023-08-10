@@ -58,7 +58,7 @@
             data-aos-once="true"
             data-aos-easing="ease-out-cubic">
             <p class="portfolio-about__profile-picture-img m-0"><img src="@/assets/img/photography/stock_profile2.jpg" class="w-100"></p>
-            <p class="portfolio-about__profile-picture-txt">Yohei I. /<br><span class="portfolio-about__profile-picture-txt-japanese">I. / 庸平</span></p>
+            <p class="portfolio-about__profile-picture-text">Yohei I. /<br><span class="portfolio-about__profile-picture-text-japanese">I. / 庸平</span></p>
           </div>
           <p class="portfolio-about__profile-title m-0">EXPERTISE /</p>
           <p class="portfolio-about__profile-list w-100 mb-4">adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS, Webpack, GIT / Github, JEST (other testing frameworks), esLint</p>

@@ -1,0 +1,63 @@
+@use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
+
+.portfolio {
+  &-showcase {
+    position: relative;
+
+    &__item {
+      clear: both;
+      padding: 20px;
+
+      &-border {
+        width: 100%;
+        margin: 0 0 20px 0;
+      }
+
+      &-title {
+        font-size: 20px;
+        line-height: 1em;
+        font-family: "Playfair", "Manrope", sans-serif;
+  
+        @media  #{media.$xsmall-and-down} {
+          font-size: 8vw;
+        }
+      }
+  
+      &-text {
+        font-size: 14px;
+        line-height: 1em;
+        font-family: "Roboto", "Manrope", sans-serif;
+      }
+    }
+
+    &__bg {
+      &-light {
+        background: colors.$portfolio_White;
+
+        & .portfolio-showcase__item-border {
+          color: colors.$portfolio_Black;
+          border-top: 1px solid colors.$portfolio_Black;
+        }
+
+        & .portfolio-showcase__item-title,
+        & .portfolio-showcase__item-text {
+          color: colors.$portfolio_Black;
+        }
+      }
+      &-dark {
+        background: colors.$portfolio_Black;
+
+        & .portfolio-showcase__item-border {
+          color: colors.$portfolio_White;
+          border-top: 1px solid colors.$portfolio_White;
+        }
+
+        & .portfolio-showcase__item-title,
+        & .portfolio-showcase__item-text {
+          color: colors.$portfolio_White;
+        }
+      }
+    }
+  }
+}

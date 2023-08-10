@@ -4,7 +4,7 @@
     <Top id="portfolioTop" />
     <Artwork id="portfolioArtwork" />
     <Photography id="portfolioPhotography" />
-    <!-- Showcase id="portfolioShowcase" / -->
+    <Showcase id="portfolioShowcase" />
     <About id="portfolioAbout" />
   </div>
 </template>
@@ -14,10 +14,7 @@ import Menu from '@/portfolio/menu/index.vue'
 import Top from '@/portfolio/top/content_top/index.vue'
 import Artwork from '@/portfolio/top/content_artwork/index.vue'
 import Photography from '@/portfolio/top/content_photography/index.vue'
-/** 
- * NOT READY FOR PROD
- * import Showcase from '@/portfolio/top/content_showcase/index.vue' 
- * **/
+import Showcase from '@/portfolio/top/content_showcase/index.vue' 
 import About from '@/portfolio/top/content_about/index.vue'
 </script>
 
