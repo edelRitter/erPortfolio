@@ -68,19 +68,20 @@
         display: flex;
         align-items: center;
         padding: 24px 0;
-
         &-img {
           max-width: 60px;
           border-radius: 100px;
           overflow: hidden;
         }
 
-        &-txt {
-          margin: 0 0 0 12px;
-          font-size: 12px;
+        &-text {
+          margin: 0 0 0 20px;
+          line-height: 1em;
+          font-size: 16px;
           font-family: "Playfair", "Manrope", sans-serif;
 
           &-japanese {
+            font-size: 12px;
             font-family: 'Noto Serif JP', serif;
           }
         }
