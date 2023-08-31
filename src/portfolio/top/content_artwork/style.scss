@@ -79,7 +79,7 @@
       height: calc(100% - 24px);
       margin: 12px 0 0 0;
       padding: 12px;
-      border-radius: 12px;
+      border-radius: 8px;
       color: colors.$portfolio_White;
       background: colors.$black;
 
@@ -101,7 +101,7 @@
       background: colors.$portfolio_Black;
 
       &-item {
-        border-radius: 12px;
+        border-radius: 8px;
         overflow: hidden;
         cursor: url(/portfolio/src/assets/img/icons/cursor_icon.svg), auto;
       }

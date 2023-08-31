@@ -164,14 +164,38 @@
         &-close {
           display: none;
           position: fixed;
-          bottom: 0;
-          width: 100%;
-          font-size: 24px;
-          letter-spacing: -0.05em;
-          text-align: center;
-          font-family: "Playfair", "Manrope", sans-serif;
+          bottom: 8px;
+          left: 8px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
           color: colors.$portfolio_Black;
           background: colors.$portfolio_Yellow;
+
+          &-btn {
+            position: absolute;
+            display: inline-block;
+            top: 20px;
+            left: 11px;
+            z-index: 3;
+        
+            &::before, 
+            &::after{
+              content: '';
+              position: absolute;
+              width: 18px;
+              height: 1px;
+              background: colors.$portfolio_Black;
+            }
+        
+            &::before {
+              transform: rotate(45deg)
+            }
+            
+            &::after{
+              transform: rotate(-45deg)
+            }
+          }
         }
 
         &-list {
