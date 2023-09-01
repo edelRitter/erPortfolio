@@ -15,6 +15,16 @@ function onDomReady() {
 }
 document.addEventListener('DOMContentLoaded', onDomReady)
 
+const imagePaths = [];
+Object.values(import.meta.glob("./src/assets/img/*.jpg", { eager: true })).forEach(
+  ({ default: path }) => {
+    const url = new URL(path, import.meta.url);
+    const data = {
+      path: url.pathname,
+    };
+    imagePaths.push(data);
+  }
+);
 /** Mount APP */
 createApp(App)
   .use(AOS.init())
