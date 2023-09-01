@@ -2,8 +2,8 @@
   {
     "id": "1",
     "bg": "dark",
-    "imageRough": "/img/illustration/arknights_ajimu.png",
-    "image": "/img/illustration/arknights_ajimu.png",
+    "imageRough": "./img/illustration/arknights_ajimu.png",
+    "image": "./img/illustration/arknights_ajimu.png",
     "type": "artwork",
     "title": "arknights / angelina",
     "description": "Cover for artbook of arknights fan event in Japan xxxx. Created the illustration and design in 2023 via photoshop. Used wacom tablet intuos for roughs, sketch, coloring.\nAngelina is a supporter operator working under Rhodes Island of the game Arknights."
@@ -11,7 +11,7 @@
   {
     "id": "2",
     "bg": "light",
-    "image": "/img/illustration/arknights_ajimu.png",
+    "image": "./img/illustration/arknights_ajimu.png",
     "type": "artwork",
     "title": "arknights / angelina",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
