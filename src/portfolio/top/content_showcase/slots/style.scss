@@ -8,26 +8,42 @@
     &__item {
       clear: both;
       padding: 20px;
+      background: colors.$portfolio_Black;
 
       &-border {
         width: 100%;
         margin: 0 0 20px 0;
+        color: colors.$portfolio_White;
+        border-top: 1px solid colors.$portfolio_White;
       }
 
       &-title {
         font-size: 20px;
         line-height: 1em;
         font-family: "Playfair", "Manrope", sans-serif;
+        color: colors.$portfolio_White;
   
         @media  #{media.$xsmall-and-down} {
           font-size: 8vw;
         }
       }
+
+      &-img {
+        line-height: 0;
+
+        &--rough {
+          line-height: 0;
+          margin: 0 0 4px 0;
+        }
+      }
   
       &-text {
+        margin-bottom: 40px;
         font-size: 14px;
-        line-height: 1em;
+        line-height: 1.2em;
+        white-space: pre-line;
         font-family: "Roboto", "Manrope", sans-serif;
+        color: colors.$portfolio_White;
       }
     }
 
@@ -43,19 +59,6 @@
         & .portfolio-showcase__item-title,
         & .portfolio-showcase__item-text {
           color: colors.$portfolio_Black;
-        }
-      }
-      &-dark {
-        background: colors.$portfolio_Black;
-
-        & .portfolio-showcase__item-border {
-          color: colors.$portfolio_White;
-          border-top: 1px solid colors.$portfolio_White;
-        }
-
-        & .portfolio-showcase__item-title,
-        & .portfolio-showcase__item-text {
-          color: colors.$portfolio_White;
         }
       }
     }

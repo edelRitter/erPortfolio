@@ -1,14 +1,22 @@
 <template>
   <section class="portfolio-artwork">
-    <div
-      class="portfolio-artwork__title"
-      data-aos="fade-right"
-      data-aos-duration="1200"
-      data-aos-offset="80"
-      data-aos-easing="ease-out-cubic"
-      data-aos-once="true">
+    <div class="portfolio-artwork__scroll">
+      <div class="portfolio-artwork__scroll-text">
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+      </div>
+      <div class="portfolio-artwork__scroll-text">
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+      </div>
+    </div>
+    <div class="portfolio-artwork__title">
       <div class="portfolio-artwork__title-border">
-        <h2 class="portfolio-artwork__title-text">SELECTED / <span class="portfolio-artwork__title-text-sub">WORKS</span></h2>
+        <h2 class="portfolio-artwork__title-text">showcase of all / <span class="portfolio-artwork__title-text-sub">WORKS</span></h2>
       </div>
     </div>
     <div class="row no-gutters">
@@ -78,12 +86,7 @@
 import { ref } from 'vue'
 
 import Modal from '@/components/ui/modal/index.vue';
-
-import hibiscus from '@/assets/img/illustration/arknights_hibiscus.png';
-import specter from '@/assets/img/illustration/arknights_specter.png';
-import w from '@/assets/img/illustration/arknights_w.png';
-import penance from '@/assets/img/illustration/arknights_penance.png';
-import ajimu from '@/assets/img/illustration/arknights_ajimu.png';
+import artworkJson from './artwork_data.json'
 
 export default {
   name: 'Artwork',
@@ -94,38 +97,8 @@ export default {
     const modalStatus = ref('');
     const modalImage = ref('');
 
-    const items = [
-      {
-        id: '1',
-        image: hibiscus,
-        type: 'artwork',
-        title: 'arknights / hibiscus',
-      },
-      {
-        id: '2',
-        image: specter,
-        type: 'artwork',
-        title: 'arknights / specter',
-      },
-      {
-        id: '3',
-        image: w,
-        type: 'artwork',
-        title: 'arknights / W',
-      },
-      {
-        id: '4',
-        image: penance,
-        type: 'artwork',
-        title: 'arknights / penance',
-      },
-      {
-        id: '5',
-        image: ajimu,
-        type: 'artwork',
-        title: 'arknights / angelina',
-      },
-    ]
+    const items = artworkJson
+
     return { 
       items,
       modalStatus,

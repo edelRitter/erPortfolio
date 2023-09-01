@@ -16,7 +16,6 @@
   animation: $animations;
 }
 
-
 @mixin keyframes($animationName) {
   @-webkit-keyframes #{$animationName} {
     @content;
@@ -62,6 +61,15 @@
   }
 }
 
+@keyframes animate_text {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
 .portfolio {
   &-showcase {
     position: relative;
@@ -69,13 +77,29 @@
     &__all {
       width: 100%;
 
+      &-scroll {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        white-space: nowrap;
+
+        &-text {
+          font-size: 80px;
+          font-weight: 700;
+          letter-spacing: -0.04em;
+          color: colors.$portfolio_Black;
+          font-family: "Roboto", "Manrope", sans-serif;
+          animation: animate_text 18s linear infinite;
+        }
+      }
+
       &-wrap {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
         align-content: center;
-        padding: 20px;
+        padding: 0 20px 20px 20px;
       }
 
       &-main {
@@ -112,6 +136,7 @@
       &.is-active {
         position: fixed;
         display: flex;
+        overflow-y: scroll;
         z-index: 5;
       }
 
@@ -164,21 +189,44 @@
         &-close {
           display: none;
           position: fixed;
-          bottom: 0;
-          width: 100%;
-          font-size: 24px;
-          letter-spacing: -0.05em;
-          text-align: center;
-          font-family: "Playfair", "Manrope", sans-serif;
+          bottom: 8px;
+          left: 8px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
           color: colors.$portfolio_Black;
           background: colors.$portfolio_Yellow;
+
+          &-btn {
+            position: absolute;
+            display: inline-block;
+            top: 20px;
+            left: 11px;
+            z-index: 3;
+        
+            &::before, 
+            &::after{
+              content: '';
+              position: absolute;
+              width: 18px;
+              height: 1px;
+              background: colors.$portfolio_Black;
+            }
+        
+            &::before {
+              transform: rotate(45deg)
+            }
+            
+            &::after{
+              transform: rotate(-45deg)
+            }
+          }
         }
 
         &-list {
           display: flex;
           flex-direction: column;
           height: 100%;
-          padding: 0 0 20px 0;
           overflow-y: scroll;
           color: colors.$portfolio_Black;
           background: colors.$portfolio_White;
