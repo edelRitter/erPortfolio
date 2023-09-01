@@ -1,15 +1,28 @@
 <template>
   <section class="portfolio-showcase">
     <div class="portfolio-showcase__all">
+      <div class="portfolio-showcase__all-scroll">
+        <div class="portfolio-showcase__all-scroll-text">
+          <span>EXPLORE&nbsp;</span>
+          <span>EXPLORE&nbsp;</span>
+          <span>EXPLORE&nbsp;</span>
+          <span>EXPLORE&nbsp;</span>
+        </div>
+        <div class="portfolio-showcase__all-scroll-text">
+          <span>EXPLORE&nbsp;</span>
+          <span>EXPLORE&nbsp;</span>
+          <span>EXPLORE&nbsp;</span>
+          <span>EXPLORE&nbsp;</span>
+        </div>
+      </div>
       <div class="portfolio-showcase__all-wrap">
         <div class="portfolio-showcase__all-main" @click="toggleShowcase">
-          <p class="portfolio-showcase__all-text m-0">ALL WORKS / SHOW ALL &nbsp;</p>
+          <p class="portfolio-showcase__all-text m-0">ALL WORKS / &nbsp;</p>
           <p
             class="portfolio-showcase__all-img mb-1"
             data-aos="fade"
             data-aos-duration="600"
-            data-aos-offset="200"
-            data-aos-delay="400"
+            data-aos-delay="200"
             data-aos-easing="ease-out-cubic">
             <img class="w-100" src="@/assets/img/icons/cursor_icon.svg">
           </p>

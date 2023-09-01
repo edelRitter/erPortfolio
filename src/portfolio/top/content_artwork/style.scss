@@ -24,6 +24,23 @@
       }
     }
 
+    &__scroll {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      white-space: nowrap;
+      background: colors.$portfolio_White;
+
+      &-text {
+        font-size: 80px;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        color: colors.$portfolio_Black;
+        font-family: "Roboto", "Manrope", sans-serif;
+        animation: animate_text 22s linear infinite;
+      }
+    }
+
     &__title {
       position: absolute;
       display: flex;
@@ -33,7 +50,7 @@
       top: 50%;
       left: 5%;
       transform: translate(-5%, -50%);
-      padding: 20px;
+      padding: 0 20px 20px 20px;
       background: colors.$portfolio_White;
       z-index: 1;
 
@@ -145,4 +162,13 @@
 .modal-fade-enter-active,
 .modal-fade-leave-active {
   transition: opacity .5s ease;
+}
+
+@keyframes animate_text {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
 }

@@ -1,12 +1,20 @@
 <template>
   <section class="portfolio-artwork">
-    <div
-      class="portfolio-artwork__title"
-      data-aos="fade-right"
-      data-aos-duration="1200"
-      data-aos-offset="80"
-      data-aos-easing="ease-out-cubic"
-      data-aos-once="true">
+    <div class="portfolio-artwork__scroll">
+      <div class="portfolio-artwork__scroll-text">
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+      </div>
+      <div class="portfolio-artwork__scroll-text">
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+        <span>SHOWCASE&nbsp;</span>
+      </div>
+    </div>
+    <div class="portfolio-artwork__title">
       <div class="portfolio-artwork__title-border">
         <h2 class="portfolio-artwork__title-text">SELECTED / <span class="portfolio-artwork__title-text-sub">WORKS</span></h2>
       </div>
