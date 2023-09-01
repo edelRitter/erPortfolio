@@ -2,7 +2,7 @@
   <section class="portfolio-about">
     <div class="row no-gutters">
       <div class="col-12">
-        <p class="m-0"><img class="w-100" src="@/assets/img/photography/stock_profile.jpg"></p>
+        <p class="m-0"><img class="w-100" src="/img/photography/stock_profile.jpg"></p>
       </div>
       <div class="col-12 col-md-6">
         <div class="portfolio-about__title">
@@ -57,7 +57,7 @@
             data-aos-delay="800"
             data-aos-once="true"
             data-aos-easing="ease-out-cubic">
-            <p class="portfolio-about__profile-picture-img m-0"><img src="@/assets/img/photography/stock_profile2.jpg" class="w-100"></p>
+            <p class="portfolio-about__profile-picture-img m-0"><img src="/img/photography/stock_profile2.jpg" class="w-100"></p>
             <p class="portfolio-about__profile-picture-text">Yohei I. /<br><span class="portfolio-about__profile-picture-text-japanese">I. / 庸平</span></p>
           </div>
           <p class="portfolio-about__profile-title m-0">EXPERTISE /</p>
@@ -87,7 +87,7 @@
             data-aos-offset="80"
             data-aos-delay="400"
             data-aos-easing="ease-out-cubic">
-            <img class="portfolio-about__profile-logoimg" src="@/assets/img/illustration/logo_edelRitter.png">
+            <img class="portfolio-about__profile-logoimg" src="/img/illustration/logo_edelRitter.png">
           </p>
         </div>
       </div>

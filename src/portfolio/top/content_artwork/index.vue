@@ -23,7 +23,7 @@
       <div class="col-12">
         <div class="portfolio-artwork__icon">
           <p class="portfolio-artwork__icon-text text-center m-0">illustration / photography works</p>
-          <p class="portfolio-artwork__icon-img text-center m-0"><img src="@/assets/img/icons/arrow_icon.svg"></p>
+          <p class="portfolio-artwork__icon-img text-center m-0"><img src="/img/icons/arrow_icon.svg"></p>
         </div>
       </div>
       <div class="col-12 col-md-4">

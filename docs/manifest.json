@@ -5,22 +5,7 @@
   },
   "index.html": {
     "assets": [
-      "img/twitter_icon.svg",
-      "img/discord_icon.svg",
-      "img/pixiv_icon.svg",
-      "img/github_icon.svg",
-      "video/teamlab_video1.mp4",
-      "img/arrow_icon.svg",
-      "img/teamlab_1.png",
-      "img/teamlab_2.png",
-      "img/teamlab_3.png",
-      "img/teamlab_4.jpg",
-      "img/teamlab_5.jpg",
-      "img/teamlab_6.jpg",
-      "img/cursor_icon.svg",
-      "img/stock_profile.jpg",
-      "img/stock_profile2.jpg",
-      "img/logo_edelRitter.png"
+      "video/teamlab_video1.mp4"
     ],
     "css": [
       "css/index.css"
@@ -28,66 +13,6 @@
     "file": "js/index.js",
     "isEntry": true,
     "src": "index.html"
-  },
-  "src/assets/img/icons/arrow_icon.svg": {
-    "file": "img/arrow_icon.svg",
-    "src": "src/assets/img/icons/arrow_icon.svg"
-  },
-  "src/assets/img/icons/cursor_icon.svg": {
-    "file": "img/cursor_icon.svg",
-    "src": "src/assets/img/icons/cursor_icon.svg"
-  },
-  "src/assets/img/icons/discord_icon.svg": {
-    "file": "img/discord_icon.svg",
-    "src": "src/assets/img/icons/discord_icon.svg"
-  },
-  "src/assets/img/icons/github_icon.svg": {
-    "file": "img/github_icon.svg",
-    "src": "src/assets/img/icons/github_icon.svg"
-  },
-  "src/assets/img/icons/pixiv_icon.svg": {
-    "file": "img/pixiv_icon.svg",
-    "src": "src/assets/img/icons/pixiv_icon.svg"
-  },
-  "src/assets/img/icons/twitter_icon.svg": {
-    "file": "img/twitter_icon.svg",
-    "src": "src/assets/img/icons/twitter_icon.svg"
-  },
-  "src/assets/img/illustration/logo_edelRitter.png": {
-    "file": "img/logo_edelRitter.png",
-    "src": "src/assets/img/illustration/logo_edelRitter.png"
-  },
-  "src/assets/img/photography/stock_profile.jpg": {
-    "file": "img/stock_profile.jpg",
-    "src": "src/assets/img/photography/stock_profile.jpg"
-  },
-  "src/assets/img/photography/stock_profile2.jpg": {
-    "file": "img/stock_profile2.jpg",
-    "src": "src/assets/img/photography/stock_profile2.jpg"
-  },
-  "src/assets/img/photography/teamlab_1.png": {
-    "file": "img/teamlab_1.png",
-    "src": "src/assets/img/photography/teamlab_1.png"
-  },
-  "src/assets/img/photography/teamlab_2.png": {
-    "file": "img/teamlab_2.png",
-    "src": "src/assets/img/photography/teamlab_2.png"
-  },
-  "src/assets/img/photography/teamlab_3.png": {
-    "file": "img/teamlab_3.png",
-    "src": "src/assets/img/photography/teamlab_3.png"
-  },
-  "src/assets/img/photography/teamlab_4.jpg": {
-    "file": "img/teamlab_4.jpg",
-    "src": "src/assets/img/photography/teamlab_4.jpg"
-  },
-  "src/assets/img/photography/teamlab_5.jpg": {
-    "file": "img/teamlab_5.jpg",
-    "src": "src/assets/img/photography/teamlab_5.jpg"
-  },
-  "src/assets/img/photography/teamlab_6.jpg": {
-    "file": "img/teamlab_6.jpg",
-    "src": "src/assets/img/photography/teamlab_6.jpg"
   },
   "src/assets/video/teamlab_video1.mp4": {
     "file": "video/teamlab_video1.mp4",

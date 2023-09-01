@@ -24,7 +24,7 @@
             data-aos-duration="600"
             data-aos-delay="200"
             data-aos-easing="ease-out-cubic">
-            <img class="w-100" src="@/assets/img/icons/cursor_icon.svg">
+            <img class="w-100" src="/img/icons/cursor_icon.svg">
           </p>
         </div>
       </div>
