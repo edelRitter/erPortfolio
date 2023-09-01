@@ -65,12 +65,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import teamLab1 from '@/assets/img/photography/teamlab_1.png';
-import teamLab2 from '@/assets/img/photography/teamlab_2.png';
-import teamLab3 from '@/assets/img/photography/teamlab_3.png';
-import teamLab4 from '@/assets/img/photography/teamlab_4.jpg';
-import teamLab5 from '@/assets/img/photography/teamlab_5.jpg';
-import teamLab6 from '@/assets/img/photography/teamlab_6.jpg';
+import photoJson from './photography_data.json'
 
 export default {
   name: 'Photography',
@@ -82,44 +77,7 @@ export default {
   setup() {
     const modalStatus = ref('');
     const modalImage = ref('');
-    const items = [
-      {
-        id: '1',
-        image: teamLab1,
-        type: 'photo',
-        title: 'teamlab / exhibit',
-      },
-      {
-        id: '2',
-        image: teamLab2,
-        type: 'photo',
-        title: 'teamlab / exhibit',
-      },
-      {
-        id: '3',
-        image: teamLab3,
-        type: 'photo',
-        title: 'teamlab / exhibit',
-      },
-      {
-        id: '4',
-        image: teamLab4,
-        type: 'photo',
-        title: 'teamlab / exhibit',
-      },
-      {
-        id: '5',
-        image: teamLab5,
-        type: 'photo',
-        title: 'teamlab / exhibit',
-      },
-      {
-        id: '6',
-        image: teamLab6,
-        type: 'photo',
-        title: 'teamlab / exhibit',
-      },
-    ]
+    const items = photoJson;
 
     const onSwiper = (swiper) => {
       console.log(swiper);
