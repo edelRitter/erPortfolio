@@ -1,37 +1,37 @@
 [
   {
     "id": "1",
-    "image": "/img/photography/teamlab_1.png",
+    "image": "./img/photography/teamlab_1.png",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "2",
-    "image": "/img/photography/teamlab_2.png",
+    "image": "./img/photography/teamlab_2.png",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "3",
-    "image": "/img/photography/teamlab_3.png",
+    "image": "./img/photography/teamlab_3.png",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "4",
-    "image": "/img/photography/teamlab_4.jpg",
+    "image": "./img/photography/teamlab_4.jpg",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "5",
-    "image": "/img/photography/teamlab_5.jpg",
+    "image": "./img/photography/teamlab_5.jpg",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "6",
-    "image": "/img/photography/teamlab_6.jpg",
+    "image": "./img/photography/teamlab_6.jpg",
     "type": "photo",
     "title": "teamlab / exhibit"
   }
