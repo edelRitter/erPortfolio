@@ -6,6 +6,9 @@
       <div class="portfolio-showcase__item-border">
         {{ data.id }}
       </div>
+      <p class="portfolio-showcase__item-img--rough">
+        <img :src="data.imageRough" class="w-100">
+      </p>
       <p class="portfolio-showcase__item-img">
         <img :src="data.image" class="w-100">
       </p>

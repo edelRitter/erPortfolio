@@ -17,7 +17,7 @@
       </div>
       <div class="portfolio-showcase__all-wrap">
         <div class="portfolio-showcase__all-main" @click="toggleShowcase">
-          <p class="portfolio-showcase__all-text m-0">ALL WORKS / &nbsp;</p>
+          <p class="portfolio-showcase__all-text m-0">in depth / SELECTED WORKS&nbsp;</p>
           <p
             class="portfolio-showcase__all-img mb-1"
             data-aos="fade"

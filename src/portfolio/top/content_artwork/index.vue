@@ -16,7 +16,7 @@
     </div>
     <div class="portfolio-artwork__title">
       <div class="portfolio-artwork__title-border">
-        <h2 class="portfolio-artwork__title-text">SELECTED / <span class="portfolio-artwork__title-text-sub">WORKS</span></h2>
+        <h2 class="portfolio-artwork__title-text">showcase of all / <span class="portfolio-artwork__title-text-sub">WORKS</span></h2>
       </div>
     </div>
     <div class="row no-gutters">

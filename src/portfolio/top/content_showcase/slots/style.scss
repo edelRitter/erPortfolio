@@ -27,10 +27,21 @@
           font-size: 8vw;
         }
       }
+
+      &-img {
+        line-height: 0;
+
+        &--rough {
+          line-height: 0;
+          margin: 0 0 4px 0;
+        }
+      }
   
       &-text {
+        margin-bottom: 40px;
         font-size: 14px;
-        line-height: 1em;
+        line-height: 1.2em;
+        white-space: pre-line;
         font-family: "Roboto", "Manrope", sans-serif;
         color: colors.$portfolio_White;
       }
