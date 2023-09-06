@@ -42,5 +42,5 @@ function smoothScroll(target, speed, smooth) {
 }
 
 export function setupSmoothScroll() {
-  new smoothScroll(document,24,12)
+  new smoothScroll(document,30,16)
 }
