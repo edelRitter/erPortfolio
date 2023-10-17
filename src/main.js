@@ -15,7 +15,5 @@ function onDomReady() {
 }
 document.addEventListener("DOMContentLoaded", onDomReady);
 
-console.log('testing eslint');
-
 /** Mount APP */
 createApp(App).use(AOS.init()).use(MasonryWall).mount("#app");
