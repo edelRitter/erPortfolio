@@ -4,15 +4,13 @@
   "description": "edelRitter personal Portfolio",
   "version": "1.0.0",
   "author": "Yohei isshiki",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "build-storybook": "storybook build",
-    "preview": "vite preview",
-    "lint:precommit": "prettier -l './**/*.{js,jsx,ts,tsx,json,css,scss}'",
-    "prepare": "husky install",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^4.1.0",
@@ -47,18 +45,23 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-storybook": "^0.6.13",
     "eslint-plugin-vue": "^7.16.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.1.1",
     "vite": "^4.4.0",
     "husky": "^8.0.0"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": "npm run lint:precommit"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css}": [
+        "prettier --write",
+        "eslint --fix src/"
+    ]
   }
 }
