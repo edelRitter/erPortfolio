@@ -60,7 +60,7 @@
       "post-merge": "yarn install"
     }
   },
-  "lint-staged": {
+  "lint": {
     "*.{js,vue}": [
       "eslint src --fix",
       "git add"
