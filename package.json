@@ -8,11 +8,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "pre-commit": "lint-staged",
-    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky install"
+    "preview": "vite preview",
+    "lint:precommit": "prettier -l './**/*.{js,jsx,ts,tsx,json,css,scss}'",
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^4.1.0",
@@ -54,7 +54,7 @@
     "husky": "^8.0.0"
   },
   "lint-staged": {
-    "*.js": ["eslint", "prettier --write"]
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": "npm run lint:precommit"
   },
   "husky": {
     "hooks": {
