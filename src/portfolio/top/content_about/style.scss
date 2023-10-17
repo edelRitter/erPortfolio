@@ -1,5 +1,5 @@
-@use '@/assets/scss/_colors.scss' as colors;
-@use '@/assets/scss/_media-queries.scss' as media;
+@use "@/assets/scss/_colors.scss" as colors;
+@use "@/assets/scss/_media-queries.scss" as media;
 
 .portfolio {
   &-about {
@@ -19,8 +19,8 @@
         letter-spacing: -0.04em;
         color: colors.$portfolio_White;
         font-family: "Roboto", "Manrope", sans-serif;
-  
-        @media  #{media.$xsmall-and-down} {
+
+        @media #{media.$xsmall-and-down} {
           font-size: 12vw;
         }
       }
@@ -32,7 +32,7 @@
         color: colors.$portfolio_Gray400;
         font-family: "Playfair", "Manrope", sans-serif;
 
-        @media  #{media.$xsmall-and-down} {
+        @media #{media.$xsmall-and-down} {
           font-size: 6vw;
         }
       }
@@ -44,7 +44,7 @@
       padding: 12px;
       background: colors.$portfolio_White;
 
-      @media  #{media.$xsmall-and-down} {
+      @media #{media.$xsmall-and-down} {
         padding: 20px;
       }
 
@@ -82,7 +82,7 @@
 
           &-japanese {
             font-size: 12px;
-            font-family: 'Noto Serif JP', serif;
+            font-family: "Noto Serif JP", serif;
           }
         }
       }
@@ -112,7 +112,7 @@
       &-sns {
         padding: 80px 0;
 
-        @media  #{media.$xsmall-and-down} {
+        @media #{media.$xsmall-and-down} {
           padding: 40px 0;
         }
       }

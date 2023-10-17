@@ -1,17 +1,21 @@
-import socialNetworking from './index.vue';
+import socialNetworking from "./index.vue";
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 export default {
-  title: 'ui/sns/socialnetworking',
+  title: "ui/sns/socialnetworking",
   component: socialNetworking,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     onClick: {},
     alignment: {
       control: {
-        type: 'select',
+        type: "select",
       },
-      options: ['ui-catalog__sns-left', 'ui-catalog__sns-center', 'ui-catalog__sns-right'],
+      options: [
+        "ui-catalog__sns-left",
+        "ui-catalog__sns-center",
+        "ui-catalog__sns-right",
+      ],
     },
   },
 };
@@ -19,18 +23,18 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/vue/writing-stories/args
 export const Left = {
   args: {
-    alignment: 'ui-catalog__sns-left',
+    alignment: "ui-catalog__sns-left",
   },
 };
 
 export const Center = {
   args: {
-    alignment: 'ui-catalog__sns-center',
+    alignment: "ui-catalog__sns-center",
   },
 };
 
 export const Right = {
   args: {
-    alignment: 'ui-catalog__sns-right',
+    alignment: "ui-catalog__sns-right",
   },
 };

@@ -1,32 +1,42 @@
 # edelRitter Portfolio / showcase
+
 Portfolio site using Vue 3 and Vite for showcasing my selected works.
 
 # edelRitter Portfolio / storybook
+
 Has very basic storybook installed to compile features and components to showcase.
 Currently just a test setup with minimal features.
 
 # Plugins
+
 Currently using [Swiper](https://swiperjs.com/) / [@yeger/vue-masonry-wall](https://vue-masonry-wall.yeger.eu/) / [aos](https://github.com/michalsnik/aos)
 
 Planning on Learning and using [three.js](https://threejs.org/)
 
 ## Project setup
-  ```
-  yarn install
-  ```
-  then :
-  for development environment
-  ```
-  yarn dev
-  ```
-  for build
-  ```
-  yarn build
-  ```
-  for storybook
-  ```
-  yarn storybook
-  ```
+
+```
+yarn install
+```
+
+then :
+for development environment
+
+```
+yarn dev
+```
+
+for build
+
+```
+yarn build
+```
+
+for storybook
+
+```
+yarn storybook
+```
 
 # Vue 3 + Vite
 

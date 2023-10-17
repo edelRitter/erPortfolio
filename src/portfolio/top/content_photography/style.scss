@@ -1,5 +1,5 @@
-@use '@/assets/scss/_colors.scss' as colors;
-@use '@/assets/scss/_media-queries.scss' as media;
+@use "@/assets/scss/_colors.scss" as colors;
+@use "@/assets/scss/_media-queries.scss" as media;
 
 .portfolio {
   &-photography {
@@ -12,7 +12,7 @@
     &__wrapper {
       padding: 40px 12px;
 
-      @media  #{media.$xsmall-and-down} {
+      @media #{media.$xsmall-and-down} {
         padding: 20px 12px;
       }
     }
@@ -27,8 +27,8 @@
         line-height: 0.9em;
         letter-spacing: -0.04em;
         font-family: "Roboto", "Manrope", sans-serif;
-  
-        @media  #{media.$xsmall-and-down} {
+
+        @media #{media.$xsmall-and-down} {
           font-size: 12vw;
         }
       }
@@ -64,12 +64,12 @@
         font-size: 11px;
         font-family: "Raleway", "Manrope", sans-serif;
       }
-  
+
       &-title {
         font-size: 11px;
         font-family: "Roboto", "Manrope", sans-serif;
 
-        @media  #{media.$tiny-only} {
+        @media #{media.$tiny-only} {
           width: 50%;
         }
       }

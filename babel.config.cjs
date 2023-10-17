@@ -1,12 +1,12 @@
 module.exports = {
   presets: [
     [
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
-        'modules': 'false',
-        'useBuiltIns': 'usage',
-        'targets': '> 0.25%, not dead',
-      }
-    ]
+        modules: "false",
+        useBuiltIns: "usage",
+        targets: "> 0.25%, not dead",
+      },
+    ],
   ],
 };

@@ -1,9 +1,9 @@
-@use '@/assets/scss/_colors.scss' as colors;
-@use '@/assets/scss/_media-queries.scss' as media;
+@use "@/assets/scss/_colors.scss" as colors;
+@use "@/assets/scss/_media-queries.scss" as media;
 
 @mixin animation($animate...) {
   $max: length($animate);
-  $animations: '';
+  $animations: "";
   @for $i from 1 through $max {
     $animations: #{$animations + nth($animate, $i)};
     @if $i < $max {
@@ -38,7 +38,8 @@
 }
 
 @include keyframes(expand) {
-  0% {}
+  0% {
+  }
   25% {
     -webkit-clip-path: polygon(0vw 0vh, 55vw 40vh, 55vw 58vh, 45vw 58vh);
     clip-path: polygon(0vw 0vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
@@ -105,7 +106,7 @@
       &-main {
         display: flex;
         align-items: center;
-        flex-grow:1;
+        flex-grow: 1;
         padding: 8px 0;
         color: colors.$portfolio_Black;
         background: colors.$portfolio_White;
@@ -162,9 +163,14 @@
             height: 100%;
             fill: colors.$portfolio_Yellow;
             stroke: 0;
-            -webkit-clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+            -webkit-clip-path: polygon(
+              45vw 40vh,
+              55vw 40vh,
+              55vw 60vh,
+              45vw 60vh
+            );
             clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
-            @include animation('expand 0.7s ease-in forwards');
+            @include animation("expand 0.7s ease-in forwards");
           }
         }
       }
@@ -175,7 +181,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease-in 0.5s;
-  
+
         &.is-active {
           position: fixed;
           top: 0;
@@ -203,22 +209,22 @@
             top: 20px;
             left: 11px;
             z-index: 3;
-        
-            &::before, 
-            &::after{
-              content: '';
+
+            &::before,
+            &::after {
+              content: "";
               position: absolute;
               width: 18px;
               height: 1px;
               background: colors.$portfolio_Black;
             }
-        
+
             &::before {
-              transform: rotate(45deg)
+              transform: rotate(45deg);
             }
-            
-            &::after{
-              transform: rotate(-45deg)
+
+            &::after {
+              transform: rotate(-45deg);
             }
           }
         }

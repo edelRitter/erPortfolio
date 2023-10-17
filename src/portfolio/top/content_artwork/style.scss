@@ -1,5 +1,5 @@
-@use '@/assets/scss/_colors.scss' as colors;
-@use '@/assets/scss/_media-queries.scss' as media;
+@use "@/assets/scss/_colors.scss" as colors;
+@use "@/assets/scss/_media-queries.scss" as media;
 
 .portfolio {
   &-artwork {
@@ -7,7 +7,7 @@
     width: 100%;
     min-height: 100vh;
     background: colors.$portfolio_Black;
-    
+
     &__icon {
       padding: 12px 0;
       font-size: 10px;
@@ -54,11 +54,11 @@
       background: colors.$portfolio_White;
       z-index: 1;
 
-      @media  #{media.$small-only} {
+      @media #{media.$small-only} {
         display: none;
       }
 
-      @media  #{media.$xsmall-and-down} {
+      @media #{media.$xsmall-and-down} {
         position: relative;
         width: 100%;
         height: auto;
@@ -100,11 +100,11 @@
       color: colors.$portfolio_White;
       background: colors.$black;
 
-      @media  #{media.$small-only} {
+      @media #{media.$small-only} {
         display: none;
       }
 
-      @media  #{media.$xsmall-and-down} {
+      @media #{media.$xsmall-and-down} {
         display: none;
       }
 
@@ -126,27 +126,27 @@
       &-img {
         margin: 0;
       }
-  
+
       &-text {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0;
-        padding : 8px;
+        padding: 8px;
         color: colors.$portfolio_White;
         background: colors.$black;
       }
-  
+
       &-type {
         font-size: 11px;
         font-family: "Raleway", "Manrope", sans-serif;
       }
-  
+
       &-title {
         font-size: 11px;
         font-family: "Roboto", "Manrope", sans-serif;
 
-        @media  #{media.$tiny-only} {
+        @media #{media.$tiny-only} {
           width: 50%;
         }
       }
@@ -161,7 +161,7 @@
 
 .modal-fade-enter-active,
 .modal-fade-leave-active {
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 }
 
 @keyframes animate_text {
