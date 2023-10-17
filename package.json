@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "prepare": "husky install",
+    "lint-staged": "lint-staged",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -44,17 +45,21 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-storybook": "^0.6.13",
     "eslint-plugin-vue": "^7.16.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^15.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.1.1",
     "vite": "^4.4.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css}": [
-      "prettier --write",
-      "eslint --fix src/"
+    "*.@(ts|tsx|vue)": [
+      "yarn lint"
     ]
   }
 }
