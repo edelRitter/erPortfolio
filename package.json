@@ -10,7 +10,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "pre-commit": "lint-staged",
-    "lint": "yarn eslint src",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky install"

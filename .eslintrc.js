@@ -11,6 +11,7 @@ module.exports = {
   extends: [
     "plugin:vue/essential",
     "airbnb-base",
+    'prettier',
     "plugin:storybook/recommended",
   ],
   parserOptions: {
