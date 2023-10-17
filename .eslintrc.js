@@ -28,6 +28,10 @@ module.exports = {
     "quotes": [2, "single", { "avoidEscape": true }],
     "no-unused-expressions": OFF,
     "array-callback-return": OFF,
+    "prettier/prettier": [
+      "error",
+      {"singleQuote": true}
+    ]
   },
   settings: {
     "import/resolver": {
