@@ -54,6 +54,12 @@
     "vite": "^4.4.0",
     "husky": "^8.0.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-merge": "yarn install"
+    }
+  },
   "lint-staged": {
     "*.{js,vue}": [
       "eslint src --fix",
