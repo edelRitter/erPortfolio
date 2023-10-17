@@ -10,7 +10,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "pre-commit": "lint-staged",
-    "lint": "yarn eslint src",
+    "lint": "vue-cli-service lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky install"
@@ -56,13 +56,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint",
+      "pre-commit": "lint-staged",
       "post-merge": "yarn install"
     }
   },
-  "lint": {
+  "lint-staged": {
     "*.{js,vue}": [
-      "eslint src --fix",
+      "vue-cli-service lint",
       "git add"
     ]
   }
