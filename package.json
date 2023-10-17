@@ -7,11 +7,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
+    "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "build-storybook": "storybook build"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^4.1.0",
@@ -58,8 +57,9 @@
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx|vue)": [
-      "yarn lint"
+    "src/**/*.{js,jsx,ts,tsx,json,css}": [
+        "prettier --write",
+        "eslint --fix src/"
     ]
   }
 }
