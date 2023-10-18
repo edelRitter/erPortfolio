@@ -51,7 +51,7 @@
     "vite": "^4.4.0"
   },
   "lint-staged": {
-    "**/*": "yarn format",
-    "**/*.{js,vue}": "yarn lint-staged"
+    "./src/**/*": "yarn format",
+    "./src/**/*.{js,vue}": "yarn lint-staged"
   }
 }

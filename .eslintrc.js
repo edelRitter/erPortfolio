@@ -1,25 +1,21 @@
+const path = require('path');
+
+const OFF = 0;
+const WARN = 1;
+const ERROR = 2;
+
 module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:vue/vue3-essential', 'prettier'],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
-  ],
+  extends: ['plugin:vue/essential', 'airbnb-base'],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['vue'],
+  plugins: ['vue', 'jest'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? WARN : OFF,
     'no-debugger': process.env.NODE_ENV === 'production' ? ERROR : OFF,
@@ -28,5 +24,13 @@ module.exports = {
     'no-new': OFF,
     'no-unused-expressions': OFF,
     'array-callback-return': OFF,
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@', path.join(__dirname, 'src')]],
+        extensions: ['.ts', '.js', '.jsx', '.json', '.vue'],
+      },
+    },
   },
 };
