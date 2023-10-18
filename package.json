@@ -39,12 +39,8 @@
     "@vue/compiler-sfc": "^3.3.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-ignore-import": "^1.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-storybook": "^0.6.13",
-    "eslint-plugin-vue": "^7.16.0",
+    "eslint": "^8.51.0",
+    "eslint-plugin-vue": "^9.17.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.0.1",
     "react": "^18.2.0",
@@ -58,9 +54,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css}": [
-        "prettier --write",
-        "eslint --fix src/"
+    "*.{js,vue}": [
+      "eslint src/ --fix --ignore-path .gitignore",
+      "prettier --write src/ --ignore-path .gitignore"
     ]
   }
 }
