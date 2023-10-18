@@ -41,18 +41,16 @@
     "babel-plugin-ignore-import": "^1.1.0",
     "eslint": "^8.51.0",
     "eslint-plugin-vue": "^9.17.0",
-    "husky": "^8.0.0",
     "lint-staged": "^15.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sort-package-json": "^2.6.0",
     "storybook": "^7.1.1",
     "vite": "^4.4.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+  "pre-commit": [
+    "lint-staged"
+  ],
   "lint-staged": {
     "*.{js,vue}": [
       "eslint src/ --fix --ignore-path .gitignore",
