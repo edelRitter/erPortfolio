@@ -1,5 +1,5 @@
-@use "@/assets/scss/_colors.scss" as colors;
-@use "@/assets/scss/_media-queries.scss" as media;
+@use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
 
 .portfolio {
   &-top {
@@ -44,14 +44,14 @@
     &__title {
       font-size: 32px;
       letter-spacing: -0.05em;
-      font-family: "Playfair", "Roboto", "Manrope", sans-serif;
+      font-family: 'Playfair', 'Roboto', 'Manrope', sans-serif;
     }
 
     &__subtitle {
       font-size: 8vw;
       line-height: 0.8em;
       letter-spacing: -0.04em;
-      font-family: "Roboto", "Manrope", sans-serif;
+      font-family: 'Roboto', 'Manrope', sans-serif;
 
       @media #{media.$xsmall-and-down} {
         font-size: 12vw;

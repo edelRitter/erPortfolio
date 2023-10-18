@@ -1,4 +1,4 @@
-@use "@/assets/scss/_media-queries.scss" as media;
+@use '@/assets/scss/_media-queries.scss' as media;
 
 .portfolio-modal {
   position: fixed;
@@ -64,7 +64,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 18px;
       height: 1px;
@@ -90,7 +90,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 18px;
       height: 1px;

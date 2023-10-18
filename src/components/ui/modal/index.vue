@@ -16,13 +16,13 @@
 
 <script>
 export default {
-  name: "Modal",
+  name: 'Modal',
   props: {
     status: String,
   },
   methods: {
     closeModal() {
-      this.$emit("modalOff");
+      this.$emit('modalOff');
     },
   },
 };
@@ -30,5 +30,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "./style.scss";
+@import './style.scss';
 </style>

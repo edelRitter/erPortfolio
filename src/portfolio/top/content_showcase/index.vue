@@ -58,10 +58,10 @@
 </template>
 
 <script>
-import showcaseItem from "@/portfolio/top/content_showcase/slots/index.vue";
+import showcaseItem from '@/portfolio/top/content_showcase/slots/index.vue';
 
 export default {
-  name: "showcase",
+  name: 'showcase',
   components: {
     showcaseItem,
   },
@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     toggleShowcase() {
-      document.body.classList.toggle("is-fixed");
+      document.body.classList.toggle('is-fixed');
       this.isActive = !this.isActive;
     },
   },
@@ -80,5 +80,5 @@ export default {
 </script>
 
 <style>
-@import "./style.scss";
+@import './style.scss';
 </style>

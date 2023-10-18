@@ -24,22 +24,22 @@
 </template>
 
 <script>
-import { reactive, computed } from "vue";
+import { reactive, computed } from 'vue';
 
 export default {
-  name: "socialNetworking",
+  name: 'socialNetworking',
   props: {
     alignment: {
       type: String,
       validator: function (value) {
-        return ["left", "center", "right"].indexOf(value) !== -1;
+        return ['left', 'center', 'right'].indexOf(value) !== -1;
       },
     },
   },
   setup(props) {
     return {
       classes: computed(() => ({
-        [`${props.alignment || "left"}`]: true,
+        [`${props.alignment || 'left'}`]: true,
       })),
     };
   },
@@ -47,5 +47,5 @@ export default {
 </script>
 
 <style>
-@import "@/components/ui/sns/style.scss";
+@import '@/components/ui/sns/style.scss';
 </style>

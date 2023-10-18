@@ -61,30 +61,30 @@
 
 <script>
 // Import Swiper Vue.js components
-import { ref } from "vue";
-import { Navigation, Pagination, Scrollbar } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/vue";
+import { ref } from 'vue';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
-import Modal from "@/components/ui/modal/index.vue";
+import Modal from '@/components/ui/modal/index.vue';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
-import photoJson from "./photography_data.json";
+import photoJson from './photography_data.json';
 
 export default {
-  name: "Photography",
+  name: 'Photography',
   components: {
     Modal,
     Swiper,
     SwiperSlide,
   },
   setup() {
-    const modalStatus = ref("");
-    const modalImage = ref("");
+    const modalStatus = ref('');
+    const modalImage = ref('');
     const items = photoJson;
 
     const onSwiper = (swiper) => {
@@ -92,7 +92,7 @@ export default {
     };
 
     const onSlideChange = () => {
-      console.log("slide change");
+      console.log('slide change');
     };
 
     return {
@@ -106,7 +106,7 @@ export default {
   },
   methods: {
     showModal(event) {
-      this.modalStatus = "confirmation";
+      this.modalStatus = 'confirmation';
       const photoData = event.target.dataset.photography;
       const itemObject = this.items.filter(
         (res) => res.id.indexOf(photoData) !== -1
@@ -116,13 +116,13 @@ export default {
       return (this.modalImage = itemPhoto);
     },
     closeModal() {
-      this.modalStatus = "";
-      this.modalImage = "";
+      this.modalStatus = '';
+      this.modalImage = '';
     },
   },
 };
 </script>
 
 <style>
-@import "./style.scss";
+@import './style.scss';
 </style>

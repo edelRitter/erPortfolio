@@ -31,10 +31,10 @@
 </template>
 
 <script>
-import socialNetworking from "@/components/ui/sns/index.vue";
+import socialNetworking from '@/components/ui/sns/index.vue';
 
 export default {
-  name: "Menu",
+  name: 'Menu',
   components: {
     socialNetworking,
   },
@@ -43,23 +43,23 @@ export default {
       isActive: false,
       dark: false,
       scrollTop: 0,
-      alignment: "ui-catalog__sns-center",
+      alignment: 'ui-catalog__sns-center',
       navLinks: [
         {
-          text: "TOP",
-          id: "portfolioTop",
+          text: 'TOP',
+          id: 'portfolioTop',
         },
         {
-          text: "ARTWORK",
-          id: "portfolioArtwork",
+          text: 'ARTWORK',
+          id: 'portfolioArtwork',
         },
         {
-          text: "PHOTOGRAPHY",
-          id: "portfolioPhotography",
+          text: 'PHOTOGRAPHY',
+          id: 'portfolioPhotography',
         },
         {
-          text: "ABOUT",
-          id: "portfolioAbout",
+          text: 'ABOUT',
+          id: 'portfolioAbout',
         },
       ],
     };
@@ -71,12 +71,12 @@ export default {
     navScroll(link) {
       const position = document.getElementById(link.id).offsetTop;
       // smooth scroll
-      window.scrollTo({ top: position, behavior: "smooth" });
+      window.scrollTo({ top: position, behavior: 'smooth' });
     },
   },
 };
 </script>
 
 <style>
-@import "./style.scss";
+@import './style.scss';
 </style>

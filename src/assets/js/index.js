@@ -1,7 +1,7 @@
-import { setupSmoothScroll } from "@/assets/js/smoothscroll/index.js";
+import { setupSmoothScroll } from '@/assets/js/smoothscroll/index.js';
 
 function onDomReady() {
   setupSmoothScroll();
 }
 
-document.addEventListener("DOMContentLoaded", onDomReady);
+document.addEventListener('DOMContentLoaded', onDomReady);

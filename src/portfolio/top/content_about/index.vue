@@ -142,21 +142,21 @@
 </template>
 
 <script>
-import socialNetworking from "@/components/ui/sns/index.vue";
+import socialNetworking from '@/components/ui/sns/index.vue';
 
 export default {
-  name: "About",
+  name: 'About',
   components: {
     socialNetworking,
   },
   data() {
     return {
-      alignment: "ui-catalog__sns-center",
+      alignment: 'ui-catalog__sns-center',
     };
   },
 };
 </script>
 
 <style>
-@import "./style.scss";
+@import './style.scss';
 </style>

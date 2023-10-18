@@ -101,19 +101,19 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref } from 'vue';
 
-import Modal from "@/components/ui/modal/index.vue";
-import artworkJson from "./artwork_data.json";
+import Modal from '@/components/ui/modal/index.vue';
+import artworkJson from './artwork_data.json';
 
 export default {
-  name: "Artwork",
+  name: 'Artwork',
   components: {
     Modal,
   },
   setup() {
-    const modalStatus = ref("");
-    const modalImage = ref("");
+    const modalStatus = ref('');
+    const modalImage = ref('');
 
     const items = artworkJson;
 
@@ -125,7 +125,7 @@ export default {
   },
   methods: {
     showModal(event) {
-      this.modalStatus = "confirmation";
+      this.modalStatus = 'confirmation';
       const artworkData = event.target.dataset.artwork;
       const itemObject = this.items.filter(
         (res) => res.id.indexOf(artworkData) !== -1
@@ -137,13 +137,13 @@ export default {
       return (this.modalImage = itemArtwork);
     },
     closeModal() {
-      this.modalStatus = "";
-      this.modalImage = "";
+      this.modalStatus = '';
+      this.modalImage = '';
     },
   },
 };
 </script>
 
 <style>
-@import "./style.scss";
+@import './style.scss';
 </style>

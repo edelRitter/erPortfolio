@@ -24,10 +24,10 @@
 </template>
 
 <script>
-import json from "./showcase_data.json";
+import json from './showcase_data.json';
 
 export default {
-  name: "showcaseItem",
+  name: 'showcaseItem',
   data() {
     return {
       myShowcase: json,
@@ -37,5 +37,5 @@ export default {
 </script>
 
 <style>
-@import "./style.scss";
+@import './style.scss';
 </style>
