@@ -74,6 +74,8 @@ export default {
     toggleShowcase() {
       document.body.classList.toggle('is-fixed');
       this.isActive = !this.isActive;
+
+      'checkig' test stuff; with listseli
     },
   },
 };
