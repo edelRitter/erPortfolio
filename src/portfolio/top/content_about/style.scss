@@ -18,9 +18,9 @@
         line-height: 0.9em;
         letter-spacing: -0.04em;
         color: colors.$portfolio_White;
-        font-family: "Roboto", "Manrope", sans-serif;
-  
-        @media  #{media.$xsmall-and-down} {
+        font-family: 'Roboto', 'Manrope', sans-serif;
+
+        @media #{media.$xsmall-and-down} {
           font-size: 12vw;
         }
       }
@@ -30,9 +30,9 @@
         line-height: 1.1em;
         font-size: 32px;
         color: colors.$portfolio_Gray400;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-family: 'Playfair', 'Manrope', sans-serif;
 
-        @media  #{media.$xsmall-and-down} {
+        @media #{media.$xsmall-and-down} {
           font-size: 6vw;
         }
       }
@@ -44,7 +44,7 @@
       padding: 12px;
       background: colors.$portfolio_White;
 
-      @media  #{media.$xsmall-and-down} {
+      @media #{media.$xsmall-and-down} {
         padding: 20px;
       }
 
@@ -57,7 +57,7 @@
       &-name {
         font-size: 24px;
         line-height: 0.8em;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-family: 'Playfair', 'Manrope', sans-serif;
 
         &-sub {
           color: colors.$portfolio_Gray700;
@@ -78,7 +78,7 @@
           margin: 0 0 0 20px;
           line-height: 1em;
           font-size: 16px;
-          font-family: "Playfair", "Manrope", sans-serif;
+          font-family: 'Playfair', 'Manrope', sans-serif;
 
           &-japanese {
             font-size: 12px;
@@ -98,7 +98,7 @@
 
       &-title {
         font-size: 20px;
-        font-family: "Raleway", "Manrope", sans-serif;
+        font-family: 'Raleway', 'Manrope', sans-serif;
       }
 
       &-list {
@@ -107,12 +107,12 @@
         margin: 0;
         padding: 4px 12px 4px 0;
         font-size: 14px;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-family: 'Playfair', 'Manrope', sans-serif;
       }
       &-sns {
         padding: 80px 0;
 
-        @media  #{media.$xsmall-and-down} {
+        @media #{media.$xsmall-and-down} {
           padding: 40px 0;
         }
       }

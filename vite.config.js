@@ -1,6 +1,6 @@
-import vue from '@vitejs/plugin-vue'
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +10,7 @@ export default defineConfig({
     alias: {
       '~bootstrap': resolve(__dirname, 'node_modules/bootstrap'),
       '@/': `${__dirname}/src/`,
-      '~/': `${__dirname}/public/`
+      '~/': `${__dirname}/public/`,
     },
   },
   css: {
@@ -19,7 +19,7 @@ export default defineConfig({
         additionalData: `$base-dir: '../';`,
       },
     },
-  }, 
+  },
   build: {
     outDir: 'docs/',
     sourcemap: true,
@@ -50,4 +50,4 @@ export default defineConfig({
       },
     },
   },
-})
+});

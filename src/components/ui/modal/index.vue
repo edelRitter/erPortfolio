@@ -4,18 +4,13 @@
       <p class="portfolio-modal__close" @click="closeModal"></p>
       <div class="portfolio-modal__wrap">
         <!-- default view -->
-        <div
-          class="portfolio-modal__opened"
-          v-show="status === 'confirmation'">
-            <slot name="body"> Default body content </slot>
+        <div class="portfolio-modal__opened" v-show="status === 'confirmation'">
+          <slot name="body"> Default body content </slot>
         </div>
         <!-- /default view -->
       </div>
     </div>
-    <div
-      class="portfolio-modal__bg"
-      @click="closeModal">
-    </div>
+    <div class="portfolio-modal__bg" @click="closeModal"></div>
   </div>
 </template>
 

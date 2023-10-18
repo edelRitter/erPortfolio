@@ -8,56 +8,59 @@
           data-aos-duration="1200"
           data-aos-delay="300"
           data-aos-once="true"
-          data-aos-easing="ease-out-cubic">
+          data-aos-easing="ease-out-cubic"
+        >
           DESIGNER /
         </span>
-        <br>
+        <br />
         <span
           class="portfolio-top__subtitle"
           data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="600"
           data-aos-once="true"
-          data-aos-easing="ease-out-cubic">
+          data-aos-easing="ease-out-cubic"
+        >
           DEVELOPER /
         </span>
-        <br>
+        <br />
         <span
           class="portfolio-top__subtitle"
           data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="900"
           data-aos-once="true"
-          data-aos-easing="ease-out-cubic">
+          data-aos-easing="ease-out-cubic"
+        >
           ILLUSTRATOR /
         </span>
         <p class="portfolio-top__text m-0">-</p>
         <p class="portfolio-top__text m-0">porfolio website created by</p>
         <p class="portfolio-top__text m-0">-</p>
         <h1 class="portfolio-top__title">edelRitter</h1>
-        <socialNetworking :class="this.alignment"/>
+        <socialNetworking :class="this.alignment" />
       </div>
     </div>
     <video playsinline autoplay muted loop class="portfolio-top__video">
-      <source src="@/assets/video/teamlab_video1.mp4" type="video/mp4">
+      <source src="@/assets/video/teamlab_video1.mp4" type="video/mp4" />
     </video>
   </section>
 </template>
 
 <script>
-import socialNetworking from '@/components/ui/sns/index.vue'
+import socialNetworking from '@/components/ui/sns/index.vue';
 
 export default {
   name: 'Top',
   components: {
-    socialNetworking
+    socialNetworking,
   },
   data() {
     return {
       alignment: 'ui-catalog__sns-right',
-    }
+    };
   },
-}
+};
 </script>
 
 <style>

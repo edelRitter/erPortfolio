@@ -1,16 +1,17 @@
 <template>
   <div v-for="data in myShowcase">
-    <div 
-    class="portfolio-showcase__item" 
-    :class="{'portfolio-showcase__bg-light': data.bg === 'light'}">
+    <div
+      class="portfolio-showcase__item"
+      :class="{ 'portfolio-showcase__bg-light': data.bg === 'light' }"
+    >
       <div class="portfolio-showcase__item-border">
         {{ data.id }}
       </div>
       <p class="portfolio-showcase__item-img--rough">
-        <img :src="data.imageRough" class="w-100">
+        <img :src="data.imageRough" class="w-100" />
       </p>
       <p class="portfolio-showcase__item-img">
-        <img :src="data.image" class="w-100">
+        <img :src="data.image" class="w-100" />
       </p>
       <p class="portfolio-showcase__item-title">
         {{ data.title }}
@@ -19,20 +20,20 @@
         {{ data.description }}
       </p>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>
-import json from './showcase_data.json'
+import json from './showcase_data.json';
 
 export default {
   name: 'showcaseItem',
   data() {
     return {
-      myShowcase: json
-    }
+      myShowcase: json,
+    };
   },
-}
+};
 </script>
 
 <style>

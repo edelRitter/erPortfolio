@@ -20,10 +20,10 @@
       &-title {
         font-size: 20px;
         line-height: 1em;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-family: 'Playfair', 'Manrope', sans-serif;
         color: colors.$portfolio_White;
-  
-        @media  #{media.$xsmall-and-down} {
+
+        @media #{media.$xsmall-and-down} {
           font-size: 8vw;
         }
       }
@@ -36,13 +36,13 @@
           margin: 0 0 4px 0;
         }
       }
-  
+
       &-text {
         margin-bottom: 40px;
         font-size: 14px;
         line-height: 1.2em;
         white-space: pre-line;
-        font-family: "Roboto", "Manrope", sans-serif;
+        font-family: 'Roboto', 'Manrope', sans-serif;
         color: colors.$portfolio_White;
       }
     }

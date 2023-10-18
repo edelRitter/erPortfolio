@@ -2,7 +2,7 @@
   {
     "id": "1",
     "bg": "dark",
-    "imageRough": "./img/illustration/arknights_ajimu.png",
+    "imageRough": "https://placehold.jp/300x150.png",
     "image": "./img/illustration/arknights_ajimu.png",
     "type": "artwork",
     "title": "arknights / angelina",
@@ -11,9 +11,9 @@
   {
     "id": "2",
     "bg": "light",
-    "image": "./img/illustration/arknights_ajimu.png",
+    "image": "https://placehold.jp/700x600.png",
     "type": "artwork",
     "title": "arknights / angelina",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    "description": "test."
   }
 ]

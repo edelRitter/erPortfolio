@@ -11,7 +11,11 @@ export default {
       control: {
         type: 'select',
       },
-      options: ['ui-catalog__sns-left', 'ui-catalog__sns-center', 'ui-catalog__sns-right'],
+      options: [
+        'ui-catalog__sns-left',
+        'ui-catalog__sns-center',
+        'ui-catalog__sns-right',
+      ],
     },
   },
 };

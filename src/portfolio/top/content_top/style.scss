@@ -35,7 +35,7 @@
       background-color: colors.$portfolio_White;
       z-index: 1;
 
-      @media  #{media.$xsmall-and-down} {
+      @media #{media.$xsmall-and-down} {
         width: 90%;
         height: 60%;
       }
@@ -44,16 +44,16 @@
     &__title {
       font-size: 32px;
       letter-spacing: -0.05em;
-      font-family: 'Playfair', 'Roboto', 'Manrope',sans-serif;
+      font-family: 'Playfair', 'Roboto', 'Manrope', sans-serif;
     }
 
     &__subtitle {
       font-size: 8vw;
       line-height: 0.8em;
       letter-spacing: -0.04em;
-      font-family: "Roboto", "Manrope", sans-serif;
+      font-family: 'Roboto', 'Manrope', sans-serif;
 
-      @media  #{media.$xsmall-and-down} {
+      @media #{media.$xsmall-and-down} {
         font-size: 12vw;
       }
     }
