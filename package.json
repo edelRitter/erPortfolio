@@ -52,6 +52,6 @@
   },
   "lint-staged": {
     "**/*": "yarn format",
-    "**/*.{js,ts,tsx}": "yarn lint-staged"
+    "**/*.{js,vue}": "yarn lint-staged"
   }
 }
