@@ -34,5 +34,17 @@
     "image": "./img/photography/teamlab_6.jpg",
     "type": "photo",
     "title": "teamlab / exhibit"
+  },
+  {
+    "id": "7",
+    "image": "./img/photography/hokkaido_1.png",
+    "type": "photo",
+    "title": "hokkaido / personal"
+  },
+  {
+    "id": "8",
+    "image": "./img/photography/hokkaido_2.png",
+    "type": "photo",
+    "title": "hokkaido / personal"
   }
 ]
