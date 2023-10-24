@@ -4,8 +4,12 @@
     "src": "index.css"
   },
   "index.html": {
-    "assets": ["video/teamlab_video1.mp4"],
-    "css": ["css/index.css"],
+    "assets": [
+      "video/teamlab_video1.mp4"
+    ],
+    "css": [
+      "css/index.css"
+    ],
     "file": "js/index.js",
     "isEntry": true,
     "src": "index.html"

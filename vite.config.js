@@ -24,6 +24,7 @@ export default defineConfig({
     outDir: 'docs/',
     sourcemap: true,
     manifest: true,
+    minify: true,
     reportCompressedSize: true,
     emptyOutDir: true,
     entry: 'src/main.js',
