@@ -35,6 +35,7 @@
     "@storybook/vue3-vite": "^7.1.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-unit-jest": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.3.4",

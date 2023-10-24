@@ -20,6 +20,7 @@ export default defineConfig({
       },
     },
   },
+  lintOnSave: true,
   build: {
     outDir: 'docs/',
     sourcemap: true,
