@@ -24,6 +24,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
     "@storybook/addon-essentials": "^7.1.1",
     "@storybook/addon-interactions": "^7.1.1",
     "@storybook/addon-links": "^7.1.1",
