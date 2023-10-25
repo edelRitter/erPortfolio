@@ -2,6 +2,7 @@
 .cache
 node_modules
 /dist
+.eslintcache
 storybook-static
 package-lock.json
 
