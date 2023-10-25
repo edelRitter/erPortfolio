@@ -1,5 +1,3 @@
-const path = require('path');
-
 const OFF = 0;
 const WARN = 1;
 const ERROR = 2;
@@ -10,12 +8,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:vue/essential', 'airbnb-base'],
+  extends: ['plugin:vue/essential'],
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module',
   },
-  plugins: ['vue', 'jest'],
+  plugins: ['vue'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? WARN : OFF,
     'no-debugger': process.env.NODE_ENV === 'production' ? ERROR : OFF,
@@ -25,13 +22,4 @@ module.exports = {
     'no-unused-expressions': OFF,
     'array-callback-return': OFF,
   },
-  settings: {
-    'import/resolver': {
-      alias: {
-        map: [['@', path.join(__dirname, 'src')]],
-        extensions: ['.ts', '.js', '.jsx', '.json', '.vue'],
-      },
-    },
-  },
-  include: ['src/**/*'],
 };
