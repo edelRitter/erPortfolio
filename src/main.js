@@ -9,11 +9,7 @@ import 'aos/dist/aos.css';
 import MasonryWall from '@yeger/vue-masonry-wall';
 
 /** original JS */
-import { setupSmoothScroll } from '@/assets/js/smoothscroll/index.js';
-function onDomReady() {
-  setupSmoothScroll();
-}
-document.addEventListener('DOMContentLoaded', onDomReady);
+import '@/assets/js/index.js';
 
 /** Mount APP */
 createApp(App).use(AOS.init()).use(MasonryWall).mount('#app');
