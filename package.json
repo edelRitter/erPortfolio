@@ -11,6 +11,10 @@
     "lint:staged": "lint-staged",
     "storybook": "storybook dev -p 6006"
   },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@3.6.4",
   "dependencies": {
     "@yeger/vue-masonry-wall": "^4.1.0",
     "aos": "^2.3.4",
@@ -34,7 +38,7 @@
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-unit-jest": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "@vue/compiler-core": "^3.3.9",
+    "@vue/compiler-core": "^3.3.10",
     "@vue/compiler-sfc": "^3.3.4",
     "babel-loader": "^8.1.0",
     "core-js": "^3.9.1",
@@ -47,7 +51,7 @@
     "sort-package-json": "^2.6.0",
     "storybook": "^7.1.1",
     "vite": "^4.4.0",
-    "vue": "^3.3.4",
+    "vue": "^3.3.10",
     "webpack": "^5.89.0"
   },
   "lint-staged": {
