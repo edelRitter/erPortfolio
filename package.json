@@ -8,8 +8,13 @@
     "dev": "vite",
     "build": "vite build",
     "build-storybook": "storybook build",
-    "lint:staged": "lint-staged",
+    "lint": "eslint ./src/**/**.{js,jsx}",
+    "lint-fix": "eslint ./src/**/**.{js,jsx} --fix && prettier ./src/**/**.scss --write",
     "storybook": "storybook dev -p 6006"
+  },
+  "packageManager": "yarn@4.0.2",
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^4.1.0",
@@ -34,12 +39,12 @@
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-unit-jest": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "@vue/compiler-core": "^3.3.9",
+    "@vue/compiler-core": "^3.3.10",
     "@vue/compiler-sfc": "^3.3.4",
     "babel-loader": "^8.1.0",
     "core-js": "^3.9.1",
     "eslint": "^8.51.0",
-    "eslint-plugin-vue": "^9.17.0",
+    "eslint-plugin-vue": "^9.21.1",
     "lint-staged": "^13.3.0",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
@@ -47,19 +52,7 @@
     "sort-package-json": "^2.6.0",
     "storybook": "^7.1.1",
     "vite": "^4.4.0",
-    "vue": "^3.3.4",
+    "vue": "^3.3.10",
     "webpack": "^5.89.0"
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "prettier --write --cache",
-      "eslint --fix --cache"
-    ],
-    "*.{html,json}": [
-      "prettier --write --cache"
-    ],
-    "*.scss": [
-      "prettier --write --cache"
-    ]
   }
 }

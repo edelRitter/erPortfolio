@@ -1,4 +1,4 @@
-@use '@/assets/scss/_colors.scss' as colors;
+@use "@/assets/scss/_colors.scss" as colors;
 
 .menu {
   &__wrapper {
@@ -41,7 +41,7 @@
 
       &::before,
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 18px;
         height: 1px;
@@ -86,7 +86,7 @@
       margin: 0;
       font-size: 32px;
       letter-spacing: -0.05em;
-      font-family: 'Playfair', 'Manrope', sans-serif;
+      font-family: "Playfair", "Manrope", sans-serif;
       color: colors.$portfolio_Black;
     }
 
@@ -105,7 +105,7 @@
         font-size: 24px;
         font-weight: 700;
         cursor: pointer;
-        font-family: 'Roboto', 'Manrope', sans-serif;
+        font-family: "Roboto", "Manrope", sans-serif;
         color: colors.$portfolio_Black;
       }
     }

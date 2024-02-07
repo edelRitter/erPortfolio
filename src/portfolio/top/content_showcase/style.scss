@@ -1,13 +1,13 @@
-@use '@/assets/scss/_colors.scss' as colors;
-@use '@/assets/scss/_media-queries.scss' as media;
+@use "@/assets/scss/_colors.scss" as colors;
+@use "@/assets/scss/_media-queries.scss" as media;
 
 @mixin animation($animate...) {
   $max: length($animate);
-  $animations: '';
+  $animations: "";
   @for $i from 1 through $max {
     $animations: #{$animations + nth($animate, $i)};
     @if $i < $max {
-      $animations: #{$animations + ', '};
+      $animations: #{$animations + ", "};
     }
   }
   -webkit-animation: $animations;
@@ -89,7 +89,7 @@
           font-weight: 700;
           letter-spacing: -0.04em;
           color: colors.$portfolio_Black;
-          font-family: 'Roboto', 'Manrope', sans-serif;
+          font-family: "Roboto", "Manrope", sans-serif;
           animation: animate_text 18s linear infinite;
         }
       }
@@ -118,7 +118,7 @@
       &-text {
         font-size: 24px;
         line-height: 0.8em;
-        font-family: 'Playfair', 'Manrope', sans-serif;
+        font-family: "Playfair", "Manrope", sans-serif;
       }
 
       &-img {
@@ -170,7 +170,7 @@
               45vw 60vh
             );
             clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
-            @include animation('expand 0.7s ease-in forwards');
+            @include animation("expand 0.7s ease-in forwards");
           }
         }
       }
@@ -212,7 +212,7 @@
 
             &::before,
             &::after {
-              content: '';
+              content: "";
               position: absolute;
               width: 18px;
               height: 1px;
