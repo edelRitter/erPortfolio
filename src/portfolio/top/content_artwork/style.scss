@@ -1,5 +1,5 @@
-@use '@/assets/scss/_colors.scss' as colors;
-@use '@/assets/scss/_media-queries.scss' as media;
+@use "@/assets/scss/_colors.scss" as colors;
+@use "@/assets/scss/_media-queries.scss" as media;
 
 .portfolio {
   &-artwork {
@@ -36,7 +36,7 @@
         font-weight: 700;
         letter-spacing: -0.04em;
         color: colors.$portfolio_Black;
-        font-family: 'Roboto', 'Manrope', sans-serif;
+        font-family: "Roboto", "Manrope", sans-serif;
         animation: animate_text 22s linear infinite;
       }
     }
@@ -78,7 +78,7 @@
         font-size: 24px;
         line-height: 0.8em;
         margin: 0;
-        font-family: 'Playfair', 'Manrope', sans-serif;
+        font-family: "Playfair", "Manrope", sans-serif;
         color: colors.$portfolio_Black;
 
         &-sub {
@@ -139,12 +139,12 @@
 
       &-type {
         font-size: 11px;
-        font-family: 'Raleway', 'Manrope', sans-serif;
+        font-family: "Raleway", "Manrope", sans-serif;
       }
 
       &-title {
         font-size: 11px;
-        font-family: 'Roboto', 'Manrope', sans-serif;
+        font-family: "Roboto", "Manrope", sans-serif;
 
         @media #{media.$tiny-only} {
           width: 50%;
