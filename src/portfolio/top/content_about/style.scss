@@ -17,7 +17,7 @@
         font-size: 8vw;
         line-height: 0.9em;
         letter-spacing: -0.04em;
-        color: colors.$portfolio_White;
+        color: colors.$portfolio_Yellow;
         font-family: "Roboto", "Manrope", sans-serif;
 
         @media #{media.$xsmall-and-down} {
@@ -41,7 +41,7 @@
     &__profile {
       width: 100%;
       height: 100%;
-      padding: 12px;
+      padding: 20px;
       background: colors.$portfolio_White;
 
       @media #{media.$xsmall-and-down} {

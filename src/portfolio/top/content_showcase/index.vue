@@ -15,8 +15,55 @@
           <span>EXPLORE&nbsp;</span>
         </div>
       </div>
+      <div class="portfolio-showcase__all-title">
+        <h2 class="portfolio-showcase__all-title-text">
+          <p
+            class="m-0"
+            data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-offset="300"
+            data-aos-delay="200"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic"
+          >
+            IN /
+          </p>
+          <p
+            class="m-0"
+            data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-offset="300"
+            data-aos-delay="400"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic"
+          >
+            DEPTH /
+          </p>
+          <p
+            class="m-0"
+            data-aos="fade-right"
+            data-aos-duration="800"
+            data-aos-offset="300"
+            data-aos-delay="600"
+            data-aos-once="true"
+            data-aos-easing="ease-out-cubic"
+          >
+            PROJECTS /
+          </p>
+        </h2>
+        <p
+          class="portfolio-showcase__all-title-desc"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="800"
+          data-aos-once="true"
+          data-aos-easing="ease-out-cubic"
+        >
+        Click on the button below to learn more about works I have made before /
+        </p>
+      </div>
       <div class="portfolio-showcase__all-wrap">
-        <div class="portfolio-showcase__all-main" @click="toggleShowcase">
+        <div class="portfolio-showcase__all-link" @click="toggleShowcase">
           <p class="portfolio-showcase__all-text m-0">
             in depth / SELECTED WORKS&nbsp;
           </p>
@@ -27,7 +74,7 @@
             data-aos-delay="200"
             data-aos-easing="ease-out-cubic"
           >
-            <img class="w-100" src="/img/icons/cursor_icon.svg" />
+            <img src="/img/icons/cursor_icon.svg" />
           </p>
         </div>
       </div>

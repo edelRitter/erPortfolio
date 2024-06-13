@@ -10,10 +10,10 @@
     background: colors.$black;
 
     &__wrapper {
-      padding: 40px 12px;
+      padding: 20px 0 20px 20px;
 
       @media #{media.$xsmall-and-down} {
-        padding: 20px 12px;
+        padding: 20px 0 20px 20px;
       }
     }
 
