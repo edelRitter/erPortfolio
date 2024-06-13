@@ -9,7 +9,7 @@
 
     &__wrapper {
       width: 100%;
-      padding: 12px;
+      padding: 20px;
     }
 
     &__video {
@@ -19,6 +19,7 @@
       min-width: 100%;
       min-height: 100%;
       z-index: 0;
+      filter: brightness(140%);
     }
 
     &__hero {
@@ -44,6 +45,7 @@
     &__title {
       font-size: 32px;
       letter-spacing: -0.05em;
+      color: colors.$portfolio_Black;
       font-family: "Playfair", "Roboto", "Manrope", sans-serif;
     }
 
