@@ -9,6 +9,10 @@
     min-height: 100vh;
     background: colors.$portfolio_Black;
 
+    &__hero {
+      width: 100%;
+    }
+
     &__title {
       padding: 20px;
       background: colors.$portfolio_Black;

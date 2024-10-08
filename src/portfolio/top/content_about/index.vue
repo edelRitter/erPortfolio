@@ -2,9 +2,11 @@
   <section class="portfolio-about">
     <div class="row no-gutters">
       <div class="col-12">
-        <p class="m-0">
-          <img class="w-100" src="/img/photography/stock_profile.jpg" />
-        </p>
+        <div class="portfolio-about__hero m-0">
+          <p class="portfolio-about__hero-img">
+            <img class="w-100" src="/public/img/photography/stock_profile.jpg">
+          </p>
+        </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="portfolio-about__title">
