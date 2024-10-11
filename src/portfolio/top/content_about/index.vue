@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="portfolio-about__hero m-0">
           <p class="portfolio-about__hero-img">
-            <img class="w-100" src="/public/img/photography/stock_profile.jpg">
+            <img class="w-100" src="/img/photography/stock_profile.jpg">
           </p>
         </div>
       </div>

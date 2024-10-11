@@ -12,7 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  cursor: url('~/img/icons/cursor_default.svg'), auto;
+  cursor: url('/img/icons/cursor_default.svg'), auto;
 }
 
 a {
@@ -22,7 +22,7 @@ a {
 }
 
 a:hover {
-  cursor: url('~/img/icons/cursor_hover.svg'), auto;
+  cursor: url('/img/icons/cursor_hover.svg'), auto;
 }
 
 body {
