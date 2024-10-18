@@ -2,11 +2,13 @@
   {
     "id": "1",
     "bg": "dark",
-    "imageRough": "https://placehold.jp/300x150.png",
+    "imagefirst": "https://placehold.jp/300x150.png",
     "image": "/erPortfolio/img/illustration/arknights_ajimu.png",
     "type": "artwork",
-    "title": "arknights / angelina",
-    "description": "Cover for artbook of arknights fan event in Japan xxxx. Created the illustration and design in 2023 via photoshop. Used wacom tablet intuos for roughs, sketch, coloring.\nAngelina is a supporter operator working under Rhodes Island of the game Arknights."
+    "title": "doujin / stella viator",
+    "description": "Cover for arknights only doujin event in 2024. Illustration works of arknights operators from 2023 to 2024. If there are demands I can print additional works and post on booth.",
+    "link": "https://edelritter.booth.pm/",
+    "link_title": "BOOTH / edelRitter shop"
   },
   {
     "id": "2",

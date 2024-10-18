@@ -7,8 +7,8 @@
       <div class="portfolio-showcase__item-border">
         {{ data.id }}
       </div>
-      <p class="portfolio-showcase__item-img--rough">
-        <img :src="data.imageRough" class="w-100" />
+      <p v-if="data.imagefirst" class="portfolio-showcase__item-img--rough">
+        <img :src="data.imagefirst" class="w-100" />
       </p>
       <p class="portfolio-showcase__item-img">
         <img :src="data.image" class="w-100" />
@@ -18,6 +18,9 @@
       </p>
       <p class="portfolio-showcase__item-text">
         {{ data.description }}
+      </p>
+      <p v-if="data.link && data.link_title" class="portfolio-showcase__item-text">
+        <a :href="data.link">{{ data.link_title }}</a>
       </p>
     </div>
   </div>
