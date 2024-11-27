@@ -8,8 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "build-storybook": "storybook build",
-    "lint": "eslint ./src/**/**.{js,jsx}",
-    "lint-fix": "eslint ./src/**/**.{js,jsx} --fix && prettier ./src/**/**.scss --write",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint-fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix && prettier 'src/**/**.scss' --write",
     "storybook": "storybook dev -p 6006"
   },
   "engines": {
@@ -43,6 +43,8 @@
     "babel-loader": "^8.1.0",
     "core-js": "^3.9.1",
     "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-vue": "^9.21.1",
     "lint-staged": "^13.3.0",
     "prettier": "^3.0.3",
