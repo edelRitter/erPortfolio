@@ -2,9 +2,11 @@
   <section class="portfolio-about">
     <div class="row no-gutters">
       <div class="col-12">
-        <p class="m-0">
-          <img class="w-100" src="/img/photography/stock_profile.jpg" />
-        </p>
+        <div class="portfolio-about__hero m-0">
+          <p class="portfolio-about__hero-img">
+            <img class="w-100" src="/img/photography/stock_profile.jpg">
+          </p>
+        </div>
       </div>
       <div class="col-12 col-md-6">
         <div class="portfolio-about__title">
@@ -91,20 +93,18 @@
           <p class="portfolio-about__profile-title m-0">LIKES /</p>
           <ul class="d-flex m-0 p-0">
             <li class="portfolio-about__profile-list">
-              <strong>arknights :</strong> The music and characters are
-              phenomenal. Developed by Hypergryph
+              <strong>Arknights :</strong> Mobile Game Developed by Hypergryph. Current Passion.
             </li>
             <li class="portfolio-about__profile-list">
-              <b>music :</b> Eli Noir, M2U, hybrid, Siames, AJURIKA, Caravan
+              <b>music :</b> M2U, hybrid, Siames, AJURIKA, Caravan
               Palace, nujabes, Masashi Hamauzu, Adam Gubman, Nomak, Starset,
               etc.
             </li>
           </ul>
           <ul class="d-flex m-0 p-0">
             <li class="portfolio-about__profile-list">
-              <b>games :</b> Omori, Chrono Trigger, Saga Frontier 2, SF 3rd
-              Strike, Cytus 2, Final Fantasy 6/7/9, Smash bros melee, Lord of
-              Vermilion 2, etc.
+              <b>games :</b> Omori, Chrono Trigger, Saga Frontier 2, Cytus 2, Final Fantasy 6/7/9, Smash bros melee, Lord of
+              Vermilion 2, arknights, etc.
             </li>
             <li class="portfolio-about__profile-list">
               <b>film :</b> Blade Runner, Truman Show, Punch Drunk Love, The

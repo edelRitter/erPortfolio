@@ -16,9 +16,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `$base-dir: '../';`,
-      },
-    },
+        api: 'modern-compiler', // or 'modern'
+      }
+    }
   },
   lintOnSave: true,
   build: {

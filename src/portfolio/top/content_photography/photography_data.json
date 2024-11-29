@@ -46,5 +46,23 @@
     "image": "/erPortfolio/img/photography/hokkaido_2.png",
     "type": "photo",
     "title": "hokkaido / personal"
+  },
+  {
+    "id": "9",
+    "image": "/erPortfolio/img/photography/awaji_1.jpg",
+    "type": "photo",
+    "title": "awaji island / personal"
+  },
+  {
+    "id": "10",
+    "image": "/erPortfolio/img/photography/awaji_2.jpg",
+    "type": "photo",
+    "title": "awaji island / personal"
+  },
+  {
+    "id": "11",
+    "image": "/erPortfolio/img/photography/yuraku_1.jpg",
+    "type": "photo",
+    "title": "exhibit / personal"
   }
 ]

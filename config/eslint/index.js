@@ -3,7 +3,11 @@ module.exports = {
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "plugin:vue/vue3-essential"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-essential",
+    "prettier"
+  ],
   "overrides": [{
     "env": {
       "node": true
@@ -17,7 +21,10 @@ module.exports = {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["vue"],
+  "plugins": [
+    "vue",
+    "prettier"
+  ],
   "rules": {
     // タグの最後で改行しないで
     "vue/html-closing-bracket-newline": [2, {

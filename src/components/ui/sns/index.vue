@@ -11,8 +11,8 @@
       </a>
     </p>
     <p class="m-0">
-      <a href="https://www.pixiv.net/users/33521928" target="_blank">
-        <img src="/img/icons/pixiv_icon.svg" />
+      <a href="https://bsky.app/profile/edelritter.bsky.social" target="_blank">
+        <img src="/img/icons/bluesky_icon.svg" />
       </a>
     </p>
     <p class="m-0">

@@ -1,5 +1,5 @@
-@use "@/assets/scss/_colors.scss" as colors;
-@use "@/assets/scss/_media-queries.scss" as media;
+@use '@/assets/scss/_colors.scss' as colors;
+@use '@/assets/scss/_media-queries.scss' as media;
 
 .portfolio {
   &-about {
@@ -8,6 +8,10 @@
     width: 100%;
     min-height: 100vh;
     background: colors.$portfolio_Black;
+
+    &__hero {
+      width: 100%;
+    }
 
     &__title {
       padding: 20px;
@@ -18,7 +22,7 @@
         line-height: 0.9em;
         letter-spacing: -0.04em;
         color: colors.$portfolio_Yellow;
-        font-family: "Roboto", "Manrope", sans-serif;
+        font-family: 'Roboto', 'Manrope', sans-serif;
 
         @media #{media.$xsmall-and-down} {
           font-size: 12vw;
@@ -30,7 +34,7 @@
         line-height: 1.1em;
         font-size: 32px;
         color: colors.$portfolio_Gray400;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-family: 'Playfair', 'Manrope', sans-serif;
 
         @media #{media.$xsmall-and-down} {
           font-size: 6vw;
@@ -57,7 +61,7 @@
       &-name {
         font-size: 24px;
         line-height: 0.8em;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-family: 'Playfair', 'Manrope', sans-serif;
 
         &-sub {
           color: colors.$portfolio_Gray700;
@@ -78,11 +82,11 @@
           margin: 0 0 0 20px;
           line-height: 1em;
           font-size: 16px;
-          font-family: "Playfair", "Manrope", sans-serif;
+          font-family: 'Playfair', 'Manrope', sans-serif;
 
           &-japanese {
             font-size: 12px;
-            font-family: "Noto Serif JP", serif;
+            font-family: 'Noto Serif JP', serif;
           }
         }
       }
@@ -98,7 +102,7 @@
 
       &-title {
         font-size: 20px;
-        font-family: "Raleway", "Manrope", sans-serif;
+        font-family: 'Raleway', 'Manrope', sans-serif;
       }
 
       &-list {
@@ -107,7 +111,7 @@
         margin: 0;
         padding: 4px 12px 4px 0;
         font-size: 14px;
-        font-family: "Playfair", "Manrope", sans-serif;
+        font-family: 'Playfair', 'Manrope', sans-serif;
       }
       &-sns {
         padding: 80px 0;
