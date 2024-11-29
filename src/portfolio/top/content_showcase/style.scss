@@ -1,11 +1,12 @@
 @use '@/assets/scss/_colors.scss' as colors;
 @use '@/assets/scss/_media-queries.scss' as media;
+@use 'sass:list';
 
 @mixin animation($animate...) {
-  $max: length($animate);
+  $max: list.length($animate);
   $animations: '';
   @for $i from 1 through $max {
-    $animations: #{$animations + nth($animate, $i)};
+    $animations: #{$animations + list.nth($animate, $i)};
     @if $i < $max {
       $animations: #{$animations + ', '};
     }
