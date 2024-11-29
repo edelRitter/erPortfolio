@@ -132,8 +132,6 @@ export default {
       );
       const itemArtwork = itemObject[0].image;
 
-      console.log(itemArtwork);
-
       return (this.modalImage = itemArtwork);
     },
     closeModal() {
