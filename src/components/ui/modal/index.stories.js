@@ -14,3 +14,10 @@ export default {
     },
   },
 }
+
+export const Primarly = {
+  args: {
+    primary: true,
+    label: 'Modal',
+  },
+}
