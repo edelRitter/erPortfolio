@@ -1,18 +1,15 @@
 {
-  "index.css": {
-    "file": "css/index.css",
-    "src": "index.css"
-  },
   "index.html": {
-    "assets": [
-      "video/teamlab_video1.mp4"
-    ],
+    "file": "js/index.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
     "css": [
       "css/index.css"
     ],
-    "file": "js/index.js",
-    "isEntry": true,
-    "src": "index.html"
+    "assets": [
+      "video/teamlab_video1.mp4"
+    ]
   },
   "src/assets/video/teamlab_video1.mp4": {
     "file": "video/teamlab_video1.mp4",
