@@ -103,7 +103,7 @@
 <script>
 import { ref } from 'vue';
 
-import Modal from '@/components/ui/modal/index.vue';
+import Modal from '@/components/ui/modal/modal.vue';
 import artworkJson from './artwork_data.json';
 
 export default {

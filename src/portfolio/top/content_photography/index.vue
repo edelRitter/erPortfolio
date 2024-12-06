@@ -65,7 +65,7 @@ import { ref } from 'vue';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
-import Modal from '@/components/ui/modal/index.vue';
+import Modal from '@/components/ui/modal/modal.vue';
 
 // Import Swiper styles
 import 'swiper/css';
