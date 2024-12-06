@@ -30,5 +30,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import './style.scss';
+@use './style.scss';
 </style>

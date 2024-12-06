@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import Menu from '@/portfolio/menu/index.vue';
+import Menu from "@/portfolio/menu/index.vue";
 import Top from '@/portfolio/top/content_top/index.vue';
 import Artwork from '@/portfolio/top/content_artwork/index.vue';
 import Photography from '@/portfolio/top/content_photography/index.vue';
