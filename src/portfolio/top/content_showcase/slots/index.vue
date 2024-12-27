@@ -7,12 +7,25 @@
       <div class="portfolio-showcase__item-border">
         {{ data.id }}
       </div>
-      <p v-if="data.imagefirst" class="portfolio-showcase__item-img--rough">
-        <img :src="data.imagefirst" class="w-100" />
-      </p>
-      <p class="portfolio-showcase__item-img">
-        <img :src="data.image" class="w-100" />
-      </p>
+      <div class="row">
+        <div class="col">
+          <p class="portfolio-showcase__item-img">
+            <img :src="data.image" class="w-100" />
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col md-col-6">
+          <p v-if="data.imagefirst" class="portfolio-showcase__item-img--rough">
+            <img :src="data.imagefirst" class="w-100" />
+          </p>
+        </div>
+        <div class="col md-col-6">
+          <p v-if="data.imagesecond" class="portfolio-showcase__item-img--rough">
+            <img :src="data.imagesecond" class="w-100" />
+          </p>
+        </div>
+      </div>
       <p class="portfolio-showcase__item-title">
         {{ data.title }}
       </p>
