@@ -246,6 +246,7 @@
           border-radius: 50px;
           color: colors.$portfolio_Black;
           background: colors.$portfolio_Yellow;
+          z-index: 1;
 
           &-btn {
             position: absolute;

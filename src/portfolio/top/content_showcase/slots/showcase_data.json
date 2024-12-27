@@ -2,7 +2,8 @@
   {
     "id": "1",
     "bg": "dark",
-    "imagefirst": "https://placehold.jp/300x150.png",
+    "imagefirst": "/erPortfolio/img/indepth/doujin_back.png",
+    "imagesecond": "/erPortfolio/img/indepth/doujin_set.png",
     "image": "/erPortfolio/img/illustration/arknights_ajimu.png",
     "type": "artwork",
     "title": "doujin / stella viator",
@@ -15,7 +16,7 @@
     "bg": "light",
     "image": "https://placehold.jp/700x600.png",
     "type": "artwork",
-    "title": "arknights / angelina",
-    "description": "test."
+    "title": "arknights / theresia artbook",
+    "description": "coming at 2025."
   }
 ]
