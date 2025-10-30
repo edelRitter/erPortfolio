@@ -60,19 +60,12 @@
       }
 
       @media #{media.$xsmall-and-down} {
-        position: relative;
-        width: 100%;
-        height: auto;
-        top: 0;
-        left: 0;
-        transform: none;
+        display: none;
       }
 
       &-border {
         height: 100%;
         padding: 8px 0;
-        border-bottom: 1px solid colors.$portfolio_Black;
-        border-top: 1px solid colors.$portfolio_Black;
       }
 
       &-text {
