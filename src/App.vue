@@ -1,11 +1,13 @@
 <template>
   <div>
-    <Menu />
-    <Top id="portfolioTop" />
-    <Artwork id="portfolioArtwork" />
-    <Photography id="portfolioPhotography" />
-    <Showcase id="portfolioShowcase" />
-    <About id="portfolioAbout" />
+    <div id="scrollarea">
+      <Menu />
+      <Top id="portfolioTop" />
+      <Artwork id="portfolioArtwork" />
+      <Photography id="portfolioPhotography" />
+      <Showcase id="portfolioShowcase" />
+      <About id="portfolioAbout" />
+    </div>
   </div>
 </template>
 
