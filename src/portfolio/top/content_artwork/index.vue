@@ -29,7 +29,7 @@
             {{ categoryText }}
           </p>
           <p class="portfolio-artwork__icon-img text-center m-0">
-            <img :src="arrowIconSrc" />
+            <img :src="resolvedArrowIconSrc" />
           </p>
         </div>
       </div>
@@ -64,7 +64,9 @@
                   <img
                     class="w-100"
                     :data-artwork="item.id"
-                    :src="item.image"
+                    :src="getImageUrl(item.image)"
+                    loading="lazy"
+                    decoding="async"
                     @click="showModal"
                   />
                 </p>
@@ -130,7 +132,7 @@ export default {
     },
     arrowIconSrc: {
       type: String,
-      default: '/img/icons/arrow_icon.svg',
+      default: null,
     },
     descriptionPrimary: {
       type: String,
@@ -145,16 +147,22 @@ export default {
       default: 'swipe left / right to see more photography',
     },
   },
-  setup() {
+  setup(props) {
     const modalStatus = ref('');
     const modalImage = ref('');
+    const baseUrl = import.meta.env.BASE_URL;
 
     const items = artworkJson;
+
+    const getImageUrl = (filename) => `${baseUrl}img/illustration/${filename}`;
+    const resolvedArrowIconSrc = props.arrowIconSrc || `${baseUrl}img/icons/arrow_icon.svg`;
 
     return {
       items,
       modalStatus,
       modalImage,
+      getImageUrl,
+      resolvedArrowIconSrc,
     };
   },
   methods: {
@@ -164,7 +172,7 @@ export default {
       const itemObject = this.items.filter(
         (res) => res.id.indexOf(artworkData) !== -1
       );
-      const itemArtwork = itemObject[0].image;
+      const itemArtwork = this.getImageUrl(itemObject[0].image);
 
       return (this.modalImage = itemArtwork);
     },

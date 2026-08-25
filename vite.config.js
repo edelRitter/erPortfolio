@@ -3,8 +3,8 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: '/erPortfolio',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/erPortfolio/' : '/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -52,4 +52,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

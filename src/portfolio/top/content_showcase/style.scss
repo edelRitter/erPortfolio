@@ -75,6 +75,7 @@
 .portfolio {
   &-showcase {
     position: relative;
+    overflow: hidden;
 
     &__all {
       width: 100%;

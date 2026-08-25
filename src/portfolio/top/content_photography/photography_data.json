@@ -1,67 +1,67 @@
 [
   {
     "id": "1",
-    "image": "/erPortfolio/img/photography/teamlab_1.png",
+    "image": "teamlab_1.png",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "2",
-    "image": "/erPortfolio/img/photography/teamlab_2.png",
+    "image": "teamlab_2.png",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "3",
-    "image": "/erPortfolio/img/photography/teamlab_3.png",
+    "image": "teamlab_3.png",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "4",
-    "image": "/erPortfolio/img/photography/teamlab_4.jpg",
+    "image": "teamlab_4.jpg",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "5",
-    "image": "/erPortfolio/img/photography/teamlab_5.jpg",
+    "image": "teamlab_5.jpg",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "6",
-    "image": "/erPortfolio/img/photography/teamlab_6.jpg",
+    "image": "teamlab_6.jpg",
     "type": "photo",
     "title": "teamlab / exhibit"
   },
   {
     "id": "7",
-    "image": "/erPortfolio/img/photography/hokkaido_1.png",
+    "image": "hokkaido_1.png",
     "type": "photo",
     "title": "hokkaido / personal"
   },
   {
     "id": "8",
-    "image": "/erPortfolio/img/photography/hokkaido_2.png",
+    "image": "hokkaido_2.png",
     "type": "photo",
     "title": "hokkaido / personal"
   },
   {
     "id": "9",
-    "image": "/erPortfolio/img/photography/awaji_1.jpg",
+    "image": "awaji_1.jpg",
     "type": "photo",
     "title": "awaji island / personal"
   },
   {
     "id": "10",
-    "image": "/erPortfolio/img/photography/awaji_2.jpg",
+    "image": "awaji_2.jpg",
     "type": "photo",
     "title": "awaji island / personal"
   },
   {
     "id": "11",
-    "image": "/erPortfolio/img/photography/yuraku_1.jpg",
+    "image": "yuraku_1.jpg",
     "type": "photo",
     "title": "exhibit / personal"
   }

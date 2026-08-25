@@ -20,10 +20,12 @@
             <img
               class="portfolio-photography__content-img"
               :style="{
-                background: 'url(' + item.image + ')',
+                background: 'url(' + getImageUrl(item.image) + ')',
                 backgroundSize: 'cover',
               }"
               :data-photography="item.id"
+              loading="lazy"
+              decoding="async"
               @click="showModal"
             />
           </p>
@@ -85,7 +87,10 @@ export default {
   setup() {
     const modalStatus = ref('');
     const modalImage = ref('');
+    const baseUrl = import.meta.env.BASE_URL;
     const items = photoJson;
+
+    const getImageUrl = (filename) => `${baseUrl}img/photography/${filename}`;
 
     const onSwiper = (swiper) => {
       console.log(swiper);
@@ -99,6 +104,7 @@ export default {
       items,
       modalStatus,
       modalImage,
+      getImageUrl,
       onSwiper,
       onSlideChange,
       modules: [Navigation, Pagination, Scrollbar],
@@ -111,7 +117,7 @@ export default {
       const itemObject = this.items.filter(
         (res) => res.id.indexOf(photoData) !== -1
       );
-      const itemPhoto = itemObject[0].image;
+      const itemPhoto = this.getImageUrl(itemObject[0].image);
 
       return (this.modalImage = itemPhoto);
     },

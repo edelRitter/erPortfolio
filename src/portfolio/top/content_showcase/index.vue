@@ -74,7 +74,7 @@
             data-aos-delay="200"
             data-aos-easing="ease-out-cubic"
           >
-            <img :src="cursorIconSrc" />
+            <img :src="resolvedCursorIconSrc" />
           </p>
         </div>
       </div>
@@ -139,13 +139,19 @@ export default {
     },
     cursorIconSrc: {
       type: String,
-      default: '/img/icons/cursor_icon.svg',
+      default: null,
     },
   },
   data: () => {
     return {
       isActive: false,
+      baseUrl: import.meta.env.BASE_URL,
     };
+  },
+  computed: {
+    resolvedCursorIconSrc() {
+      return this.cursorIconSrc || `${this.baseUrl}img/icons/cursor_icon.svg`;
+    },
   },
   methods: {
     toggleShowcase() {

@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="portfolio-about__hero m-0">
           <p class="portfolio-about__hero-img">
-            <img class="w-100" src="/img/photography/stock_profile.jpg">
+            <img class="w-100" :src="`${baseUrl}img/photography/stock_profile.jpg`">
           </p>
         </div>
       </div>
@@ -76,7 +76,7 @@
             data-aos-easing="ease-out-cubic"
           >
             <p class="portfolio-about__profile-picture-img m-0">
-              <img src="/img/photography/stock_profile2.jpg" class="w-100" />
+              <img :src="`${baseUrl}img/photography/stock_profile2.jpg`" class="w-100" />
             </p>
             <p class="portfolio-about__profile-picture-text">
               Yohei I. /<br /><span
@@ -132,7 +132,7 @@
           >
             <img
               class="portfolio-about__profile-logoimg"
-              src="/img/illustration/logo_edelRitter.png"
+              :src="`${baseUrl}img/illustration/logo_edelRitter.png`"
             />
           </p>
         </div>
@@ -152,6 +152,7 @@ export default {
   data() {
     return {
       alignment: 'ui-catalog__sns-center',
+      baseUrl: import.meta.env.BASE_URL,
     };
   },
 };
