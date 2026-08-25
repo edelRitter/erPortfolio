@@ -13,7 +13,7 @@
     "storybook": "storybook dev -p 6006"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19 || >=22.12"
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^5.0.16",
@@ -24,24 +24,17 @@
     "swiper": "^12.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.6",
-    "@babel/preset-env": "^7.23.2",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
     "@popperjs/core": "^2.11.8",
-    "@storybook/addon-essentials": "^8.4.6",
-    "@storybook/addon-interactions": "^8.6.14",
-    "@storybook/addon-links": "^9.1.12",
-    "@storybook/blocks": "^8.4.6",
-    "@storybook/testing-library": "^0.2.0",
-    "@storybook/vue3": "^9.1.12",
-    "@storybook/vue3-vite": "^9.1.12",
+    "@storybook/addon-links": "^10.5.10",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/vue3": "^10.5.10",
+    "@storybook/vue3-vite": "^10.5.10",
     "@types/eslint": "^9.6.1",
-    "@vitejs/plugin-vue": "^6.0.1",
-    "@vue/cli-service": "^5.0.8",
-    "@vue/compiler-core": "^3.3.10",
-    "@vue/compiler-sfc": "^3.3.4",
-    "babel-loader": "^10.0.0",
+    "@vitejs/plugin-vue": "^6.0.8",
     "core-js": "^3.9.1",
     "eslint": "^9.16.0",
     "eslint-config-prettier": "^10.1.8",
@@ -54,9 +47,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "sort-package-json": "^2.6.0",
-    "storybook": "^9.1.12",
+    "storybook": "^10.5.10",
     "vite": "^7.1.10",
-    "vue": "^3.5.22",
-    "webpack": "^5.102.1"
+    "vue": "^3.5.41"
   }
 }
