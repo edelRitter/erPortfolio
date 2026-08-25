@@ -2,23 +2,23 @@
   <section class="portfolio-artwork">
     <div class="portfolio-artwork__scroll">
       <div class="portfolio-artwork__scroll-text">
-        <span>SHOWCASE&nbsp;</span>
-        <span>SHOWCASE&nbsp;</span>
-        <span>SHOWCASE&nbsp;</span>
-        <span>SHOWCASE&nbsp;</span>
+        <span>{{ scrollText }}&nbsp;</span>
+        <span>{{ scrollText }}&nbsp;</span>
+        <span>{{ scrollText }}&nbsp;</span>
+        <span>{{ scrollText }}&nbsp;</span>
       </div>
       <div class="portfolio-artwork__scroll-text">
-        <span>SHOWCASE&nbsp;</span>
-        <span>SHOWCASE&nbsp;</span>
-        <span>SHOWCASE&nbsp;</span>
-        <span>SHOWCASE&nbsp;</span>
+        <span>{{ scrollText }}&nbsp;</span>
+        <span>{{ scrollText }}&nbsp;</span>
+        <span>{{ scrollText }}&nbsp;</span>
+        <span>{{ scrollText }}&nbsp;</span>
       </div>
     </div>
     <div class="portfolio-artwork__title">
       <div class="portfolio-artwork__title-border">
         <h2 class="portfolio-artwork__title-text">
-          showcase of all /
-          <span class="portfolio-artwork__title-text-sub">WORKS</span>
+          {{ titleText }}
+          <span class="portfolio-artwork__title-text-sub">{{ subtitleText }}</span>
         </h2>
       </div>
     </div>
@@ -26,21 +26,21 @@
       <div class="col-12">
         <div class="portfolio-artwork__icon">
           <p class="portfolio-artwork__icon-text text-center m-0">
-            illustration / photography works
+            {{ categoryText }}
           </p>
           <p class="portfolio-artwork__icon-img text-center m-0">
-            <img src="/img/icons/arrow_icon.svg" />
+            <img :src="arrowIconSrc" />
           </p>
         </div>
       </div>
       <div class="col-12 col-md-4">
         <div class="portfolio-artwork__description">
           <p class="portfolio-artwork__description-text m-0">
-            scroll down to see more /
+            {{ descriptionPrimary }}
           </p>
-          <p class="portfolio-artwork__description-text m-0">+</p>
+          <p class="portfolio-artwork__description-text m-0">{{ descriptionSeparator }}</p>
           <p class="portfolio-artwork__description-text m-0">
-            swipe left / right to see more photography
+            {{ descriptionSecondary }}
           </p>
         </div>
       </div>
@@ -110,6 +110,40 @@ export default {
   name: 'Artwork',
   components: {
     Modal,
+  },
+  props: {
+    scrollText: {
+      type: String,
+      default: 'SHOWCASE',
+    },
+    titleText: {
+      type: String,
+      default: 'showcase of all /',
+    },
+    subtitleText: {
+      type: String,
+      default: 'WORKS',
+    },
+    categoryText: {
+      type: String,
+      default: 'illustration / photography works',
+    },
+    arrowIconSrc: {
+      type: String,
+      default: '/img/icons/arrow_icon.svg',
+    },
+    descriptionPrimary: {
+      type: String,
+      default: 'scroll down to see more /',
+    },
+    descriptionSeparator: {
+      type: String,
+      default: '+',
+    },
+    descriptionSecondary: {
+      type: String,
+      default: 'swipe left / right to see more photography',
+    },
   },
   setup() {
     const modalStatus = ref('');
