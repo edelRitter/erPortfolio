@@ -13,6 +13,7 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import { VueLenis } from 'lenis/vue'
 import Menu from "@/portfolio/menu/index.vue";
 import Top from '@/portfolio/top/content_top/index.vue';
@@ -26,6 +27,16 @@ const lenisOptions = {
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smoothWheel: true,
 }
+
+// Scroll to top instantly on page load/reload (before Lenis initializes)
+if (typeof window !== 'undefined') {
+  window.history.scrollRestoration = 'manual';
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+}
+
+onMounted(() => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+})
 </script>
 
 <style>

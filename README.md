@@ -9,7 +9,7 @@ Currently just a test setup with minimal features.
 
 # Plugins
 
-Currently using [Swiper](https://swiperjs.com/) / [@yeger/vue-masonry-wall](https://vue-masonry-wall.yeger.eu/) / [aos](https://github.com/michalsnik/aos)
+Currently using [Swiper](https://swiperjs.com/) / [Lenis](https://lenis.dev/) / [aos](https://github.com/michalsnik/aos)
 
 Planning on Learning and using [three.js](https://threejs.org/)
 
