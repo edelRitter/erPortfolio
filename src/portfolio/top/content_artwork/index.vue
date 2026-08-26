@@ -74,7 +74,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useLenis } from 'lenis/vue';
 import Modal from '@/components/ui/modal/modal.vue';
 import artworkJson from './artwork_data.json';
@@ -147,7 +147,7 @@ let touchStartY = 0;
 let touchStartX = 0;
 
 const handleTouchStart = (e) => {
-  if (!isScrollLocked.value) return;
+  // Always record touch start position
   touchStartY = e.touches[0].clientY;
   touchStartX = e.touches[0].clientX;
 };
@@ -160,30 +160,28 @@ const handleTouchMove = (e) => {
   const deltaY = touchStartY - touchCurrentY;
   const deltaX = touchStartX - touchCurrentX;
   
-  // Only handle if vertical swipe is dominant (user trying to scroll down/up)
-  if (Math.abs(deltaY) > Math.abs(deltaX)) {
-    e.preventDefault();
-    
-    const maxTranslate = getMaxTranslate();
-    if (maxTranslate === 0) return;
-    
-    // Convert touch delta to progress (multiply by sensitivity factor for touch)
-    const touchSensitivity = scrollSensitivity * 2;
-    const progressDelta = (deltaY * touchSensitivity) / maxTranslate;
-    
-    scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
-    translateX.value = -scrollProgress.value * maxTranslate;
-    
-    // Update touch start for continuous movement
-    touchStartY = touchCurrentY;
-    touchStartX = touchCurrentX;
-    
-    // Unlock scroll when reaching the end
-    if (scrollProgress.value >= 1) {
-      unlockScroll();
-    } else if (scrollProgress.value <= 0) {
-      unlockScroll();
-    }
+  // Prevent default to stop native scroll when locked
+  e.preventDefault();
+  
+  const maxTranslate = getMaxTranslate();
+  if (maxTranslate === 0) return;
+  
+  // Convert touch delta to progress (multiply by sensitivity factor for touch)
+  const touchSensitivity = scrollSensitivity * 2;
+  const progressDelta = (deltaY * touchSensitivity) / maxTranslate;
+  
+  scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
+  translateX.value = -scrollProgress.value * maxTranslate;
+  
+  // Update touch start for continuous movement
+  touchStartY = touchCurrentY;
+  touchStartX = touchCurrentX;
+  
+  // Unlock scroll when reaching the end
+  if (scrollProgress.value >= 1) {
+    unlockScroll();
+  } else if (scrollProgress.value <= 0) {
+    unlockScroll();
   }
 };
 
@@ -193,6 +191,9 @@ const lockScroll = () => {
   if (lenis.value) {
     lenis.value.stop();
   }
+  // Prevent native scroll on mobile
+  document.body.style.overflow = 'hidden';
+  document.body.style.touchAction = 'none';
 };
 
 const unlockScroll = () => {
@@ -201,6 +202,9 @@ const unlockScroll = () => {
   if (lenis.value) {
     lenis.value.start();
   }
+  // Restore native scroll
+  document.body.style.overflow = '';
+  document.body.style.touchAction = '';
 };
 
 // Check if artwork section should lock scroll
