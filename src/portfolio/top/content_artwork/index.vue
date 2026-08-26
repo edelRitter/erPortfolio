@@ -29,30 +29,18 @@
         </div>
       </div>
 
-      <!-- Description -->
-      <div class="col-12 col-md-4">
-        <div class="artwork__desc">
-          <p class="artwork__desc-text m-0">{{ descriptionPrimary }}</p>
-          <p class="artwork__desc-text m-0">{{ descriptionSeparator }}</p>
-          <p class="artwork__desc-text m-0">{{ descriptionSecondary }}</p>
-        </div>
-      </div>
-
-      <!-- Masonry Gallery -->
-      <div class="col-12 col-md-8">
-        <div class="artwork__content">
-          <masonry-wall :items="items" :column-width="400" :min-columns="2" :gap="12">
-            <template #default="{ item }">
+      <!-- Horizontal Scroll Gallery -->
+      <div class="col-12">
+        <div ref="wrapperRef" class="artwork__wrapper">
+          <div class="artwork__sticky">
+            <div ref="trackRef" class="artwork__track" :style="trackStyle">
               <div
-                class="artwork__item flex items-center justify-center"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-                data-aos-delay="400"
-                data-aos-easing="ease-out-cubic"
+                v-for="item in items"
+                :key="item.id"
+                class="artwork__item"
               >
                 <p class="artwork__item-img">
                   <img
-                    class="w-100"
                     :src="getImageUrl(item.image)"
                     :alt="item.title"
                     :data-artwork="item.id"
@@ -66,8 +54,8 @@
                   <span class="artwork__item-title">{{ item.title }}</span>
                 </p>
               </div>
-            </template>
-          </masonry-wall>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -86,7 +74,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
+import { useLenis } from 'lenis/vue';
 import Modal from '@/components/ui/modal/modal.vue';
 import artworkJson from './artwork_data.json';
 
@@ -106,9 +95,105 @@ const props = defineProps({
 const modalStatus = ref('');
 const modalImage = ref('');
 const baseUrl = import.meta.env.BASE_URL;
+const wrapperRef = ref(null);
+const trackRef = ref(null);
+const translateX = ref(0);
+const isScrollLocked = ref(false);
+const scrollProgress = ref(0); // 0 to 1
 
 // Data
 const items = artworkJson;
+
+// Scroll sensitivity: higher = faster horizontal scroll per wheel delta
+const scrollSensitivity = 1.5;
+
+// Get lenis instance
+const lenis = useLenis();
+
+// Calculate max translate based on track width
+const getMaxTranslate = () => {
+  if (!trackRef.value) return 0;
+  const trackWidth = trackRef.value.scrollWidth;
+  const windowWidth = window.innerWidth;
+  return Math.max(0, trackWidth - windowWidth + 40);
+};
+
+// Handle wheel event when scroll is locked
+const handleWheel = (e) => {
+  if (!isScrollLocked.value) return;
+  
+  e.preventDefault();
+  
+  const maxTranslate = getMaxTranslate();
+  if (maxTranslate === 0) return;
+  
+  // Convert wheel delta to progress
+  const delta = e.deltaY * scrollSensitivity;
+  const progressDelta = delta / maxTranslate;
+  
+  scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
+  translateX.value = -scrollProgress.value * maxTranslate;
+  
+  // Unlock scroll when reaching the end
+  if (scrollProgress.value >= 1) {
+    unlockScroll();
+  } else if (scrollProgress.value <= 0) {
+    unlockScroll();
+  }
+};
+
+const lockScroll = () => {
+  if (isScrollLocked.value) return;
+  isScrollLocked.value = true;
+  if (lenis.value) {
+    lenis.value.stop();
+  }
+};
+
+const unlockScroll = () => {
+  if (!isScrollLocked.value) return;
+  isScrollLocked.value = false;
+  if (lenis.value) {
+    lenis.value.start();
+  }
+};
+
+// Check if artwork section should lock scroll
+useLenis(() => {
+  if (!wrapperRef.value || isScrollLocked.value) return;
+  
+  const wrapperRect = wrapperRef.value.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  
+  // Calculate center positions
+  const wrapperCenter = wrapperRect.top + wrapperRect.height / 2;
+  const viewportCenter = windowHeight / 2;
+  
+  // Lock scroll when artwork center reaches viewport center
+  // (with small tolerance of 50px)
+  const shouldLock = Math.abs(wrapperCenter - viewportCenter) < 50 &&
+                     scrollProgress.value < 1;
+  
+  if (shouldLock) {
+    lockScroll();
+  }
+});
+
+onMounted(() => {
+  window.addEventListener('wheel', handleWheel, { passive: false });
+});
+
+onUnmounted(() => {
+  window.removeEventListener('wheel', handleWheel);
+  if (isScrollLocked.value) {
+    unlockScroll();
+  }
+});
+
+const trackStyle = computed(() => ({
+  transform: `translate3d(${translateX.value}px, 0, 0)`,
+  willChange: 'transform'
+}));
 
 // Computed
 const resolvedArrowIconSrc = computed(() => 

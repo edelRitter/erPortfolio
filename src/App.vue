@@ -1,5 +1,6 @@
 <template>
   <div>
+    <VueLenis root :options="lenisOptions" />
     <div id="scrollarea">
       <Menu />
       <Top id="portfolioTop" />
@@ -12,12 +13,19 @@
 </template>
 
 <script setup>
+import { VueLenis } from 'lenis/vue'
 import Menu from "@/portfolio/menu/index.vue";
 import Top from '@/portfolio/top/content_top/index.vue';
 import Artwork from '@/portfolio/top/content_artwork/index.vue';
 import Photography from '@/portfolio/top/content_photography/index.vue';
 import Showcase from '@/portfolio/top/content_showcase/index.vue';
 import About from '@/portfolio/top/content_about/index.vue';
+
+const lenisOptions = {
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smoothWheel: true,
+}
 </script>
 
 <style>
