@@ -42,7 +42,7 @@
               >
                 <p class="artwork__item-img">
                   <img
-                    :src="getImageUrl(item.image)"
+                    :src="getImageUrl(item.thumb)"
                     :alt="item.title"
                     loading="lazy"
                     decoding="async"
@@ -102,6 +102,7 @@ const scrollProgress = ref(0); // 0 to 1
 const scrollDirection = ref('down'); // 'down' or 'up'
 const lastScrollY = ref(0);
 const hasExitedSection = ref(true); // Track if we've left the section
+const justUnlocked = ref(false); // Debounce flag to prevent immediate re-lock
 
 // Data
 const items = artworkJson;
@@ -136,12 +137,12 @@ const handleWheel = (e) => {
   scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
   translateX.value = -scrollProgress.value * maxTranslate;
   
-  // Unlock scroll when reaching the appropriate end based on direction
-  if (scrollProgress.value >= 1 && delta > 0) {
-    // Scrolling down and reached end
+  // Unlock scroll when reaching the appropriate end based on direction (with lenient thresholds)
+  if (scrollProgress.value >= 0.98 && delta > 0) {
+    // Scrolling down and nearly reached end
     unlockScroll();
-  } else if (scrollProgress.value <= 0 && delta < 0) {
-    // Scrolling up and reached beginning
+  } else if (scrollProgress.value <= 0.02 && delta < 0) {
+    // Scrolling up and nearly reached beginning
     unlockScroll();
   }
 };
@@ -185,12 +186,12 @@ const handleTouchMove = (e) => {
   touchStartY = touchCurrentY;
   touchStartX = touchCurrentX;
   
-  // Unlock scroll when reaching the appropriate end based on swipe direction
-  if (scrollProgress.value >= 1 && deltaY > 0) {
-    // Swiping up (scrolling down) and reached end
+  // Unlock scroll when reaching the appropriate end based on swipe direction (with lenient thresholds)
+  if (scrollProgress.value >= 0.98 && deltaY > 0) {
+    // Swiping up (scrolling down) and nearly reached end
     unlockScroll();
-  } else if (scrollProgress.value <= 0 && deltaY < 0) {
-    // Swiping down (scrolling up) and reached beginning
+  } else if (scrollProgress.value <= 0.02 && deltaY < 0) {
+    // Swiping down (scrolling up) and nearly reached beginning
     unlockScroll();
   }
 };
@@ -208,11 +209,16 @@ const lockScroll = () => {
 const unlockScroll = () => {
   if (!isScrollLocked.value) return;
   isScrollLocked.value = false;
+  justUnlocked.value = true;
   if (lenis.value) {
     lenis.value.start();
   }
   // Restore native scroll
   document.body.style.overflow = '';
+  // Prevent immediate re-lock
+  setTimeout(() => {
+    justUnlocked.value = false;
+  }, 100);
 };
 
 // Check if artwork section should lock scroll
@@ -258,7 +264,7 @@ useLenis((lenisInstance) => {
     }
   }
   
-  if (isScrollLocked.value) return;
+  if (isScrollLocked.value || justUnlocked.value) return;
   
   // Calculate center positions
   const wrapperCenter = wrapperRect.top + wrapperRect.height / 2;
@@ -268,10 +274,10 @@ useLenis((lenisInstance) => {
   const isNearCenter = Math.abs(wrapperCenter - viewportCenter) < 50;
   
   if (isNearCenter) {
-    // Lock if we haven't completed the scroll in the current direction
-    if (scrollDirection.value === 'down' && scrollProgress.value < 1) {
+    // Lock if we haven't completed the scroll in the current direction (matching unlock thresholds)
+    if (scrollDirection.value === 'down' && scrollProgress.value < 0.98) {
       lockScroll();
-    } else if (scrollDirection.value === 'up' && scrollProgress.value > 0) {
+    } else if (scrollDirection.value === 'up' && scrollProgress.value > 0.02) {
       lockScroll();
     }
   }
