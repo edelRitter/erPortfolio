@@ -142,6 +142,51 @@ const handleWheel = (e) => {
   }
 };
 
+// Touch event handling for mobile
+let touchStartY = 0;
+let touchStartX = 0;
+
+const handleTouchStart = (e) => {
+  if (!isScrollLocked.value) return;
+  touchStartY = e.touches[0].clientY;
+  touchStartX = e.touches[0].clientX;
+};
+
+const handleTouchMove = (e) => {
+  if (!isScrollLocked.value) return;
+  
+  const touchCurrentY = e.touches[0].clientY;
+  const touchCurrentX = e.touches[0].clientX;
+  const deltaY = touchStartY - touchCurrentY;
+  const deltaX = touchStartX - touchCurrentX;
+  
+  // Only handle if vertical swipe is dominant (user trying to scroll down/up)
+  if (Math.abs(deltaY) > Math.abs(deltaX)) {
+    e.preventDefault();
+    
+    const maxTranslate = getMaxTranslate();
+    if (maxTranslate === 0) return;
+    
+    // Convert touch delta to progress (multiply by sensitivity factor for touch)
+    const touchSensitivity = scrollSensitivity * 2;
+    const progressDelta = (deltaY * touchSensitivity) / maxTranslate;
+    
+    scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
+    translateX.value = -scrollProgress.value * maxTranslate;
+    
+    // Update touch start for continuous movement
+    touchStartY = touchCurrentY;
+    touchStartX = touchCurrentX;
+    
+    // Unlock scroll when reaching the end
+    if (scrollProgress.value >= 1) {
+      unlockScroll();
+    } else if (scrollProgress.value <= 0) {
+      unlockScroll();
+    }
+  }
+};
+
 const lockScroll = () => {
   if (isScrollLocked.value) return;
   isScrollLocked.value = true;
@@ -181,10 +226,14 @@ useLenis(() => {
 
 onMounted(() => {
   window.addEventListener('wheel', handleWheel, { passive: false });
+  window.addEventListener('touchstart', handleTouchStart, { passive: true });
+  window.addEventListener('touchmove', handleTouchMove, { passive: false });
 });
 
 onUnmounted(() => {
   window.removeEventListener('wheel', handleWheel);
+  window.removeEventListener('touchstart', handleTouchStart);
+  window.removeEventListener('touchmove', handleTouchMove);
   if (isScrollLocked.value) {
     unlockScroll();
   }
