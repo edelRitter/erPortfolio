@@ -1,158 +1,157 @@
 @use '@/assets/scss/_colors.scss' as colors;
 @use '@/assets/scss/_media-queries.scss' as media;
 
-.prt {
-  &-artwork {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
+
+.artwork {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: colors.$portfolio_Black;
+
+  &__icon {
+    padding: 12px 0;
+    font-size: 10px;
+    color: colors.$portfolio_White;
     background: colors.$portfolio_Black;
 
-    &__icon {
-      padding: 12px 0;
+    & img {
+      width: 30px;
+      height: auto;
+    }
+
+    &-text {
       font-size: 10px;
+    }
+  }
+
+  &__scroll {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    background: colors.$portfolio_White;
+
+    &-text {
+      font-size: 80px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
       color: colors.$portfolio_White;
-      background: colors.$portfolio_Black;
+      -webkit-text-stroke: 1px colors.$portfolio_Black;
+      font-family: 'Roboto', 'Manrope', sans-serif;
+      animation: animate_text 22s linear infinite;
+    }
+  }
 
-      & img {
-        width: 30px;
-        height: auto;
-      }
+  &__title {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    top: 50%;
+    left: 5%;
+    transform: translate(-5%, -50%);
+    padding: 20px;
+    background: colors.$portfolio_White;
+    z-index: 1;
 
-      &-text {
-        font-size: 10px;
-      }
+    @media #{media.$small-only} {
+      display: none;
     }
 
-    &__scroll {
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      white-space: nowrap;
-      background: colors.$portfolio_White;
-
-      &-text {
-        font-size: 80px;
-        font-weight: 700;
-        letter-spacing: -0.04em;
-        color: colors.$portfolio_White;
-        -webkit-text-stroke: 1px colors.$portfolio_Black;
-        font-family: 'Roboto', 'Manrope', sans-serif;
-        animation: animate_text 22s linear infinite;
-      }
+    @media #{media.$xsmall-and-down} {
+      display: none;
     }
 
-    &__title {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 30%;
-      top: 50%;
-      left: 5%;
-      transform: translate(-5%, -50%);
-      padding: 20px;
-      background: colors.$portfolio_White;
-      z-index: 1;
-
-      @media #{media.$small-only} {
-        display: none;
-      }
-
-      @media #{media.$xsmall-and-down} {
-        display: none;
-      }
-
-      &-border {
-        height: 100%;
-        padding: 8px 0;
-      }
-
-      &-text {
-        font-size: 24px;
-        line-height: 0.8em;
-        margin: 0;
-        font-family: 'Playfair', 'Manrope', sans-serif;
-        color: colors.$portfolio_Black;
-
-        &--sub {
-          color: colors.$portfolio_Gray700;
-        }
-      }
+    &-border {
+      height: 100%;
+      padding: 8px 0;
     }
 
-    &__desc {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: stretch;
-      align-content: stretch;
-      height: calc(100% - 24px);
-      margin: 12px 0 0 0;
-      padding: 20px;
-      border-radius: 8px;
-      color: colors.$portfolio_White;
-      background: colors.$black;
+    &-text {
+      font-size: 24px;
+      line-height: 0.8em;
+      margin: 0;
+      font-family: 'Playfair', 'Manrope', sans-serif;
+      color: colors.$portfolio_Black;
 
-      @media #{media.$small-only} {
-        display: none;
-      }
-
-      @media #{media.$xsmall-and-down} {
-        display: none;
-      }
-
-      &-text {
-        font-size: 12px;
-      }
-    }
-
-    &__content {
-      padding: 20px;
-      background: colors.$portfolio_Black;
-    }
-
-    &__item {
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: url('/img/icons/cursor_hover.svg'), auto;
-
-      &-img {
-        margin: 0;
-      }
-
-      &-text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0;
-        padding: 8px;
-        color: colors.$portfolio_White;
-        background: colors.$black;
-      }
-
-      &-type {
-        font-size: 11px;
-        padding-right: 8px;
-        font-family: 'Raleway', 'Manrope', sans-serif;
-      }
-
-      &-title {
-        font-size: 11px;
-        font-family: 'Roboto', 'Manrope', sans-serif;
-
-        @media #{media.$tiny-only} {
-          width: 50%;
-        }
+      &--sub {
+        color: colors.$portfolio_Gray700;
       }
     }
   }
 
-  &-modal__item {
-    &-img {
-      max-width: 100%;
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    height: calc(100% - 24px);
+    margin: 12px 0 0 0;
+    padding: 20px;
+    border-radius: 8px;
+    color: colors.$portfolio_White;
+    background: colors.$black;
+
+    @media #{media.$small-only} {
+      display: none;
     }
+
+    @media #{media.$xsmall-and-down} {
+      display: none;
+    }
+
+    &-text {
+      font-size: 12px;
+    }
+  }
+
+  &__content {
+    padding: 20px;
+    background: colors.$portfolio_Black;
+  }
+
+  &__item {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: url('/img/icons/cursor_hover.svg'), auto;
+
+    &-img {
+      margin: 0;
+    }
+
+    &-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 8px;
+      color: colors.$portfolio_White;
+      background: colors.$black;
+    }
+
+    &-type {
+      font-size: 11px;
+      padding-right: 8px;
+      font-family: 'Raleway', 'Manrope', sans-serif;
+    }
+
+    &-title {
+      font-size: 11px;
+      font-family: 'Roboto', 'Manrope', sans-serif;
+
+      @media #{media.$tiny-only} {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.modal__item {
+  &-img {
+  max-width: 100%;
   }
 }
 
@@ -168,9 +167,9 @@
 
 @keyframes animate_text {
   from {
-    transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
   }
 }

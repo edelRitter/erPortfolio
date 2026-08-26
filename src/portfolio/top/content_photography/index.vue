@@ -1,8 +1,8 @@
 <template>
-  <section class="prt-photography">
+  <section class="photography">
     <!-- Swiper Gallery -->
     <div
-      class="prt-photography__wrapper"
+      class="photography__wrapper"
       data-aos="fade-left"
       data-aos-duration="1200"
       data-aos-offset="200"
@@ -10,16 +10,16 @@
       data-aos-easing="ease-out-cubic"
     >
       <swiper
-        class="prt-photography__list"
+        class="photography__list"
         :slides-per-view="2"
         :space-between="12"
         @swiper="onSwiper"
         @slide-change="onSlideChange"
       >
         <swiper-slide v-for="item in items" :key="item.id">
-          <p class="prt-photography__item m-0">
+          <p class="photography__item m-0">
             <img
-              class="prt-photography__item-img"
+              class="photography__item-img"
               :style="{ background: `url(${getImageUrl(item.image)})`, backgroundSize: 'cover' }"
               :alt="item.title"
               :data-photography="item.id"
@@ -28,14 +28,14 @@
               @click="showModal"
             />
           </p>
-          <p class="prt-photography__item-text">
-            <span class="prt-photography__item-type">{{ item.type }}</span>
-            <span class="prt-photography__item-title">{{ item.title }}</span>
+          <p class="photography__item-text">
+            <span class="photography__item-type">{{ item.type }}</span>
+            <span class="photography__item-title">{{ item.title }}</span>
           </p>
         </swiper-slide>
       </swiper>
 
-      <p class="prt-photography__notice m-0 d-block d-md-none">
+      <p class="photography__notice m-0 d-block d-md-none">
         swipe left / right to see more photography
       </p>
     </div>
@@ -44,8 +44,8 @@
     <Transition name="modal-fade">
       <Modal v-if="modalStatus" :status="modalStatus" @modal-off="closeModal">
         <template #body>
-          <div class="prt-modal__item">
-            <img :src="modalImage" alt="Photography preview" class="prt-modal__item-img" />
+          <div class="modal__item">
+            <img :src="modalImage" alt="Photography preview" class="modal__item-img" />
           </div>
         </template>
       </Modal>

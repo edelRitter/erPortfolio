@@ -1,131 +1,130 @@
 @use '@/assets/scss/_colors.scss' as colors;
 @use '@/assets/scss/_media-queries.scss' as media;
 
-.prt {
-  &-about {
-    position: relative;
-    overflow: hidden;
+
+.about {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  background: colors.$portfolio_Black;
+
+  &__hero {
     width: 100%;
-    min-height: 100vh;
+
+    &-img {
+      width: auto;
+      max-height: 400px;
+      overflow: hidden;
+    }
+  }
+
+  &__title {
+    padding: 20px;
     background: colors.$portfolio_Black;
 
-    &__hero {
-      width: 100%;
-
-      &-img {
-        width: auto;
-        max-height: 400px;
-        overflow: hidden;
-      }
-    }
-
-    &__title {
-      padding: 20px;
-      background: colors.$portfolio_Black;
-
-      &-text {
-        font-size: 8vw;
-        line-height: 0.9em;
-        letter-spacing: -0.04em;
-        color: colors.$portfolio_Yellow;
-        font-family: 'Roboto', 'Manrope', sans-serif;
-
-        @media #{media.$xsmall-and-down} {
-          font-size: 12vw;
-        }
-      }
-
-      &-desc {
-        margin: 40px 0;
-        line-height: 1.1em;
-        font-size: 32px;
-        color: colors.$portfolio_Gray400;
-        font-family: 'Playfair', 'Manrope', sans-serif;
-
-        @media #{media.$xsmall-and-down} {
-          font-size: 6vw;
-        }
-      }
-    }
-
-    &__profile {
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      background: colors.$portfolio_White;
+    &-text {
+      font-size: 8vw;
+      line-height: 0.9em;
+      letter-spacing: -0.04em;
+      color: colors.$portfolio_Yellow;
+      font-family: 'Roboto', 'Manrope', sans-serif;
 
       @media #{media.$xsmall-and-down} {
-        padding: 20px;
-      }
-
-      &-wrap {
-        padding: 12px 0;
-      }
-
-      &-name {
-        font-size: 24px;
-        line-height: 0.8em;
-        font-family: 'Playfair', 'Manrope', sans-serif;
-
-        &--sub {
-          color: colors.$portfolio_Gray700;
-        }
-      }
-
-      &-title {
-        font-size: 20px;
-        font-family: 'Raleway', 'Manrope', sans-serif;
-      }
-
-      &-list {
-        list-style-type: none;
-        width: 50%;
-        margin: 0;
-        padding: 4px 12px 4px 0;
-        font-size: 14px;
-        font-family: 'Playfair', 'Manrope', sans-serif;
+        font-size: 12vw;
       }
     }
 
-    &__picture {
-      display: flex;
-      align-items: center;
-      padding: 24px 0;
-
-      &-img {
-        max-width: 80px;
-        border-radius: 100px;
-        overflow: hidden;
-      }
-
-      &-text {
-        margin: 0 0 0 20px;
-        line-height: 1em;
-        font-size: 16px;
-        font-family: 'Playfair', 'Manrope', sans-serif;
-
-        &--jp {
-          font-size: 12px;
-          font-family: 'Noto Serif JP', serif;
-        }
-      }
-    }
-
-    &__sns {
-      padding: 80px 0;
+    &-desc {
+      margin: 40px 0;
+      line-height: 1.1em;
+      font-size: 32px;
+      color: colors.$portfolio_Gray400;
+      font-family: 'Playfair', 'Manrope', sans-serif;
 
       @media #{media.$xsmall-and-down} {
-        padding: 40px 0;
+        font-size: 6vw;
+      }
+    }
+  }
+
+  &__profile {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: colors.$portfolio_White;
+
+    @media #{media.$xsmall-and-down} {
+      padding: 20px;
+    }
+
+    &-wrap {
+      padding: 12px 0;
+    }
+
+    &-name {
+      font-size: 24px;
+      line-height: 0.8em;
+      font-family: 'Playfair', 'Manrope', sans-serif;
+
+      &--sub {
+        color: colors.$portfolio_Gray700;
       }
     }
 
-    &__logo {
-      margin: 0 auto;
-      text-align: center;
+    &-title {
+      font-size: 20px;
+      font-family: 'Raleway', 'Manrope', sans-serif;
+    }
 
-      &-img {
-        max-width: 100px;
+    &-list {
+      list-style-type: none;
+      width: 50%;
+      margin: 0;
+      padding: 4px 12px 4px 0;
+      font-size: 14px;
+      font-family: 'Playfair', 'Manrope', sans-serif;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+
+    &-img {
+      max-width: 80px;
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    &-text {
+      margin: 0 0 0 20px;
+      line-height: 1em;
+      font-size: 16px;
+      font-family: 'Playfair', 'Manrope', sans-serif;
+
+      &--jp {
+        font-size: 12px;
+        font-family: 'Noto Serif JP', serif;
       }
+    }
+  }
+
+  &__sns {
+    padding: 80px 0;
+
+    @media #{media.$xsmall-and-down} {
+      padding: 40px 0;
+    }
+  }
+
+  &__logo {
+    margin: 0 auto;
+    text-align: center;
+
+    &-img {
+      max-width: 100px;
     }
   }
 }

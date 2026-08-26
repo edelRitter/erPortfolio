@@ -72,218 +72,216 @@
   }
 }
 
-.prt {
-  &-showcase {
-    position: relative;
+.showcase {
+  position: relative;
+  overflow: hidden;
+
+  &__main {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__scroll {
+    width: 100%;
     overflow: hidden;
+    display: flex;
+    white-space: nowrap;
 
-    &__main {
-      width: 100%;
-      min-height: 50vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    &-text {
+      font-size: 80px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: colors.$portfolio_White;
+      -webkit-text-stroke: 1px colors.$portfolio_Black;
+      font-family: 'Roboto', 'Manrope', sans-serif;
+      animation: animate_text 18s linear infinite;
     }
+  }
 
-    &__scroll {
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      white-space: nowrap;
+  &__title {
+    padding: 20px;
 
-      &-text {
-        font-size: 80px;
-        font-weight: 700;
-        letter-spacing: -0.04em;
-        color: colors.$portfolio_White;
-        -webkit-text-stroke: 1px colors.$portfolio_Black;
-        font-family: 'Roboto', 'Manrope', sans-serif;
-        animation: animate_text 18s linear infinite;
-      }
-    }
-
-    &__title {
-      padding: 20px;
-
-      &-text {
-        font-size: 8vw;
-        line-height: 0.9em;
-        letter-spacing: -0.04em;
-        color: colors.$portfolio_Black;
-        font-family: 'Roboto', 'Manrope', sans-serif;
-
-        @media #{media.$xsmall-and-down} {
-          font-size: 12vw;
-        }
-      }
-
-      &-desc {
-        margin: 20px 0;
-        line-height: 1.1em;
-        font-size: 24px;
-        color: colors.$portfolio_Gray700;
-        font-family: 'Playfair', 'Manrope', sans-serif;
-
-        @media #{media.$xsmall-and-down} {
-          font-size: 5vw;
-        }
-      }
-    }
-
-    &__wrap {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: stretch;
-      align-content: center;
-      padding: 0 20px 20px 20px;
-    }
-
-    &__link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
-      padding: 8px;
+    &-text {
+      font-size: 8vw;
+      line-height: 0.9em;
+      letter-spacing: -0.04em;
       color: colors.$portfolio_Black;
-      background: colors.$portfolio_White;
-      border: 1px solid colors.$portfolio_Black;
-      border-radius: 40px;
-      cursor: url('/img/icons/cursor_hover.svg'), auto;
+      font-family: 'Roboto', 'Manrope', sans-serif;
 
-      &-text {
-        font-size: 16px;
-        line-height: 0.8em;
-        font-family: 'Playfair', 'Manrope', sans-serif;
-
-        @media #{media.$xsmall-and-down} {
-          font-size: 5vw;
-        }
-      }
-
-      &-img {
-        max-width: 20px;
-        margin: 0 8px;
-
-        & img {
-          width: 12px;
-        }
+      @media #{media.$xsmall-and-down} {
+        font-size: 12vw;
       }
     }
 
-    &__splash {
-      display: none;
-      width: 100vw;
-      height: 100vh;
-      top: 0;
-      overflow: hidden;
-      z-index: 0;
+    &-desc {
+      margin: 20px 0;
+      line-height: 1.1em;
+      font-size: 24px;
+      color: colors.$portfolio_Gray700;
+      font-family: 'Playfair', 'Manrope', sans-serif;
 
-      &.is-active {
-        position: fixed;
-        display: flex;
-        overflow-y: scroll;
-        z-index: 5;
+      @media #{media.$xsmall-and-down} {
+        font-size: 5vw;
       }
+    }
+  }
 
-      &-svg {
-        position: absolute;
-        margin: auto;
-        top: 0;
-        left: 0;
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+    padding: 0 20px 20px 20px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 8px;
+    color: colors.$portfolio_Black;
+    background: colors.$portfolio_White;
+    border: 1px solid colors.$portfolio_Black;
+    border-radius: 40px;
+    cursor: url('/img/icons/cursor_hover.svg'), auto;
+
+    &-text {
+      font-size: 16px;
+      line-height: 0.8em;
+      font-family: 'Playfair', 'Manrope', sans-serif;
+
+      @media #{media.$xsmall-and-down} {
+        font-size: 5vw;
+      }
+    }
+
+    &-img {
+      max-width: 20px;
+      margin: 0 8px;
+
+      & img {
+        width: 12px;
+      }
+    }
+  }
+
+  &__splash {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    overflow: hidden;
+    z-index: 0;
+
+    &.is-active {
+      position: fixed;
+      display: flex;
+      overflow-y: scroll;
+      z-index: 5;
+    }
+
+    &-svg {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+
+      svg {
         width: 100%;
         height: 100%;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
+        -webkit-backface-visibility: visible;
+        backface-visibility: visible;
 
-        svg {
+        rect {
           width: 100%;
           height: 100%;
-          -webkit-backface-visibility: visible;
-          backface-visibility: visible;
-
-          rect {
-            width: 100%;
-            height: 100%;
-            fill: colors.$portfolio_Yellow;
-            stroke: 0;
-            -webkit-clip-path: polygon(
-              45vw 40vh,
-              55vw 40vh,
-              55vw 60vh,
-              45vw 60vh
-            );
-            clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
-            @include animation('expand 0.5s ease-in forwards');
-          }
+          fill: colors.$portfolio_Yellow;
+          stroke: 0;
+          -webkit-clip-path: polygon(
+            45vw 40vh,
+            55vw 40vh,
+            55vw 60vh,
+            45vw 60vh
+          );
+          clip-path: polygon(45vw 40vh, 55vw 40vh, 55vw 60vh, 45vw 60vh);
+          @include animation('expand 0.5s ease-in forwards');
         }
       }
     }
+  }
 
-    &__panel {
-      position: relative;
-      height: 0;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease-in 0.5s;
+  &__panel {
+    position: relative;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in 0.5s;
 
-      &.is-active {
-        position: fixed;
-        top: 0;
-        opacity: 1;
-        width: 100%;
-        height: 100%;
-        visibility: visible;
-        z-index: 6;
-      }
-
-      &-close {
-        display: none;
-        position: fixed;
-        bottom: 8px;
-        left: 8px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50px;
-        color: colors.$portfolio_Black;
-        background: colors.$portfolio_Yellow;
-        z-index: 1;
-      }
-
-      &-list {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        overflow-y: scroll;
-        color: colors.$portfolio_Black;
-        background: colors.$portfolio_White;
-      }
+    &.is-active {
+      position: fixed;
+      top: 0;
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      visibility: visible;
+      z-index: 6;
     }
 
-    &__close-btn {
+    &-close {
+      display: none;
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      color: colors.$portfolio_Black;
+      background: colors.$portfolio_Yellow;
+      z-index: 1;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: scroll;
+      color: colors.$portfolio_Black;
+      background: colors.$portfolio_White;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    display: inline-block;
+    top: 20px;
+    left: 11px;
+    z-index: 3;
+
+    &::before,
+    &::after {
+      content: '';
       position: absolute;
-      display: inline-block;
-      top: 20px;
-      left: 11px;
-      z-index: 3;
+      width: 18px;
+      height: 1px;
+      background: colors.$portfolio_Black;
+    }
 
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        width: 18px;
-        height: 1px;
-        background: colors.$portfolio_Black;
-      }
+    &::before {
+      transform: rotate(45deg);
+    }
 
-      &::before {
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        transform: rotate(-45deg);
-      }
+    &::after {
+      transform: rotate(-45deg);
     }
   }
 }
