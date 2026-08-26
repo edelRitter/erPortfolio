@@ -1,7 +1,7 @@
 @use '@/assets/scss/_colors.scss' as colors;
 @use '@/assets/scss/_media-queries.scss' as media;
 
-.portfolio {
+.prt {
   &-artwork {
     position: relative;
     width: 100%;
@@ -76,13 +76,13 @@
         font-family: 'Playfair', 'Manrope', sans-serif;
         color: colors.$portfolio_Black;
 
-        &-sub {
+        &--sub {
           color: colors.$portfolio_Gray700;
         }
       }
     }
 
-    &__description {
+    &__desc {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -111,12 +111,12 @@
     &__content {
       padding: 20px;
       background: colors.$portfolio_Black;
+    }
 
-      &-item {
-        border-radius: 8px;
-        overflow: hidden;
-        cursor: url('/img/icons/cursor_hover.svg'), auto;
-      }
+    &__item {
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: url('/img/icons/cursor_hover.svg'), auto;
 
       &-img {
         margin: 0;
@@ -146,6 +146,12 @@
           width: 50%;
         }
       }
+    }
+  }
+
+  &-modal__item {
+    &-img {
+      max-width: 100%;
     }
   }
 }

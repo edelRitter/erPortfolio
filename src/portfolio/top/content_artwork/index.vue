@@ -1,18 +1,18 @@
 <template>
-  <section class="portfolio-artwork">
+  <section class="prt-artwork">
     <!-- Scrolling Text Banner -->
-    <div class="portfolio-artwork__scroll">
-      <div v-for="n in 2" :key="n" class="portfolio-artwork__scroll-text">
+    <div class="prt-artwork__scroll">
+      <div v-for="n in 2" :key="n" class="prt-artwork__scroll-text">
         <span v-for="i in 4" :key="i">{{ scrollText }}&nbsp;</span>
       </div>
     </div>
 
     <!-- Title Section -->
-    <div class="portfolio-artwork__title">
-      <div class="portfolio-artwork__title-border">
-        <h2 class="portfolio-artwork__title-text">
+    <div class="prt-artwork__title">
+      <div class="prt-artwork__title-border">
+        <h2 class="prt-artwork__title-text">
           {{ titleText }}
-          <span class="portfolio-artwork__title-text-sub">{{ subtitleText }}</span>
+          <span class="prt-artwork__title-text--sub">{{ subtitleText }}</span>
         </h2>
       </div>
     </div>
@@ -21,9 +21,9 @@
     <div class="row no-gutters">
       <!-- Category Icon -->
       <div class="col-12">
-        <div class="portfolio-artwork__icon">
-          <p class="portfolio-artwork__icon-text text-center m-0">{{ categoryText }}</p>
-          <p class="portfolio-artwork__icon-img text-center m-0">
+        <div class="prt-artwork__icon">
+          <p class="prt-artwork__icon-text text-center m-0">{{ categoryText }}</p>
+          <p class="prt-artwork__icon-img text-center m-0">
             <img :src="resolvedArrowIconSrc" alt="Arrow icon" />
           </p>
         </div>
@@ -31,26 +31,26 @@
 
       <!-- Description -->
       <div class="col-12 col-md-4">
-        <div class="portfolio-artwork__description">
-          <p class="portfolio-artwork__description-text m-0">{{ descriptionPrimary }}</p>
-          <p class="portfolio-artwork__description-text m-0">{{ descriptionSeparator }}</p>
-          <p class="portfolio-artwork__description-text m-0">{{ descriptionSecondary }}</p>
+        <div class="prt-artwork__desc">
+          <p class="prt-artwork__desc-text m-0">{{ descriptionPrimary }}</p>
+          <p class="prt-artwork__desc-text m-0">{{ descriptionSeparator }}</p>
+          <p class="prt-artwork__desc-text m-0">{{ descriptionSecondary }}</p>
         </div>
       </div>
 
       <!-- Masonry Gallery -->
       <div class="col-12 col-md-8">
-        <div class="portfolio-artwork__content">
+        <div class="prt-artwork__content">
           <masonry-wall :items="items" :column-width="400" :min-columns="2" :gap="12">
             <template #default="{ item }">
               <div
-                class="portfolio-artwork__content-item flex items-center justify-center"
+                class="prt-artwork__item flex items-center justify-center"
                 data-aos="fade-up"
                 data-aos-duration="1200"
                 data-aos-delay="400"
                 data-aos-easing="ease-out-cubic"
               >
-                <p class="portfolio-artwork__content-img">
+                <p class="prt-artwork__item-img">
                   <img
                     class="w-100"
                     :src="getImageUrl(item.image)"
@@ -61,9 +61,9 @@
                     @click="showModal"
                   />
                 </p>
-                <p class="portfolio-artwork__content-text">
-                  <span class="portfolio-artwork__content-type">{{ item.type }}</span>
-                  <span class="portfolio-artwork__content-title">{{ item.title }}</span>
+                <p class="prt-artwork__item-text">
+                  <span class="prt-artwork__item-type">{{ item.type }}</span>
+                  <span class="prt-artwork__item-title">{{ item.title }}</span>
                 </p>
               </div>
             </template>
@@ -76,8 +76,8 @@
     <Transition name="modal-fade">
       <Modal v-if="modalStatus" :status="modalStatus" @modal-off="closeModal">
         <template #body>
-          <div class="portfolio-modal__item">
-            <img :src="modalImage" alt="Artwork preview" class="portfolio-modal__item-images" />
+          <div class="prt-modal__item">
+            <img :src="modalImage" alt="Artwork preview" class="prt-modal__item-img" />
           </div>
         </template>
       </Modal>

@@ -1,7 +1,7 @@
 @use '@/assets/scss/_colors.scss' as colors;
 @use '@/assets/scss/_media-queries.scss' as media;
 
-.portfolio {
+.prt {
   &-showcase {
     position: relative;
 
@@ -49,16 +49,16 @@
     }
 
     &__bg {
-      &-light {
+      &--light {
         background: colors.$portfolio_White;
 
-        & .portfolio-showcase__item-border {
+        & .prt-showcase__item-border {
           color: colors.$portfolio_Black;
           border-top: 1px solid colors.$portfolio_Black;
         }
 
-        & .portfolio-showcase__item-title,
-        & .portfolio-showcase__item-text {
+        & .prt-showcase__item-title,
+        & .prt-showcase__item-text {
           color: colors.$portfolio_Black;
         }
       }

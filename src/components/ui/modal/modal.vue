@@ -1,17 +1,17 @@
 <template>
-  <div class="portfolio-modal">
-    <div class="portfolio-modal__content">
-      <p class="portfolio-modal__close" @click="closeModal"></p>
-      <div class="portfolio-modal__wrap">
+  <div class="prt-modal">
+    <div class="prt-modal__content">
+      <p class="prt-modal__close" @click="closeModal"></p>
+      <div class="prt-modal__wrap">
         <!-- default view -->
-        <div class="portfolio-modal__opened" v-show="status === 'confirmation'">
+        <div class="prt-modal__opened" v-show="status === 'confirmation'">
           <slot name="body">
-            <div class="portfolio-modal__item">
+            <div class="prt-modal__item">
               <p class="m-0">
                 <img 
                   src="https://via.placeholder.com/800x600?text=Modal+Content" 
                   alt="Placeholder image"
-                  class="portfolio-modal__item-images" 
+                  class="prt-modal__item-img" 
                 />
               </p>
             </div>
@@ -20,7 +20,7 @@
         <!-- /default view -->
       </div>
     </div>
-    <div class="portfolio-modal__bg" @click="closeModal"></div>
+    <div class="prt-modal__bg" @click="closeModal"></div>
   </div>
 </template>
 

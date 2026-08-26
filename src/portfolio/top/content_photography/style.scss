@@ -1,7 +1,7 @@
 @use '@/assets/scss/_colors.scss' as colors;
 @use '@/assets/scss/_media-queries.scss' as media;
 
-.portfolio {
+.prt {
   &-photography {
     position: relative;
     overflow: hidden;
@@ -39,7 +39,7 @@
       color: colors.$portfolio_White;
     }
 
-    &__content {
+    &__item {
       &-img {
         display: block;
         width: 100%;
@@ -74,6 +74,12 @@
           width: 50%;
         }
       }
+    }
+  }
+
+  &-modal__item {
+    &-img {
+      max-width: 100%;
     }
   }
 }

@@ -1,17 +1,17 @@
 <template>
-  <section class="portfolio-showcase">
+  <section class="prt-showcase">
     <!-- Main Content -->
-    <div class="portfolio-showcase__all">
+    <div class="prt-showcase__main">
       <!-- Scrolling Text Banner -->
-      <div class="portfolio-showcase__all-scroll">
-        <div v-for="n in 2" :key="n" class="portfolio-showcase__all-scroll-text">
+      <div class="prt-showcase__scroll">
+        <div v-for="n in 2" :key="n" class="prt-showcase__scroll-text">
           <span v-for="i in 4" :key="i">{{ scrollText }}&nbsp;</span>
         </div>
       </div>
 
       <!-- Title Section -->
-      <div class="portfolio-showcase__all-title">
-        <h2 class="portfolio-showcase__all-title-text">
+      <div class="prt-showcase__title">
+        <h2 class="prt-showcase__title-text">
           <p
             v-for="(line, index) in titleLines"
             :key="index"
@@ -27,7 +27,7 @@
           </p>
         </h2>
         <p
-          class="portfolio-showcase__all-title-desc"
+          class="prt-showcase__title-desc"
           data-aos="fade-up"
           data-aos-duration="800"
           data-aos-delay="800"
@@ -39,11 +39,11 @@
       </div>
 
       <!-- Call to Action -->
-      <div class="portfolio-showcase__all-wrap">
-        <div class="portfolio-showcase__all-link" @click="toggleShowcase">
-          <p class="portfolio-showcase__all-text m-0">{{ linkText }}&nbsp;</p>
+      <div class="prt-showcase__wrap">
+        <div class="prt-showcase__link" @click="toggleShowcase">
+          <p class="prt-showcase__link-text m-0">{{ linkText }}&nbsp;</p>
           <p
-            class="portfolio-showcase__all-img mb-1"
+            class="prt-showcase__link-img mb-1"
             data-aos="fade"
             data-aos-duration="600"
             data-aos-delay="200"
@@ -56,8 +56,8 @@
     </div>
 
     <!-- Splash Overlay -->
-    <div class="portfolio-showcase__splash" :class="{ 'is-active': isActive }">
-      <div class="portfolio-showcase__splash-svg">
+    <div class="prt-showcase__splash" :class="{ 'is-active': isActive }">
+      <div class="prt-showcase__splash-svg">
         <svg width="100%" height="100%">
           <rect width="100%" height="100%" />
         </svg>
@@ -65,15 +65,15 @@
     </div>
 
     <!-- Showcase Content Panel -->
-    <div class="portfolio-showcase__splash-contents" :class="{ 'is-active': isActive }">
+    <div class="prt-showcase__panel" :class="{ 'is-active': isActive }">
       <div
-        class="portfolio-showcase__splash-contents-close"
+        class="prt-showcase__panel-close"
         :class="{ 'd-block': isActive }"
         @click="toggleShowcase"
       >
-        <p class="portfolio-showcase__splash-contents-close-btn" />
+        <p class="prt-showcase__close-btn" />
       </div>
-      <div class="portfolio-showcase__splash-contents-list">
+      <div class="prt-showcase__panel-list">
         <ShowcaseItem />
       </div>
     </div>
