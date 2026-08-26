@@ -5,7 +5,17 @@
       <div class="portfolio-modal__wrap">
         <!-- default view -->
         <div class="portfolio-modal__opened" v-show="status === 'confirmation'">
-          <slot name="body"> Default body content </slot>
+          <slot name="body">
+            <div class="portfolio-modal__item">
+              <p class="m-0">
+                <img 
+                  src="https://via.placeholder.com/800x600?text=Modal+Content" 
+                  alt="Placeholder image"
+                  class="portfolio-modal__item-images" 
+                />
+              </p>
+            </div>
+          </slot>
         </div>
         <!-- /default view -->
       </div>
@@ -20,9 +30,10 @@ export default {
   props: {
     status: String,
   },
+  emits: ['modal-off'],
   methods: {
     closeModal() {
-      this.$emit('modalOff');
+      this.$emit('modal-off');
     },
   },
 };
