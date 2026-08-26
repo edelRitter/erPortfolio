@@ -1,9 +1,9 @@
 <template>
-  <section class="portfolio-top">
-    <div class="portfolio-top__hero m-0">
-      <div class="portfolio-top__wrapper">
+  <section class="top">
+    <div class="top__hero m-0">
+      <div class="top__wrapper">
         <span
-          class="portfolio-top__subtitle"
+          class="top__subtitle"
           data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="300"
@@ -14,7 +14,7 @@
         </span>
         <br />
         <span
-          class="portfolio-top__subtitle"
+          class="top__subtitle"
           data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="600"
@@ -25,7 +25,7 @@
         </span>
         <br />
         <span
-          class="portfolio-top__subtitle"
+          class="top__subtitle"
           data-aos="zoom-in"
           data-aos-duration="1200"
           data-aos-delay="900"
@@ -34,14 +34,14 @@
         >
           ILLUSTRATOR /
         </span>
-        <p class="portfolio-top__text m-0">-</p>
-        <p class="portfolio-top__text m-0">porfolio website created by</p>
-        <p class="portfolio-top__text m-0">-</p>
-        <h1 class="portfolio-top__title">edelRitter</h1>
+        <p class="top__text m-0">-</p>
+        <p class="top__text m-0">porfolio website created by</p>
+        <p class="top__text m-0">-</p>
+        <h1 class="top__title">edelRitter</h1>
         <socialNetworking :class="this.alignment" />
       </div>
     </div>
-    <video playsinline autoplay muted loop class="portfolio-top__video">
+    <video playsinline autoplay muted loop class="top__video">
       <source src="@/assets/video/teamlab_video1.mp4" type="video/mp4" />
     </video>
   </section>

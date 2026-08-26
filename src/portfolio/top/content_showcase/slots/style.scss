@@ -1,66 +1,65 @@
 @use '@/assets/scss/_colors.scss' as colors;
 @use '@/assets/scss/_media-queries.scss' as media;
 
-.portfolio {
-  &-showcase {
-    position: relative;
 
-    &__item {
-      clear: both;
-      padding: 20px;
-      background: colors.$portfolio_Black;
+.showcase {
+  position: relative;
 
-      &-border {
-        width: 100%;
-        margin: 0 0 20px 0;
-        color: colors.$portfolio_White;
-        border-top: 1px solid colors.$portfolio_White;
-      }
+  &__item {
+    clear: both;
+    padding: 20px;
+    background: colors.$portfolio_Black;
 
-      &-title {
-        font-size: 20px;
-        line-height: 1em;
-        font-family: 'Playfair', 'Manrope', sans-serif;
-        color: colors.$portfolio_White;
+    &-border {
+      width: 100%;
+      margin: 0 0 20px 0;
+      color: colors.$portfolio_White;
+      border-top: 1px solid colors.$portfolio_White;
+    }
 
-        @media #{media.$xsmall-and-down} {
-          font-size: 8vw;
-        }
-      }
+    &-title {
+      font-size: 20px;
+      line-height: 1em;
+      font-family: 'Playfair', 'Manrope', sans-serif;
+      color: colors.$portfolio_White;
 
-      &-img {
-        line-height: 0;
-        margin: 0 auto 4px;
-
-        &--rough {
-          line-height: 0;
-          margin: 0 auto 4px;
-        }
-      }
-
-      &-text {
-        margin-bottom: 40px;
-        font-size: 14px;
-        line-height: 1.2em;
-        white-space: pre-line;
-        font-family: 'Roboto', 'Manrope', sans-serif;
-        color: colors.$portfolio_White;
+      @media #{media.$xsmall-and-down} {
+        font-size: 8vw;
       }
     }
 
-    &__bg {
-      &-light {
-        background: colors.$portfolio_White;
+    &-img {
+      line-height: 0;
+      margin: 0 auto 4px;
 
-        & .portfolio-showcase__item-border {
-          color: colors.$portfolio_Black;
-          border-top: 1px solid colors.$portfolio_Black;
-        }
+      &--rough {
+        line-height: 0;
+        margin: 0 auto 4px;
+      }
+    }
 
-        & .portfolio-showcase__item-title,
-        & .portfolio-showcase__item-text {
-          color: colors.$portfolio_Black;
-        }
+    &-text {
+      margin-bottom: 40px;
+      font-size: 14px;
+      line-height: 1.2em;
+      white-space: pre-line;
+      font-family: 'Roboto', 'Manrope', sans-serif;
+      color: colors.$portfolio_White;
+    }
+  }
+
+  &__bg {
+    &--light {
+      background: colors.$portfolio_White;
+
+      & .showcase__item-border {
+        color: colors.$portfolio_Black;
+        border-top: 1px solid colors.$portfolio_Black;
+      }
+
+      & .showcase__item-title,
+      & .showcase__item-text {
+        color: colors.$portfolio_Black;
       }
     }
   }

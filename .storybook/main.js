@@ -6,5 +6,11 @@ const config = {
     name: '@storybook/vue3-vite',
     options: {},
   },
+  async viteFinal(config) {
+    return {
+      ...config,
+      assetsInclude: [...(config.assetsInclude || []), '**/*.svg'],
+    };
+  },
 };
 export default config;

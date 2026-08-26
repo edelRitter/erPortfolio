@@ -1,7 +1,8 @@
 <template>
-  <section class="portfolio-photography">
+  <section class="photography">
+    <!-- Swiper Gallery -->
     <div
-      class="portfolio-photography__wrapper"
+      class="photography__wrapper"
       data-aos="fade-left"
       data-aos-duration="1200"
       data-aos-offset="200"
@@ -9,51 +10,42 @@
       data-aos-easing="ease-out-cubic"
     >
       <swiper
-        class="portfolio-photography__list"
+        class="photography__list"
         :slides-per-view="2"
         :space-between="12"
         @swiper="onSwiper"
-        @slideChange="onSlideChange"
+        @slide-change="onSlideChange"
       >
-        <swiper-slide v-for="(item, index) in items" :key="index">
-          <p class="portfolio-photography__content m-0">
+        <swiper-slide v-for="item in items" :key="item.id">
+          <p class="photography__item m-0">
             <img
-              class="portfolio-photography__content-img"
-              :style="{
-                background: 'url(' + getImageUrl(item.image) + ')',
-                backgroundSize: 'cover',
-              }"
+              class="photography__item-img"
+              :style="{ background: `url(${getImageUrl(item.image)})`, backgroundSize: 'cover' }"
+              :alt="item.title"
               :data-photography="item.id"
               loading="lazy"
               decoding="async"
               @click="showModal"
             />
           </p>
-          <p class="portfolio-photography__content-text">
-            <span class="portfolio-photography__content-type">{{
-              item.type
-            }}</span>
-            <span class="portfolio-photography__content-title">{{
-              item.title
-            }}</span>
+          <p class="photography__item-text">
+            <span class="photography__item-type">{{ item.type }}</span>
+            <span class="photography__item-title">{{ item.title }}</span>
           </p>
         </swiper-slide>
       </swiper>
-      <p class="portfolio-photography__notice m-0 d-block d-md-none">
+
+      <p class="photography__notice m-0 d-block d-md-none">
         swipe left / right to see more photography
       </p>
     </div>
-    <Transition
-      name="modal-fade"
-      :status="this.modalStatus"
-      v-show="this.modalStatus !== ''"
-    >
-      <Modal @modalOff="closeModal">
-        <template v-slot:body>
-          <div class="portfolio-modal__item">
-            <p class="m-0">
-              <img :src="modalImage" class="portfolio-modal__item-images" />
-            </p>
+
+    <!-- Image Modal -->
+    <Transition name="modal-fade">
+      <Modal v-if="modalStatus" :status="modalStatus" @modal-off="closeModal">
+        <template #body>
+          <div class="modal__item">
+            <img :src="modalImage" alt="Photography preview" class="modal__item-img" />
           </div>
         </template>
       </Modal>
@@ -61,71 +53,47 @@
   </section>
 </template>
 
-<script>
-// Import Swiper Vue.js components
+<script setup>
 import { ref } from 'vue';
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
 import Modal from '@/components/ui/modal/modal.vue';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
 import photoJson from './photography_data.json';
 
-export default {
-  name: 'Photography',
-  components: {
-    Modal,
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    const modalStatus = ref('');
-    const modalImage = ref('');
-    const baseUrl = import.meta.env.BASE_URL;
-    const items = photoJson;
+// Swiper styles
+import 'swiper/css';
 
-    const getImageUrl = (filename) => `${baseUrl}img/photography/${filename}`;
+// State
+const modalStatus = ref('');
+const modalImage = ref('');
+const baseUrl = import.meta.env.BASE_URL;
 
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
+// Data
+const items = photoJson;
 
-    const onSlideChange = () => {
-      console.log('slide change');
-    };
+// Methods
+const getImageUrl = (filename) => `${baseUrl}img/photography/${filename}`;
 
-    return {
-      items,
-      modalStatus,
-      modalImage,
-      getImageUrl,
-      onSwiper,
-      onSlideChange,
-      modules: [Navigation, Pagination, Scrollbar],
-    };
-  },
-  methods: {
-    showModal(event) {
-      this.modalStatus = 'confirmation';
-      const photoData = event.target.dataset.photography;
-      const itemObject = this.items.filter(
-        (res) => res.id.indexOf(photoData) !== -1
-      );
-      const itemPhoto = this.getImageUrl(itemObject[0].image);
+const onSwiper = (swiper) => {
+  // Swiper instance ready
+};
 
-      return (this.modalImage = itemPhoto);
-    },
-    closeModal() {
-      this.modalStatus = '';
-      this.modalImage = '';
-    },
-  },
+const onSlideChange = () => {
+  // Slide changed
+};
+
+const showModal = (event) => {
+  const photoId = event.target.dataset.photography;
+  const item = items.find((i) => i.id === photoId);
+
+  if (item) {
+    modalStatus.value = 'confirmation';
+    modalImage.value = getImageUrl(item.image);
+  }
+};
+
+const closeModal = () => {
+  modalStatus.value = '';
+  modalImage.value = '';
 };
 </script>
 

@@ -1,186 +1,136 @@
 <template>
-  <section class="portfolio-artwork">
-    <div class="portfolio-artwork__scroll">
-      <div class="portfolio-artwork__scroll-text">
-        <span>{{ scrollText }}&nbsp;</span>
-        <span>{{ scrollText }}&nbsp;</span>
-        <span>{{ scrollText }}&nbsp;</span>
-        <span>{{ scrollText }}&nbsp;</span>
-      </div>
-      <div class="portfolio-artwork__scroll-text">
-        <span>{{ scrollText }}&nbsp;</span>
-        <span>{{ scrollText }}&nbsp;</span>
-        <span>{{ scrollText }}&nbsp;</span>
-        <span>{{ scrollText }}&nbsp;</span>
+  <section class="artwork">
+    <!-- Scrolling Text Banner -->
+    <div class="artwork__scroll">
+      <div v-for="n in 2" :key="n" class="artwork__scroll-text">
+        <span v-for="i in 4" :key="i">{{ scrollText }}&nbsp;</span>
       </div>
     </div>
-    <div class="portfolio-artwork__title">
-      <div class="portfolio-artwork__title-border">
-        <h2 class="portfolio-artwork__title-text">
+
+    <!-- Title Section -->
+    <div class="artwork__title">
+      <div class="artwork__title-border">
+        <h2 class="artwork__title-text">
           {{ titleText }}
-          <span class="portfolio-artwork__title-text-sub">{{ subtitleText }}</span>
+          <span class="artwork__title-text--sub">{{ subtitleText }}</span>
         </h2>
       </div>
     </div>
+
+    <!-- Content Grid -->
     <div class="row no-gutters">
+      <!-- Category Icon -->
       <div class="col-12">
-        <div class="portfolio-artwork__icon">
-          <p class="portfolio-artwork__icon-text text-center m-0">
-            {{ categoryText }}
-          </p>
-          <p class="portfolio-artwork__icon-img text-center m-0">
-            <img :src="resolvedArrowIconSrc" />
+        <div class="artwork__icon">
+          <p class="artwork__icon-text text-center m-0">{{ categoryText }}</p>
+          <p class="artwork__icon-img text-center m-0">
+            <img :src="resolvedArrowIconSrc" alt="Arrow icon" />
           </p>
         </div>
       </div>
+
+      <!-- Description -->
       <div class="col-12 col-md-4">
-        <div class="portfolio-artwork__description">
-          <p class="portfolio-artwork__description-text m-0">
-            {{ descriptionPrimary }}
-          </p>
-          <p class="portfolio-artwork__description-text m-0">{{ descriptionSeparator }}</p>
-          <p class="portfolio-artwork__description-text m-0">
-            {{ descriptionSecondary }}
-          </p>
+        <div class="artwork__desc">
+          <p class="artwork__desc-text m-0">{{ descriptionPrimary }}</p>
+          <p class="artwork__desc-text m-0">{{ descriptionSeparator }}</p>
+          <p class="artwork__desc-text m-0">{{ descriptionSecondary }}</p>
         </div>
       </div>
+
+      <!-- Masonry Gallery -->
       <div class="col-12 col-md-8">
-        <div class="portfolio-artwork__content">
-          <masonry-wall
-            :items="items"
-            :column-width="400"
-            :min-columns="2"
-            :gap="12"
-          >
-            <template #default="{ item, index }">
+        <div class="artwork__content">
+          <masonry-wall :items="items" :column-width="400" :min-columns="2" :gap="12">
+            <template #default="{ item }">
               <div
+                class="artwork__item flex items-center justify-center"
                 data-aos="fade-up"
                 data-aos-duration="1200"
                 data-aos-delay="400"
                 data-aos-easing="ease-out-cubic"
-                class="portfolio-artwork__content-item flex items-center justify-center"
               >
-                <p class="portfolio-artwork__content-img">
+                <p class="artwork__item-img">
                   <img
                     class="w-100"
-                    :data-artwork="item.id"
                     :src="getImageUrl(item.image)"
+                    :alt="item.title"
+                    :data-artwork="item.id"
                     loading="lazy"
                     decoding="async"
                     @click="showModal"
                   />
                 </p>
-                <p class="portfolio-artwork__content-text">
-                  <span class="portfolio-artwork__content-type">{{
-                    item.type
-                  }}</span>
-                  <span class="portfolio-artwork__content-title">{{
-                    item.title
-                  }}</span>
+                <p class="artwork__item-text">
+                  <span class="artwork__item-type">{{ item.type }}</span>
+                  <span class="artwork__item-title">{{ item.title }}</span>
                 </p>
               </div>
             </template>
           </masonry-wall>
         </div>
       </div>
-      <Transition
-        name="modal-fade"
-        :status="this.modalStatus"
-        v-show="this.modalStatus !== ''"
-      >
-        <Modal @modalOff="closeModal">
-          <template v-slot:body>
-            <div class="portfolio-modal__item">
-              <p class="m-0">
-                <img :src="modalImage" class="portfolio-modal__item-images" />
-              </p>
-            </div>
-          </template>
-        </Modal>
-      </Transition>
     </div>
+
+    <!-- Image Modal -->
+    <Transition name="modal-fade">
+      <Modal v-if="modalStatus" :status="modalStatus" @modal-off="closeModal">
+        <template #body>
+          <div class="modal__item">
+            <img :src="modalImage" alt="Artwork preview" class="modal__item-img" />
+          </div>
+        </template>
+      </Modal>
+    </Transition>
   </section>
 </template>
 
-<script>
-import { ref } from 'vue';
-
+<script setup>
+import { ref, computed } from 'vue';
 import Modal from '@/components/ui/modal/modal.vue';
 import artworkJson from './artwork_data.json';
 
-export default {
-  name: 'Artwork',
-  components: {
-    Modal,
-  },
-  props: {
-    scrollText: {
-      type: String,
-      default: 'SHOWCASE',
-    },
-    titleText: {
-      type: String,
-      default: 'showcase of all /',
-    },
-    subtitleText: {
-      type: String,
-      default: 'WORKS',
-    },
-    categoryText: {
-      type: String,
-      default: 'illustration / photography works',
-    },
-    arrowIconSrc: {
-      type: String,
-      default: null,
-    },
-    descriptionPrimary: {
-      type: String,
-      default: 'scroll down to see more /',
-    },
-    descriptionSeparator: {
-      type: String,
-      default: '+',
-    },
-    descriptionSecondary: {
-      type: String,
-      default: 'swipe left / right to see more photography',
-    },
-  },
-  setup(props) {
-    const modalStatus = ref('');
-    const modalImage = ref('');
-    const baseUrl = import.meta.env.BASE_URL;
+// Props
+const props = defineProps({
+  scrollText: { type: String, default: 'SHOWCASE' },
+  titleText: { type: String, default: 'showcase of all /' },
+  subtitleText: { type: String, default: 'WORKS' },
+  categoryText: { type: String, default: 'illustration / photography works' },
+  arrowIconSrc: { type: String, default: null },
+  descriptionPrimary: { type: String, default: 'scroll down to see more /' },
+  descriptionSeparator: { type: String, default: '+' },
+  descriptionSecondary: { type: String, default: 'swipe left / right to see more photography' },
+});
 
-    const items = artworkJson;
+// State
+const modalStatus = ref('');
+const modalImage = ref('');
+const baseUrl = import.meta.env.BASE_URL;
 
-    const getImageUrl = (filename) => `${baseUrl}img/illustration/${filename}`;
-    const resolvedArrowIconSrc = props.arrowIconSrc || `${baseUrl}img/icons/arrow_icon.svg`;
+// Data
+const items = artworkJson;
 
-    return {
-      items,
-      modalStatus,
-      modalImage,
-      getImageUrl,
-      resolvedArrowIconSrc,
-    };
-  },
-  methods: {
-    showModal(event) {
-      this.modalStatus = 'confirmation';
-      const artworkData = event.target.dataset.artwork;
-      const itemObject = this.items.filter(
-        (res) => res.id.indexOf(artworkData) !== -1
-      );
-      const itemArtwork = this.getImageUrl(itemObject[0].image);
+// Computed
+const resolvedArrowIconSrc = computed(() => 
+  props.arrowIconSrc || `${baseUrl}img/icons/arrow_icon.svg`
+);
 
-      return (this.modalImage = itemArtwork);
-    },
-    closeModal() {
-      this.modalStatus = '';
-      this.modalImage = '';
-    },
-  },
+// Methods
+const getImageUrl = (filename) => `${baseUrl}img/illustration/${filename}`;
+
+const showModal = (event) => {
+  const artworkId = event.target.dataset.artwork;
+  const item = items.find((i) => i.id === artworkId);
+  
+  if (item) {
+    modalStatus.value = 'confirmation';
+    modalImage.value = getImageUrl(item.image);
+  }
+};
+
+const closeModal = () => {
+  modalStatus.value = '';
+  modalImage.value = '';
 };
 </script>
 
