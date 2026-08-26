@@ -1,37 +1,36 @@
 [
   {
     "id": "1",
-    "image": "arknights_hibiscus.png",
-    "type": "artwork",
-    "title": "arknights / hibiscus"
-  },
-  {
-    "id": "2",
     "image": "arknights_specter.png",
+    "thumb": "arknights_specter_thumb.png",
     "type": "artwork",
     "title": "arknights / specter"
   },
   {
-    "id": "3",
+    "id": "2",
     "image": "arknights_w.png",
+    "thumb": "arknights_w_thumb.png",
     "type": "artwork",
     "title": "arknights / W"
   },
   {
-    "id": "4",
+    "id": "3",
     "image": "arknights_ajimu.png",
+    "thumb": "arknights_ajimu_thumb.png",
     "type": "artwork",
     "title": "arknights / angelina"
   },
   {
-    "id": "5",
+    "id": "4",
     "image": "arknights_endfield.jpg",
+    "thumb": "arknights_endfield_thumb.png",
     "type": "artwork",
     "title": "arknights / endministrator"
   },
   {
-    "id": "6",
+    "id": "5",
     "image": "arknights_mudrock.jpg",
+    "thumb": "arknights_mudrock_thumb.png",
     "type": "artwork",
     "title": "arknights / mudrock"
   }

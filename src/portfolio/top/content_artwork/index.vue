@@ -38,15 +38,14 @@
                 v-for="item in items"
                 :key="item.id"
                 class="artwork__item"
+                @click.stop="showModal(item)"
               >
                 <p class="artwork__item-img">
                   <img
-                    :src="getImageUrl(item.image)"
+                    :src="getImageUrl(item.thumb)"
                     :alt="item.title"
-                    :data-artwork="item.id"
                     loading="lazy"
                     decoding="async"
-                    @click="showModal"
                   />
                 </p>
                 <p class="artwork__item-text">
@@ -61,20 +60,20 @@
     </div>
 
     <!-- Image Modal -->
-    <Transition name="modal-fade">
+    <Teleport to="body">
       <Modal v-if="modalStatus" :status="modalStatus" @modal-off="closeModal">
         <template #body>
-          <div class="modal__item">
-            <img :src="modalImage" alt="Artwork preview" class="modal__item-img" />
+          <div class="er-modal__item">
+            <img :src="modalImage" alt="Artwork preview" class="er-modal__item-img" />
           </div>
         </template>
       </Modal>
-    </Transition>
+    </Teleport>
   </section>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useLenis } from 'lenis/vue';
 import Modal from '@/components/ui/modal/modal.vue';
 import artworkJson from './artwork_data.json';
@@ -100,6 +99,10 @@ const trackRef = ref(null);
 const translateX = ref(0);
 const isScrollLocked = ref(false);
 const scrollProgress = ref(0); // 0 to 1
+const scrollDirection = ref('down'); // 'down' or 'up'
+const lastScrollY = ref(0);
+const hasExitedSection = ref(true); // Track if we've left the section
+const justUnlocked = ref(false); // Debounce flag to prevent immediate re-lock
 
 // Data
 const items = artworkJson;
@@ -134,10 +137,12 @@ const handleWheel = (e) => {
   scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
   translateX.value = -scrollProgress.value * maxTranslate;
   
-  // Unlock scroll when reaching the end
-  if (scrollProgress.value >= 1) {
+  // Unlock scroll when reaching the appropriate end based on direction (with lenient thresholds)
+  if (scrollProgress.value >= 0.98 && delta > 0) {
+    // Scrolling down and nearly reached end
     unlockScroll();
-  } else if (scrollProgress.value <= 0) {
+  } else if (scrollProgress.value <= 0.02 && delta < 0) {
+    // Scrolling up and nearly reached beginning
     unlockScroll();
   }
 };
@@ -147,7 +152,7 @@ let touchStartY = 0;
 let touchStartX = 0;
 
 const handleTouchStart = (e) => {
-  if (!isScrollLocked.value) return;
+  // Always record touch start position
   touchStartY = e.touches[0].clientY;
   touchStartX = e.touches[0].clientX;
 };
@@ -160,30 +165,34 @@ const handleTouchMove = (e) => {
   const deltaY = touchStartY - touchCurrentY;
   const deltaX = touchStartX - touchCurrentX;
   
-  // Only handle if vertical swipe is dominant (user trying to scroll down/up)
-  if (Math.abs(deltaY) > Math.abs(deltaX)) {
-    e.preventDefault();
-    
-    const maxTranslate = getMaxTranslate();
-    if (maxTranslate === 0) return;
-    
-    // Convert touch delta to progress (multiply by sensitivity factor for touch)
-    const touchSensitivity = scrollSensitivity * 2;
-    const progressDelta = (deltaY * touchSensitivity) / maxTranslate;
-    
-    scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
-    translateX.value = -scrollProgress.value * maxTranslate;
-    
-    // Update touch start for continuous movement
-    touchStartY = touchCurrentY;
-    touchStartX = touchCurrentX;
-    
-    // Unlock scroll when reaching the end
-    if (scrollProgress.value >= 1) {
-      unlockScroll();
-    } else if (scrollProgress.value <= 0) {
-      unlockScroll();
-    }
+  // Only prevent default for scrolling gestures, not taps
+  const isScrollGesture = Math.abs(deltaY) > 10 || Math.abs(deltaX) > 10;
+  if (!isScrollGesture) return;
+  
+  // Prevent default to stop native scroll when locked
+  e.preventDefault();
+  
+  const maxTranslate = getMaxTranslate();
+  if (maxTranslate === 0) return;
+  
+  // Convert touch delta to progress (multiply by sensitivity factor for touch)
+  const touchSensitivity = scrollSensitivity * 2;
+  const progressDelta = (deltaY * touchSensitivity) / maxTranslate;
+  
+  scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
+  translateX.value = -scrollProgress.value * maxTranslate;
+  
+  // Update touch start for continuous movement
+  touchStartY = touchCurrentY;
+  touchStartX = touchCurrentX;
+  
+  // Unlock scroll when reaching the appropriate end based on swipe direction (with lenient thresholds)
+  if (scrollProgress.value >= 0.98 && deltaY > 0) {
+    // Swiping up (scrolling down) and nearly reached end
+    unlockScroll();
+  } else if (scrollProgress.value <= 0.02 && deltaY < 0) {
+    // Swiping down (scrolling up) and nearly reached beginning
+    unlockScroll();
   }
 };
 
@@ -193,34 +202,84 @@ const lockScroll = () => {
   if (lenis.value) {
     lenis.value.stop();
   }
+  // Prevent native scroll on mobile but allow clicks
+  document.body.style.overflow = 'hidden';
 };
 
 const unlockScroll = () => {
   if (!isScrollLocked.value) return;
   isScrollLocked.value = false;
+  justUnlocked.value = true;
   if (lenis.value) {
     lenis.value.start();
   }
+  // Restore native scroll
+  document.body.style.overflow = '';
+  // Prevent immediate re-lock
+  setTimeout(() => {
+    justUnlocked.value = false;
+  }, 100);
 };
 
 // Check if artwork section should lock scroll
-useLenis(() => {
-  if (!wrapperRef.value || isScrollLocked.value) return;
+useLenis((lenisInstance) => {
+  if (!wrapperRef.value) return;
+  
+  // Track scroll direction
+  const currentScrollY = lenisInstance.scroll;
+  if (currentScrollY > lastScrollY.value) {
+    scrollDirection.value = 'down';
+  } else if (currentScrollY < lastScrollY.value) {
+    scrollDirection.value = 'up';
+  }
+  lastScrollY.value = currentScrollY;
   
   const wrapperRect = wrapperRef.value.getBoundingClientRect();
   const windowHeight = window.innerHeight;
+  const maxTranslate = getMaxTranslate();
+  
+  // Check if section is visible in viewport
+  const isVisible = wrapperRect.bottom > 0 && wrapperRect.top < windowHeight;
+  
+  // Track when we exit the section
+  if (!isVisible) {
+    if (!hasExitedSection.value) {
+      hasExitedSection.value = true;
+    }
+    return;
+  }
+  
+  // On re-entry to section, set starting position based on direction
+  if (hasExitedSection.value && isVisible) {
+    hasExitedSection.value = false;
+    
+    if (scrollDirection.value === 'up') {
+      // Coming from below - start at the end (last artwork)
+      scrollProgress.value = 1;
+      translateX.value = -maxTranslate;
+    } else {
+      // Coming from above - start at beginning (first artwork)
+      scrollProgress.value = 0;
+      translateX.value = 0;
+    }
+  }
+  
+  if (isScrollLocked.value || justUnlocked.value) return;
   
   // Calculate center positions
   const wrapperCenter = wrapperRect.top + wrapperRect.height / 2;
   const viewportCenter = windowHeight / 2;
   
   // Lock scroll when artwork center reaches viewport center
-  // (with small tolerance of 50px)
-  const shouldLock = Math.abs(wrapperCenter - viewportCenter) < 50 &&
-                     scrollProgress.value < 1;
+  const isNearCenter = Math.abs(wrapperCenter - viewportCenter) < 50;
   
-  if (shouldLock) {
-    lockScroll();
+  if (isNearCenter) {
+    // Lock if we haven't completed the scroll in the current direction (matching unlock thresholds)
+    if (scrollDirection.value === 'down' && scrollProgress.value < 0.98) {
+      lockScroll();
+    } else if (scrollDirection.value === 'up' && scrollProgress.value > 0.02) {
+      lockScroll();
+    }
   }
 });
 
@@ -252,14 +311,9 @@ const resolvedArrowIconSrc = computed(() =>
 // Methods
 const getImageUrl = (filename) => `${baseUrl}img/illustration/${filename}`;
 
-const showModal = (event) => {
-  const artworkId = event.target.dataset.artwork;
-  const item = items.find((i) => i.id === artworkId);
-  
-  if (item) {
-    modalStatus.value = 'confirmation';
-    modalImage.value = getImageUrl(item.image);
-  }
+const showModal = (item) => {
+  modalStatus.value = 'confirmation';
+  modalImage.value = getImageUrl(item.image);
 };
 
 const closeModal = () => {
