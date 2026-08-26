@@ -306,12 +306,8 @@ const resolvedArrowIconSrc = computed(() =>
 const getImageUrl = (filename) => `${baseUrl}img/illustration/${filename}`;
 
 const showModal = (item) => {
-  console.log('showModal called with item:', item);
-  console.log('Setting modalStatus to confirmation');
   modalStatus.value = 'confirmation';
   modalImage.value = getImageUrl(item.image);
-  console.log('modalStatus is now:', modalStatus.value);
-  console.log('modalImage is now:', modalImage.value);
 };
 
 const closeModal = () => {
