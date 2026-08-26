@@ -1,48 +1,28 @@
 <template>
-  <div class="menu">
-    <div class="menu__wrapper">
-      <label for="navigation" class="menu__button">
-        <button
-          id="navigation"
-          class="menu__button-input"
-          @click="toggleMenu"
-          :class="{ 'is-active': isActive }"
-        ></button>
-        <span class="menu__button-hamburger"></span>
-      </label>
-      <menu class="menu__sidebar" :class="{ 'is-active': isActive }">
-        <h2 class="menu__sidebar-title">edelRitter</h2>
-        <ul class="menu__sidebar-list">
-          <li
-            class="menu__sidebar-list-item"
-            v-for="(link, index) in navLinks"
-            :key="index"
-            @click="navScroll(link)"
-            v-on:click="toggleMenu"
-          >
-            {{ link.text }}
-          </li>
-        </ul>
-        <socialNetworking :class="this.alignment" />
-      </menu>
-    </div>
-    <div class="menu__background" :class="{ 'is-active': isActive }"></div>
-  </div>
+  <UiMenu
+    :title="title"
+    :navLinks="navLinks"
+    :enableScroll="true"
+  >
+    <template #footer>
+      <socialNetworking :class="alignment" />
+    </template>
+  </UiMenu>
 </template>
 
 <script>
+import UiMenu from '@/components/ui/menu/menu.vue';
 import socialNetworking from '@/components/ui/sns/sns.vue';
 
 export default {
-  name: 'Menu',
+  name: 'PortfolioMenu',
   components: {
+    UiMenu,
     socialNetworking,
   },
   data: () => {
     return {
-      isActive: false,
-      dark: false,
-      scrollTop: 0,
+      title: 'edelRitter',
       alignment: 'ui-catalog__sns-center',
       navLinks: [
         {
@@ -63,16 +43,6 @@ export default {
         },
       ],
     };
-  },
-  methods: {
-    toggleMenu() {
-      this.isActive = !this.isActive;
-    },
-    navScroll(link) {
-      const position = document.getElementById(link.id).offsetTop;
-      // smooth scroll
-      window.scrollTo({ top: position, behavior: 'smooth' });
-    },
   },
 };
 </script>

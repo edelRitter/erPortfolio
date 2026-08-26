@@ -3,16 +3,16 @@
     <div class="portfolio-showcase__all">
       <div class="portfolio-showcase__all-scroll">
         <div class="portfolio-showcase__all-scroll-text">
-          <span>EXPLORE&nbsp;</span>
-          <span>EXPLORE&nbsp;</span>
-          <span>EXPLORE&nbsp;</span>
-          <span>EXPLORE&nbsp;</span>
+          <span>{{ scrollText }}&nbsp;</span>
+          <span>{{ scrollText }}&nbsp;</span>
+          <span>{{ scrollText }}&nbsp;</span>
+          <span>{{ scrollText }}&nbsp;</span>
         </div>
         <div class="portfolio-showcase__all-scroll-text">
-          <span>EXPLORE&nbsp;</span>
-          <span>EXPLORE&nbsp;</span>
-          <span>EXPLORE&nbsp;</span>
-          <span>EXPLORE&nbsp;</span>
+          <span>{{ scrollText }}&nbsp;</span>
+          <span>{{ scrollText }}&nbsp;</span>
+          <span>{{ scrollText }}&nbsp;</span>
+          <span>{{ scrollText }}&nbsp;</span>
         </div>
       </div>
       <div class="portfolio-showcase__all-title">
@@ -26,7 +26,7 @@
             data-aos-once="true"
             data-aos-easing="ease-out-cubic"
           >
-            IN /
+            {{ titleLine1 }}
           </p>
           <p
             class="m-0"
@@ -37,7 +37,7 @@
             data-aos-once="true"
             data-aos-easing="ease-out-cubic"
           >
-            DEPTH /
+            {{ titleLine2 }}
           </p>
           <p
             class="m-0"
@@ -48,7 +48,7 @@
             data-aos-once="true"
             data-aos-easing="ease-out-cubic"
           >
-            PROJECTS /
+            {{ titleLine3 }}
           </p>
         </h2>
         <p
@@ -59,13 +59,13 @@
           data-aos-once="true"
           data-aos-easing="ease-out-cubic"
         >
-        Click on the button below to learn more about works I have made before /
+        {{ descriptionText }}
         </p>
       </div>
       <div class="portfolio-showcase__all-wrap">
         <div class="portfolio-showcase__all-link" @click="toggleShowcase">
           <p class="portfolio-showcase__all-text m-0">
-            in depth / SELECTED WORKS&nbsp;
+            {{ linkText }}&nbsp;
           </p>
           <p
             class="portfolio-showcase__all-img mb-1"
@@ -74,7 +74,7 @@
             data-aos-delay="200"
             data-aos-easing="ease-out-cubic"
           >
-            <img src="/img/icons/cursor_icon.svg" />
+            <img :src="resolvedCursorIconSrc" />
           </p>
         </div>
       </div>
@@ -112,10 +112,46 @@ export default {
   components: {
     showcaseItem,
   },
+  props: {
+    scrollText: {
+      type: String,
+      default: 'EXPLORE',
+    },
+    titleLine1: {
+      type: String,
+      default: 'IN /',
+    },
+    titleLine2: {
+      type: String,
+      default: 'DEPTH /',
+    },
+    titleLine3: {
+      type: String,
+      default: 'PROJECTS /',
+    },
+    descriptionText: {
+      type: String,
+      default: 'Click on the button below to learn more about works I have made before /',
+    },
+    linkText: {
+      type: String,
+      default: 'in depth / SELECTED WORKS',
+    },
+    cursorIconSrc: {
+      type: String,
+      default: null,
+    },
+  },
   data: () => {
     return {
       isActive: false,
+      baseUrl: import.meta.env.BASE_URL,
     };
+  },
+  computed: {
+    resolvedCursorIconSrc() {
+      return this.cursorIconSrc || `${this.baseUrl}img/icons/cursor_icon.svg`;
+    },
   },
   methods: {
     toggleShowcase() {

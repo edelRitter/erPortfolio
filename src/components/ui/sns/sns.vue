@@ -2,22 +2,22 @@
   <div class="ui-catalog__sns" :class="classes">
     <p class="m-0">
       <a href="https://twitter.com/edelRitter9" target="_blank">
-        <img src="/img/icons/twitter_icon.svg" />
+        <img :src="`${baseUrl}img/icons/twitter_icon.svg`" />
       </a>
     </p>
     <p class="m-0">
       <a href="https://discordapp.com/users/_edelritter" target="_blank">
-        <img src="/img/icons/discord_icon.svg" />
+        <img :src="`${baseUrl}img/icons/discord_icon.svg`" />
       </a>
     </p>
     <p class="m-0">
       <a href="https://bsky.app/profile/edelritter.bsky.social" target="_blank">
-        <img src="/img/icons/bluesky_icon.svg" />
+        <img :src="`${baseUrl}img/icons/bluesky_icon.svg`" />
       </a>
     </p>
     <p class="m-0">
       <a href="https://github.com/edelRitter/" target="_blank">
-        <img src="/img/icons/github_icon.svg" />
+        <img :src="`${baseUrl}img/icons/github_icon.svg`" />
       </a>
     </p>
   </div>
@@ -37,7 +37,10 @@ export default {
     },
   },
   setup(props) {
+    const baseUrl = import.meta.env.BASE_URL;
+
     return {
+      baseUrl,
       classes: computed(() => ({
         [`${props.alignment || 'left'}`]: true,
       })),
