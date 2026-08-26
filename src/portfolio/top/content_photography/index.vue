@@ -21,7 +21,6 @@
             <img
               class="photography__item-img"
               :style="{ background: `url(${getImageUrl(item.image)})`, backgroundSize: 'cover' }"
-              :alt="item.title"
               :data-photography="item.id"
               loading="lazy"
               decoding="async"

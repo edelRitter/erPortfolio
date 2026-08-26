@@ -5,8 +5,9 @@ import App from './App.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-/** plugin Masonry */
-import MasonryWall from '@yeger/vue-masonry-wall'
+/** plugin Lenis */
+import LenisVue from 'lenis/vue'
+import 'lenis/dist/lenis.css'
 
 /** Mount APP */
-createApp(App).use(AOS.init()).use(MasonryWall).mount('#app')
+createApp(App).use(AOS.init()).use(LenisVue).mount('#app')
