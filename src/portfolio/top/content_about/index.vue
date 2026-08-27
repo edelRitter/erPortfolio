@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="about__hero m-0">
           <p class="about__hero-img">
-            <img class="w-100" :src="`${baseUrl}img/photography/stock_profile.jpg`">
+            <img class="w-100" :src="`${baseUrl}${heroImage}`">
           </p>
         </div>
       </div>
@@ -12,37 +12,17 @@
         <div class="about__title">
           <h2 class="about__title-text">
             <p
+              v-for="(line, index) in titleLines"
+              :key="index"
               class="m-0"
               data-aos="fade-right"
               data-aos-duration="800"
               data-aos-offset="300"
-              data-aos-delay="200"
+              :data-aos-delay="200 + (index * 200)"
               data-aos-once="true"
               data-aos-easing="ease-out-cubic"
             >
-              CREATIVE /
-            </p>
-            <p
-              class="m-0"
-              data-aos="fade-right"
-              data-aos-duration="800"
-              data-aos-offset="300"
-              data-aos-delay="400"
-              data-aos-once="true"
-              data-aos-easing="ease-out-cubic"
-            >
-              MAKES /
-            </p>
-            <p
-              class="m-0"
-              data-aos="fade-right"
-              data-aos-duration="800"
-              data-aos-offset="300"
-              data-aos-delay="600"
-              data-aos-once="true"
-              data-aos-easing="ease-out-cubic"
-            >
-              WONDERS /
+              {{ line }}
             </p>
           </h2>
           <p
@@ -53,9 +33,7 @@
             data-aos-once="true"
             data-aos-easing="ease-out-cubic"
           >
-            Hello, this is a portfolio website of Yohei. I create websites from
-            UI / pages / frameworks. I also draw illustrations and post them on
-            social media. Avid lover of photography, film and music.
+            {{ description }}
           </p>
         </div>
       </div>
@@ -63,8 +41,8 @@
         <div class="about__profile">
           <div class="about__profile-wrap">
             <p class="about__profile-name m-0">
-              ABOUT ME /
-              <span class="about__profile-name--sub">edelRitter</span>
+              {{ sectionTitle }}
+              <span class="about__profile-name--sub">{{ subName }}</span>
             </p>
           </div>
           <div
@@ -76,40 +54,23 @@
             data-aos-easing="ease-out-cubic"
           >
             <p class="about__picture-img m-0">
-              <img :src="`${baseUrl}img/photography/stock_profile2.jpg`" class="w-100" />
+              <img :src="`${baseUrl}${profileImage}`" class="w-100" />
             </p>
             <p class="about__picture-text">
-              Yohei I. /<br /><span
+              {{ profileName }}<br /><span
                 class="about__picture-text--jp"
-                >I. / 庸平</span
+                >{{ profileNameJp }}</span
               >
             </p>
           </div>
-          <p class="about__profile-title m-0">EXPERTISE /</p>
+          <p class="about__profile-title m-0">{{ expertiseTitle }}</p>
           <p class="about__profile-list w-100 mb-4">
-            adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS,
-            Webpack, GIT / Github, JEST (other testing frameworks), esLint
+            {{ expertiseList }}
           </p>
-          <p class="about__profile-title m-0">LIKES /</p>
-          <ul class="d-flex m-0 p-0">
-            <li class="about__profile-list">
-              <strong>Arknights :</strong> Mobile Game Developed by Hypergryph. Current Passion.
-            </li>
-            <li class="about__profile-list">
-              <b>music :</b> M2U, hybrid, Siames, AJURIKA, Caravan
-              Palace, nujabes, Masashi Hamauzu, Adam Gubman, Nomak, Starset,
-              etc.
-            </li>
-          </ul>
-          <ul class="d-flex m-0 p-0">
-            <li class="about__profile-list">
-              <b>games :</b> Omori, Chrono Trigger, Saga Frontier 2, Cytus 2, Final Fantasy 6/7/9, Smash bros melee, Lord of
-              Vermilion 2, arknights, etc.
-            </li>
-            <li class="about__profile-list">
-              <b>film :</b> Blade Runner, Truman Show, Punch Drunk Love, The
-              Grand Budapest Hotel, The Godfather 1/2, The Matrix, Dunkirk,
-              Parasite, Lawrence of Arabia, Memento, Birdman, etc.
+          <p class="about__profile-title m-0">{{ likesTitle }}</p>
+          <ul v-for="(row, rowIndex) in likesRows" :key="rowIndex" class="d-flex m-0 p-0">
+            <li v-for="(item, itemIndex) in row" :key="itemIndex" class="about__profile-list">
+              <component :is="item.bold ? 'strong' : 'b'">{{ item.label }} :</component> {{ item.content }}
             </li>
           </ul>
           <div
@@ -120,7 +81,7 @@
             data-aos-delay="400"
             data-aos-easing="ease-out-cubic"
           >
-            <socialNetworking :class="this.alignment" />
+            <socialNetworking :class="alignment" />
           </div>
           <p
             class="about__logo"
@@ -132,7 +93,7 @@
           >
             <img
               class="about__logo-img"
-              :src="`${baseUrl}img/illustration/logo_edelRitter.png`"
+              :src="`${baseUrl}${logoImage}`"
             />
           </p>
         </div>
@@ -148,6 +109,68 @@ export default {
   name: 'About',
   components: {
     socialNetworking,
+  },
+  props: {
+    heroImage: {
+      type: String,
+      default: 'img/photography/stock_profile.jpg',
+    },
+    titleLines: {
+      type: Array,
+      default: () => ['CREATIVE /', 'MAKES /', 'WONDERS /'],
+    },
+    description: {
+      type: String,
+      default: 'Hello, this is a portfolio website of Yohei. I create websites from UI / pages / frameworks. I also draw illustrations and post them on social media. Avid lover of photography, film and music.',
+    },
+    sectionTitle: {
+      type: String,
+      default: 'ABOUT ME /',
+    },
+    subName: {
+      type: String,
+      default: 'edelRitter',
+    },
+    profileImage: {
+      type: String,
+      default: 'img/photography/stock_profile2.jpg',
+    },
+    profileName: {
+      type: String,
+      default: 'Yohei I. /',
+    },
+    profileNameJp: {
+      type: String,
+      default: 'I. / 庸平',
+    },
+    expertiseTitle: {
+      type: String,
+      default: 'EXPERTISE /',
+    },
+    expertiseList: {
+      type: String,
+      default: 'adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS, Webpack, GIT / Github',
+    },
+    likesTitle: {
+      type: String,
+      default: 'LIKES /',
+    },
+    likesRows: {
+      type: Array,
+      default: () => [
+        [
+          { label: 'Arknights', content: 'Game Developed by Hypergryph. Current Passion.', bold: true },
+          { label: 'MUSIC', content: 'M2U, hybrid, Siames, AJURIKA, Caravan Palace, nujabes, Masashi Hamauzu, Adam Gubman, Nomak, Starset, Polyphia, Danger, etc.', bold: false },
+        ],
+        [
+          { label: 'FILM', content: 'Punch Drunk Love, Obsession, The Lighthouse, Blade Runner, Truman Show, The Grand Budapest Hotel, The Godfather 1&2, The Matrix, Dunkirk, Parasite, Lawrence of Arabia, Memento, Interstellar, Birdman, tons of others', bold: false },
+        ],
+      ],
+    },
+    logoImage: {
+      type: String,
+      default: 'img/illustration/logo_edelRitter.png',
+    },
   },
   data() {
     return {

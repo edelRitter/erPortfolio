@@ -90,25 +90,46 @@ const props = defineProps({
   descriptionSecondary: { type: String, default: 'swipe left / right to see more photography' },
 });
 
+// ===========================================
+// Lenis-style smooth scroll configuration
+// ===========================================
+const smoothConfig = {
+  lerp: 0.1,                    // Linear interpolation (0-1, lower = smoother)
+  wheelMultiplier: 1.5,         // Wheel sensitivity
+  touchMultiplier: 2,           // Touch sensitivity
+  syncTouchLerp: 0.075,         // Lerp for touch inertia
+  touchInertiaExponent: 1.7,    // Inertia decay strength (higher = longer coast)
+  touchInertiaMultiplier: 35,   // Initial velocity multiplier for momentum
+};
+
 // State
 const modalStatus = ref('');
 const modalImage = ref('');
 const baseUrl = import.meta.env.BASE_URL;
 const wrapperRef = ref(null);
 const trackRef = ref(null);
-const translateX = ref(0);
 const isScrollLocked = ref(false);
-const scrollProgress = ref(0); // 0 to 1
-const scrollDirection = ref('down'); // 'down' or 'up'
+const scrollDirection = ref('down');
 const lastScrollY = ref(0);
-const hasExitedSection = ref(true); // Track if we've left the section
-const justUnlocked = ref(false); // Debounce flag to prevent immediate re-lock
+const hasExitedSection = ref(true);
+const justUnlocked = ref(false);
+
+// Smooth scroll state
+const targetScroll = ref(0);      // Target position (where we want to scroll to)
+const currentScroll = ref(0);     // Current animated position
+const velocity = ref(0);          // Current velocity for momentum
+let animationFrameId = null;
+
+// Touch tracking for momentum
+let touchStartY = 0;
+let touchStartTime = 0;
+let lastTouchY = 0;
+let lastTouchTime = 0;
+let touchVelocity = 0;
+let isTouching = false;
 
 // Data
 const items = artworkJson;
-
-// Scroll sensitivity: higher = faster horizontal scroll per wheel delta
-const scrollSensitivity = 1.5;
 
 // Get lenis instance
 const lenis = useLenis();
@@ -121,88 +142,149 @@ const getMaxTranslate = () => {
   return Math.max(0, trackWidth - windowWidth + 40);
 };
 
-// Handle wheel event when scroll is locked
+// Scroll progress (0 to 1)
+const scrollProgress = computed(() => {
+  const max = getMaxTranslate();
+  return max > 0 ? Math.abs(currentScroll.value) / max : 0;
+});
+
+// Clamp scroll within bounds
+const clampScroll = (value) => {
+  const max = getMaxTranslate();
+  return Math.max(-max, Math.min(0, value));
+};
+
+// Animation loop for smooth scrolling (Lenis-style lerp)
+const animate = () => {
+  if (!isScrollLocked.value && !isTouching && Math.abs(velocity.value) < 0.01) {
+    animationFrameId = null;
+    return;
+  }
+  
+  // Apply momentum when not touching
+  if (!isTouching && Math.abs(velocity.value) > 0.01) {
+    targetScroll.value = clampScroll(targetScroll.value + velocity.value);
+    // Decay velocity (exponential decay like Lenis touchInertiaExponent)
+    velocity.value *= Math.pow(0.95, smoothConfig.touchInertiaExponent);
+  }
+  
+  // Lerp current toward target
+  const diff = targetScroll.value - currentScroll.value;
+  const lerpValue = isTouching ? smoothConfig.syncTouchLerp : smoothConfig.lerp;
+  
+  if (Math.abs(diff) > 0.1) {
+    currentScroll.value += diff * lerpValue;
+  } else {
+    currentScroll.value = targetScroll.value;
+  }
+  
+  // Check unlock conditions
+  const progress = scrollProgress.value;
+  if (progress >= 0.98 && velocity.value < -0.1) {
+    unlockScroll();
+    return;
+  } else if (progress <= 0.02 && velocity.value > 0.1) {
+    unlockScroll();
+    return;
+  }
+  
+  animationFrameId = requestAnimationFrame(animate);
+};
+
+const startAnimation = () => {
+  if (!animationFrameId) {
+    animationFrameId = requestAnimationFrame(animate);
+  }
+};
+
+const stopAnimation = () => {
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+    animationFrameId = null;
+  }
+};
+
+// Handle wheel event
 const handleWheel = (e) => {
   if (!isScrollLocked.value) return;
   
   e.preventDefault();
   
-  const maxTranslate = getMaxTranslate();
-  if (maxTranslate === 0) return;
+  const delta = e.deltaY * smoothConfig.wheelMultiplier;
+  targetScroll.value = clampScroll(targetScroll.value - delta);
+  velocity.value = 0; // Stop momentum on wheel
   
-  // Convert wheel delta to progress
-  const delta = e.deltaY * scrollSensitivity;
-  const progressDelta = delta / maxTranslate;
+  startAnimation();
   
-  scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
-  translateX.value = -scrollProgress.value * maxTranslate;
-  
-  // Unlock scroll when reaching the appropriate end based on direction (with lenient thresholds)
-  if (scrollProgress.value >= 0.98 && delta > 0) {
-    // Scrolling down and nearly reached end
+  // Check for unlock at edges
+  const progress = scrollProgress.value;
+  if (progress >= 0.98 && e.deltaY > 0) {
     unlockScroll();
-  } else if (scrollProgress.value <= 0.02 && delta < 0) {
-    // Scrolling up and nearly reached beginning
+  } else if (progress <= 0.02 && e.deltaY < 0) {
     unlockScroll();
   }
 };
 
-// Touch event handling for mobile
-let touchStartY = 0;
-let touchStartX = 0;
-
+// Touch handlers with momentum
 const handleTouchStart = (e) => {
-  // Always record touch start position
-  touchStartY = e.touches[0].clientY;
-  touchStartX = e.touches[0].clientX;
+  if (!isScrollLocked.value) return;
+  
+  isTouching = true;
+  velocity.value = 0;
+  
+  const touch = e.touches[0];
+  touchStartY = touch.clientY;
+  touchStartTime = performance.now();
+  lastTouchY = touch.clientY;
+  lastTouchTime = touchStartTime;
+  touchVelocity = 0;
+  
+  startAnimation();
 };
 
 const handleTouchMove = (e) => {
-  if (!isScrollLocked.value) return;
+  if (!isScrollLocked.value || !isTouching) return;
   
-  const touchCurrentY = e.touches[0].clientY;
-  const touchCurrentX = e.touches[0].clientX;
-  const deltaY = touchStartY - touchCurrentY;
-  const deltaX = touchStartX - touchCurrentX;
-  
-  // Only prevent default for scrolling gestures, not taps
-  const isScrollGesture = Math.abs(deltaY) > 10 || Math.abs(deltaX) > 10;
-  if (!isScrollGesture) return;
-  
-  // Prevent default to stop native scroll when locked
   e.preventDefault();
   
-  const maxTranslate = getMaxTranslate();
-  if (maxTranslate === 0) return;
+  const touch = e.touches[0];
+  const currentTime = performance.now();
+  const deltaY = lastTouchY - touch.clientY;
+  const deltaTime = currentTime - lastTouchTime;
   
-  // Convert touch delta to progress (multiply by sensitivity factor for touch)
-  const touchSensitivity = scrollSensitivity * 2;
-  const progressDelta = (deltaY * touchSensitivity) / maxTranslate;
-  
-  scrollProgress.value = Math.max(0, Math.min(1, scrollProgress.value + progressDelta));
-  translateX.value = -scrollProgress.value * maxTranslate;
-  
-  // Update touch start for continuous movement
-  touchStartY = touchCurrentY;
-  touchStartX = touchCurrentX;
-  
-  // Unlock scroll when reaching the appropriate end based on swipe direction (with lenient thresholds)
-  if (scrollProgress.value >= 0.98 && deltaY > 0) {
-    // Swiping up (scrolling down) and nearly reached end
-    unlockScroll();
-  } else if (scrollProgress.value <= 0.02 && deltaY < 0) {
-    // Swiping down (scrolling up) and nearly reached beginning
-    unlockScroll();
+  // Calculate velocity (pixels per ms)
+  if (deltaTime > 0) {
+    touchVelocity = deltaY / deltaTime;
   }
+  
+  // Apply touch movement directly to target
+  const delta = deltaY * smoothConfig.touchMultiplier;
+  targetScroll.value = clampScroll(targetScroll.value - delta);
+  
+  lastTouchY = touch.clientY;
+  lastTouchTime = currentTime;
+};
+
+const handleTouchEnd = () => {
+  if (!isScrollLocked.value) return;
+  
+  isTouching = false;
+  
+  // Apply momentum based on touch velocity
+  velocity.value = -touchVelocity * smoothConfig.touchInertiaMultiplier;
+  
+  startAnimation();
 };
 
 const lockScroll = () => {
   if (isScrollLocked.value) return;
   isScrollLocked.value = true;
+  
   if (lenis.value) {
     lenis.value.stop();
   }
-  // Prevent native scroll on mobile but allow clicks
+  
+  startAnimation();
   document.body.style.overflow = 'hidden';
 };
 
@@ -210,12 +292,15 @@ const unlockScroll = () => {
   if (!isScrollLocked.value) return;
   isScrollLocked.value = false;
   justUnlocked.value = true;
+  velocity.value = 0;
+  
+  stopAnimation();
+  
   if (lenis.value) {
     lenis.value.start();
   }
-  // Restore native scroll
   document.body.style.overflow = '';
-  // Prevent immediate re-lock
+  
   setTimeout(() => {
     justUnlocked.value = false;
   }, 100);
@@ -255,12 +340,12 @@ useLenis((lenisInstance) => {
     
     if (scrollDirection.value === 'up') {
       // Coming from below - start at the end (last artwork)
-      scrollProgress.value = 1;
-      translateX.value = -maxTranslate;
+      targetScroll.value = -maxTranslate;
+      currentScroll.value = -maxTranslate;
     } else {
       // Coming from above - start at beginning (first artwork)
-      scrollProgress.value = 0;
-      translateX.value = 0;
+      targetScroll.value = 0;
+      currentScroll.value = 0;
     }
   }
   
@@ -275,9 +360,10 @@ useLenis((lenisInstance) => {
   
   if (isNearCenter) {
     // Lock if we haven't completed the scroll in the current direction (matching unlock thresholds)
-    if (scrollDirection.value === 'down' && scrollProgress.value < 0.98) {
+    const progress = scrollProgress.value;
+    if (scrollDirection.value === 'down' && progress < 0.98) {
       lockScroll();
-    } else if (scrollDirection.value === 'up' && scrollProgress.value > 0.02) {
+    } else if (scrollDirection.value === 'up' && progress > 0.02) {
       lockScroll();
     }
   }
@@ -287,19 +373,24 @@ onMounted(() => {
   window.addEventListener('wheel', handleWheel, { passive: false });
   window.addEventListener('touchstart', handleTouchStart, { passive: true });
   window.addEventListener('touchmove', handleTouchMove, { passive: false });
+  window.addEventListener('touchend', handleTouchEnd, { passive: true });
 });
 
 onUnmounted(() => {
   window.removeEventListener('wheel', handleWheel);
   window.removeEventListener('touchstart', handleTouchStart);
   window.removeEventListener('touchmove', handleTouchMove);
+  window.removeEventListener('touchend', handleTouchEnd);
+  
+  stopAnimation();
+  
   if (isScrollLocked.value) {
     unlockScroll();
   }
 });
 
 const trackStyle = computed(() => ({
-  transform: `translate3d(${translateX.value}px, 0, 0)`,
+  transform: `translate3d(${currentScroll.value}px, 0, 0)`,
   willChange: 'transform'
 }));
 
