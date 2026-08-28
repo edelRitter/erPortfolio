@@ -127,4 +127,15 @@
       max-width: 100px;
     }
   }
+
+  &__footer {
+    padding: 20px;
+    background: colors.$black;
+
+    &-text {
+      font-size: 10px;
+      color: colors.$portfolio_White;
+      text-align: center;
+    }
+  }
 }

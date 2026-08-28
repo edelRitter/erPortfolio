@@ -11,21 +11,20 @@
     >
       <swiper
         class="photography__list"
-        :slides-per-view="2"
-        :space-between="12"
+        :slides-per-view="1.2"
+        :space-between="20"
+        :slides-offset-after="40"
         @swiper="onSwiper"
         @slide-change="onSlideChange"
       >
         <swiper-slide v-for="item in items" :key="item.id">
           <p class="photography__item m-0">
-            <img
+            <span
               class="photography__item-img"
-              :style="{ background: `url(${getImageUrl(item.image)})`, backgroundSize: 'cover' }"
+              :style="{ backgroundImage: `url(${getImageUrl(item.image)})` }"
               :data-photography="item.id"
-              loading="lazy"
-              decoding="async"
               @click="showModal"
-            />
+            ></span>
           </p>
           <p class="photography__item-text">
             <span class="photography__item-type">{{ item.type }}</span>
@@ -33,10 +32,6 @@
           </p>
         </swiper-slide>
       </swiper>
-
-      <p class="photography__notice m-0 d-block d-md-none">
-        swipe left / right to see more photography
-      </p>
     </div>
 
     <!-- Image Modal -->

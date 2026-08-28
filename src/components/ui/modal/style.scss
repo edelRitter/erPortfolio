@@ -1,6 +1,6 @@
 @use '@/assets/scss/_media-queries.scss' as media;
 
-.modal {
+.er-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,17 +12,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 
   &__content {
     position: relative;
     width: 86vw;
     max-width: 1200px;
     max-height: 86vh;
-    padding: 20px;
     border-radius: 4px;
     z-index: 100001;
     background: #1a1a1a;
-    overflow: auto;
 
     @media #{media.$xsmall-and-down} {
       width: 94vw;
@@ -34,13 +33,10 @@
     position: relative;
     max-height: 100%;
     height: auto;
+  }
 
-    @media #{media.$xsmall-and-down} {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: center;
-    }
+  &__opened {
+    width: 100%;
   }
 
   &__item {
@@ -55,8 +51,8 @@
 
   &__close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: -32px;
+    right: 0;
     width: 30px;
     height: 30px;
     cursor: pointer;
