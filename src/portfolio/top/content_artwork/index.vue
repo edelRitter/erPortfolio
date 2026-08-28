@@ -19,16 +19,6 @@
 
     <!-- Content Grid -->
     <div class="row no-gutters">
-      <!-- Category Icon -->
-      <div class="col-12">
-        <div class="artwork__icon">
-          <p class="artwork__icon-text text-center m-0">{{ categoryText }}</p>
-          <p class="artwork__icon-img text-center m-0">
-            <img :src="resolvedArrowIconSrc" alt="Arrow icon" />
-          </p>
-        </div>
-      </div>
-
       <!-- Horizontal Scroll Gallery -->
       <div class="col-12">
         <div ref="wrapperRef" class="artwork__wrapper">
@@ -83,8 +73,6 @@ const props = defineProps({
   scrollText: { type: String, default: 'SHOWCASE' },
   titleText: { type: String, default: 'showcase of all /' },
   subtitleText: { type: String, default: 'WORKS' },
-  categoryText: { type: String, default: 'illustration / photography works' },
-  arrowIconSrc: { type: String, default: null },
   descriptionPrimary: { type: String, default: 'scroll down to see more /' },
   descriptionSeparator: { type: String, default: '+' },
   descriptionSecondary: { type: String, default: 'swipe left / right to see more photography' },
@@ -393,11 +381,6 @@ const trackStyle = computed(() => ({
   transform: `translate3d(${currentScroll.value}px, 0, 0)`,
   willChange: 'transform'
 }));
-
-// Computed
-const resolvedArrowIconSrc = computed(() => 
-  props.arrowIconSrc || `${baseUrl}img/icons/arrow_icon.svg`
-);
 
 // Methods
 const getImageUrl = (filename) => `${baseUrl}img/illustration/${filename}`;

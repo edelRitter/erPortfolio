@@ -29,7 +29,7 @@
     justify-content: center;
     align-items: center;
     width: 75%;
-    height: 75%;
+    height: fit-content;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -39,7 +39,6 @@
 
     @media #{media.$xsmall-and-down} {
       width: 90%;
-      height: 60%;
     }
   }
 

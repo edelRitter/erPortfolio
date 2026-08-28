@@ -45,14 +45,7 @@
               <span class="about__profile-name--sub">{{ subName }}</span>
             </p>
           </div>
-          <div
-            class="about__picture"
-            data-aos="fade"
-            data-aos-duration="800"
-            data-aos-delay="800"
-            data-aos-once="true"
-            data-aos-easing="ease-out-cubic"
-          >
+          <div class="about__picture">
             <p class="about__picture-img m-0">
               <img :src="`${baseUrl}${profileImage}`" class="w-100" />
             </p>
@@ -99,6 +92,9 @@
         </div>
       </div>
     </div>
+    <div class="about__footer">
+      <p class="about__footer-text m-0">© {{ currentYear }} Yohei I. All rights reserved.</p>
+    </div>
   </section>
 </template>
 
@@ -109,6 +105,11 @@ export default {
   name: 'About',
   components: {
     socialNetworking,
+  },
+  data() {
+    return {
+      currentYear: new Date().getFullYear(),
+    };
   },
   props: {
     heroImage: {

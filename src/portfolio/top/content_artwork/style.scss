@@ -8,22 +8,6 @@
   overflow: hidden;
   background: colors.$portfolio_Black;
 
-  &__icon {
-    padding: 12px 0;
-    font-size: 10px;
-    color: colors.$portfolio_White;
-    background: colors.$portfolio_Black;
-
-    & img {
-      width: 30px;
-      height: auto;
-    }
-
-    &-text {
-      font-size: 10px;
-    }
-  }
-
   &__scroll {
     width: 100%;
     overflow: hidden;
@@ -47,21 +31,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
-    bottom: 10%;
-    left: 5%;
-    transform: translate(-5%, -50%);
-    padding: 20px;
-    background: colors.$portfolio_White;
+    width: 50%;
+    bottom: 2.5vh;
+    left: 16px;
+    padding: 4px 8px;
+    background: #ffffff;
     z-index: 1;
-
-    @media #{media.$small-only} {
-      display: none;
-    }
-
-    @media #{media.$xsmall-and-down} {
-      display: none;
-    }
 
     &-border {
       height: 100%;
@@ -113,8 +88,8 @@
   }
 
   &__wrapper {
-    padding-bottom: 20px;
-    background: colors.$portfolio_Black;
+    padding: 15vh 0;
+    background: #bc1616 url('/img/illustration/digital.png') center / contain no-repeat;
   }
 
   &__sticky {
@@ -127,7 +102,7 @@
 
   &__track {
     display: flex;
-    gap: 20px;
+    gap: 80px;
     padding: 0 20px;
   }
 
@@ -154,14 +129,6 @@
         width: 100%;
         height: fit-content;
         object-fit: cover;
-
-        @media #{media.$small-only} {
-          height: 50vh;
-        }
-
-        @media #{media.$xsmall-and-down} {
-          height: 40vh;
-        }
       }
     }
 
