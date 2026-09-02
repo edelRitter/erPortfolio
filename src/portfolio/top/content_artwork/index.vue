@@ -109,8 +109,6 @@ const velocity = ref(0);          // Current velocity for momentum
 let animationFrameId = null;
 
 // Touch tracking for momentum
-let touchStartY = 0;
-let touchStartTime = 0;
 let lastTouchY = 0;
 let lastTouchTime = 0;
 let touchVelocity = 0;
@@ -221,10 +219,8 @@ const handleTouchStart = (e) => {
   velocity.value = 0;
   
   const touch = e.touches[0];
-  touchStartY = touch.clientY;
-  touchStartTime = performance.now();
   lastTouchY = touch.clientY;
-  lastTouchTime = touchStartTime;
+  lastTouchTime = performance.now();
   touchVelocity = 0;
   
   startAnimation();
@@ -268,10 +264,7 @@ const lockScroll = () => {
   if (isScrollLocked.value) return;
   isScrollLocked.value = true;
   
-  if (lenis.value) {
-    lenis.value.stop();
-  }
-  
+  lenis.value?.stop();
   startAnimation();
   document.body.style.overflow = 'hidden';
 };
@@ -283,10 +276,8 @@ const unlockScroll = () => {
   velocity.value = 0;
   
   stopAnimation();
-  
-  if (lenis.value) {
-    lenis.value.start();
-  }
+
+  lenis.value?.start();
   document.body.style.overflow = '';
   
   setTimeout(() => {
