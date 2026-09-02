@@ -12,17 +12,37 @@
         <div class="about__title">
           <h2 class="about__title-text">
             <p
-              v-for="(line, index) in titleLines"
-              :key="index"
               class="m-0"
               data-aos="fade-right"
               data-aos-duration="800"
               data-aos-offset="300"
-              :data-aos-delay="200 + (index * 200)"
+              data-aos-delay="200"
               data-aos-once="true"
               data-aos-easing="ease-out-cubic"
             >
-              {{ line }}
+              CREATIVE /
+            </p>
+            <p
+              class="m-0"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-offset="300"
+              data-aos-delay="400"
+              data-aos-once="true"
+              data-aos-easing="ease-out-cubic"
+            >
+              MAKES /
+            </p>
+            <p
+              class="m-0"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-offset="300"
+              data-aos-delay="600"
+              data-aos-once="true"
+              data-aos-easing="ease-out-cubic"
+            >
+              WONDERS /
             </p>
           </h2>
           <p
@@ -41,8 +61,8 @@
         <div class="about__profile">
           <div class="about__profile-wrap">
             <p class="about__profile-name m-0">
-              {{ sectionTitle }}
-              <span class="about__profile-name--sub">{{ subName }}</span>
+              ABOUT ME /
+              <span class="about__profile-name--sub">edelRitter</span>
             </p>
           </div>
           <div class="about__picture">
@@ -56,11 +76,11 @@
               >
             </p>
           </div>
-          <p class="about__profile-title m-0">{{ expertiseTitle }}</p>
+          <p class="about__profile-title m-0">EXPERTISE /</p>
           <p class="about__profile-list w-100 mb-4">
             {{ expertiseList }}
           </p>
-          <p class="about__profile-title m-0">{{ likesTitle }}</p>
+          <p class="about__profile-title m-0">LIKES /</p>
           <ul v-for="(row, rowIndex) in likesRows" :key="rowIndex" class="d-flex m-0 p-0">
             <li v-for="(item, itemIndex) in row" :key="itemIndex" class="about__profile-list">
               <component :is="item.bold ? 'strong' : 'b'">{{ item.label }} :</component> {{ item.content }}
@@ -106,31 +126,14 @@ export default {
   components: {
     socialNetworking,
   },
-  data() {
-    return {
-      currentYear: new Date().getFullYear(),
-    };
-  },
   props: {
     heroImage: {
       type: String,
       default: 'img/photography/stock_profile.jpg',
     },
-    titleLines: {
-      type: Array,
-      default: () => ['CREATIVE /', 'MAKES /', 'WONDERS /'],
-    },
     description: {
       type: String,
       default: 'Hello, this is a portfolio website of Yohei. I create websites from UI / pages / frameworks. I also draw illustrations and post them on social media. Avid lover of photography, film and music.',
-    },
-    sectionTitle: {
-      type: String,
-      default: 'ABOUT ME /',
-    },
-    subName: {
-      type: String,
-      default: 'edelRitter',
     },
     profileImage: {
       type: String,
@@ -144,17 +147,9 @@ export default {
       type: String,
       default: 'I. / 庸平',
     },
-    expertiseTitle: {
-      type: String,
-      default: 'EXPERTISE /',
-    },
     expertiseList: {
       type: String,
       default: 'adobe photoshop, vue 3 / vite, javascript, jQuery, HTML/CSS, SASS, Webpack, GIT / Github',
-    },
-    likesTitle: {
-      type: String,
-      default: 'LIKES /',
     },
     likesRows: {
       type: Array,
@@ -177,6 +172,7 @@ export default {
     return {
       alignment: 'ui-catalog__sns-center',
       baseUrl: import.meta.env.BASE_URL,
+      currentYear: new Date().getFullYear(),
     };
   },
 };
